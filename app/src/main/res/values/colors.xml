@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="fons">#E1DEDE</color>
+    <color name="sanitat">#9EED7D</color>
+    <color name="entreteniment">#FF5B5B</color>
+    <color name="movilitat">#6CC2F4</color>
+    <color name="socialitzacio">#FFE478</color>
+
 </resources>

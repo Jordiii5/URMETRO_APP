@@ -1,40 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".IniciarSessioFragment"
-    android:background="@color/fons"
-    >
+    android:background="@color/fons">
 
     <!-- TODO: Update blank fragment layout -->
 
 
-
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="345dp"
-        tools:ignore="RtlHardcoded"
-        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_registro"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.9"
+        app:layout_constraintWidth_percent="0.50"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rectangle_registre"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
-        android:layout_width="347dp"
+        android:id="@+id/titolIniciSessio"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="345dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="40dp"
-        android:text="Inici de sessió"
+        app:layout_constraintStart_toStartOf="@id/container_registro"
+        app:layout_constraintEnd_toEndOf="@id/container_registro"
+        app:layout_constraintTop_toTopOf="@id/container_registro"
+        app:layout_constraintBottom_toTopOf="@id/dni_field"
+        android:text="INICI DE SESSIÓ"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
         android:textAlignment="center"
 
         />
 
+    <EditText
+        android:id="@+id/dni_field"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.165"
+        app:layout_constraintStart_toStartOf="@id/container_registro"
+        app:layout_constraintEnd_toEndOf="@id/container_registro"
+        app:layout_constraintTop_toBottomOf="@id/titolIniciSessio"
+        app:layout_constraintBottom_toTopOf="@id/contrasenya_field"
+        android:hint="DNI"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:ems="13"
+        android:paddingLeft="30dp"
+        android:background="@drawable/rectangle_registre"
+        />
+
+    <EditText
+        android:id="@+id/contrasenya_field"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.165"
+        app:layout_constraintStart_toStartOf="@id/container_registro"
+        app:layout_constraintEnd_toEndOf="@id/container_registro"
+        app:layout_constraintTop_toBottomOf="@id/dni_field"
+        app:layout_constraintBottom_toTopOf="@id/login_switch"
+        android:hint="CONTRASENYA"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:ems="13"
+        android:paddingLeft="30dp"
+        android:background="@drawable/rectangle_registre"
+        />
+
     <Switch
+        android:id="@+id/login_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+        app:layout_constraintStart_toStartOf="@id/contrasenya_field"
+        app:layout_constraintTop_toBottomOf="@id/contrasenya_field"
+        app:layout_constraintBottom_toTopOf="@id/login"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/recordam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/login_switch"
+        app:layout_constraintTop_toTopOf="@id/login_switch"
+        app:layout_constraintBottom_toBottomOf="@id/login_switch"
+        android:text="Recorda'm"
+        android:textColor="@color/black"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.15"
+        android:text="Entrar"
+        android:textColor="@color/black"
+        android:background="@drawable/rectangle_registre"
+        app:layout_constraintTop_toBottomOf="@id/login_switch"
+        app:layout_constraintBottom_toTopOf="@+id/registrat_view"
+        app:layout_constraintEnd_toEndOf="@id/container_registro"
+        app:layout_constraintStart_toStartOf="@id/container_registro"
+        android:textAlignment="center"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/registrat_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/login"
+        app:layout_constraintStart_toStartOf="@id/container_registro"
+        app:layout_constraintEnd_toEndOf="@id/container_registro"
+        app:layout_constraintBottom_toBottomOf="@id/container_registro"
+
+
+
+        >
+        <TextView
+            android:id="@+id/no_tens_compte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/registrat"
+            app:layout_constraintEnd_toStartOf="@id/registrat"
+            android:text="No tens compte?"
+            android:textColor="@color/black"
+
+            />
+        <TextView
+            android:id="@+id/registrat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/no_tens_compte"
+            android:text="Registrat!"
+            android:textColor="#3F51B5"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

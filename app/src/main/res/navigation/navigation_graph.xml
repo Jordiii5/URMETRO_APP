@@ -39,22 +39,38 @@
         android:id="@+id/modulEntretenimentFragment"
         android:name="com.example.urmetro.ModulEntretenimentFragment"
         android:label="fragment_modul_entreteniment"
-        tools:layout="@layout/fragment_modul_entreteniment" />
+        tools:layout="@layout/fragment_modul_entreteniment" >
+        <action
+            android:id="@+id/action_modulEntretenimentFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/modulSanitatFragment"
         android:name="com.example.urmetro.ModulSanitatFragment"
         android:label="fragment_modul_sanitat"
-        tools:layout="@layout/fragment_modul_sanitat" />
+        tools:layout="@layout/fragment_modul_sanitat" >
+        <action
+            android:id="@+id/action_modulSanitatFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/modulMovilitatFragment"
         android:name="com.example.urmetro.ModulMovilitatFragment"
         android:label="fragment_modul_movilitat"
-        tools:layout="@layout/fragment_modul_movilitat" />
+        tools:layout="@layout/fragment_modul_movilitat" >
+        <action
+            android:id="@+id/action_modulMovilitatFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/modulSocialitzacioFragment"
         android:name="com.example.urmetro.ModulSocialitzacioFragment"
         android:label="fragment_modul_socialitzacio"
-        tools:layout="@layout/fragment_modul_socialitzacio" />
+        tools:layout="@layout/fragment_modul_socialitzacio" >
+        <action
+            android:id="@+id/action_modulSocialitzacioFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registreFragment"
         android:name="com.example.urmetro.RegistreFragment"

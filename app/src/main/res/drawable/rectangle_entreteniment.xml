@@ -7,7 +7,8 @@
     <padding
         android:bottom="25dp"
         android:top="25dp"
-        android:left="30dp"
+        android:left="70dp"
+        android:right="40dp"
         />
     <solid
         android:color="#80FF5B5B"

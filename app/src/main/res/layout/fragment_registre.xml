@@ -47,7 +47,7 @@ android:background="@color/fons">
     android:textAlignment="center"
     />
 
-    <TextView
+    <EditText
         android:id="@+id/name_field"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -57,12 +57,11 @@ android:background="@color/fons">
         app:layout_constraintTop_toBottomOf="@id/titolRegistre"
         app:layout_constraintBottom_toTopOf="@id/dni_field"
         android:hint="NOM"
-        android:textSize="9dp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:ems="13"
         android:paddingLeft="30dp"
-        android:background="@drawable/rectangle_registre"
+        android:background="@drawable/register_rectangle"
 
         />
 
@@ -80,7 +79,7 @@ android:background="@color/fons">
     android:textStyle="bold"
     android:ems="13"
     android:paddingLeft="30dp"
-    android:background="@drawable/rectangle_registre"
+    android:background="@drawable/register_rectangle"
     />
 
 <EditText
@@ -91,13 +90,13 @@ android:background="@color/fons">
     app:layout_constraintStart_toStartOf="@id/container_registro"
     app:layout_constraintEnd_toEndOf="@id/container_registro"
     app:layout_constraintTop_toBottomOf="@id/dni_field"
-    app:layout_constraintBottom_toTopOf="@id/crear_compte"
+    app:layout_constraintBottom_toTopOf="@id/confirmar_contrasenya_field"
     android:hint="CONTRASENYA"
     android:textColor="@color/black"
     android:textStyle="bold"
     android:ems="13"
     android:paddingLeft="30dp"
-    android:background="@drawable/rectangle_registre"
+    android:background="@drawable/register_rectangle"
     />
     <EditText
         android:id="@+id/confirmar_contrasenya_field"
@@ -108,12 +107,13 @@ android:background="@color/fons">
         app:layout_constraintEnd_toEndOf="@id/container_registro"
         app:layout_constraintTop_toBottomOf="@id/contrasenya_field"
         app:layout_constraintBottom_toTopOf="@id/crear_compte"
-        android:hint="CONFIRMAR CONTRASENYA"
+        android:textSize=""
+        android:hint="CONFIRMA CONTRASENYA"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:ems="13"
         android:paddingLeft="30dp"
-        android:background="@drawable/rectangle_registre"
+        android:background="@drawable/register_rectangle"
         />
 
 
@@ -121,11 +121,11 @@ android:background="@color/fons">
     android:id="@+id/crear_compte"
     android:layout_width="0dp"
     android:layout_height="0dp"
-    app:layout_constraintHeight_percent="0.140"
+    app:layout_constraintHeight_percent="0.12"
     app:layout_constraintWidth_percent="0.20"
     android:text="Crear Compte"
     android:textColor="@color/black"
-    android:background="@drawable/rectangle_registre"
+    android:background="@drawable/register_rectangle"
     app:layout_constraintTop_toBottomOf="@id/confirmar_contrasenya_field"
     app:layout_constraintBottom_toTopOf="@+id/registrat_view"
     app:layout_constraintEnd_toEndOf="@id/container_registro"
@@ -164,6 +164,7 @@ android:background="@color/fons">
         android:textColor="#3F51B5"
         android:textStyle="bold"
         android:layout_marginStart="5dp"
+        android:paddingBottom="6dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -63,5 +63,8 @@
         <action
             android:id="@+id/action_registreFragment_to_iniciarSessioFragment"
             app:destination="@id/iniciarSessioFragment" />
+        <action
+            android:id="@+id/action_registreFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
     </fragment>
 </navigation>

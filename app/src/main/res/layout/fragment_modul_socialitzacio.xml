@@ -17,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/rectangle_socialitzacio"
-
         >
 
         <TextView
@@ -39,6 +38,84 @@
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_contactes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintWidth_percent="0.3"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintBottom_toTopOf="@id/menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/container_imatges"
+        android:background="@drawable/socialitzacio_boto"
+        >
+
+        <ImageView
+            android:id="@+id/contactes_img"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.6"
+            android:src="@drawable/llista_contactes"
+            app:layout_constraintTop_toTopOf="@id/container_contactes"
+            app:layout_constraintBottom_toTopOf="@id/contactes_text"
+            android:backgroundTint="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/contactes_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LLISTA DE CONTACTES"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="45dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/container_contactes"
+            app:layout_constraintTop_toBottomOf="@id/contactes_img"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_imatges"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintWidth_percent="0.3"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintBottom_toTopOf="@id/menu"
+        app:layout_constraintStart_toEndOf="@id/container_contactes"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/socialitzacio_boto"
+        >
+        <ImageView
+            android:id="@+id/galeria_img"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.6"
+            android:src="@drawable/galeria_imatges"
+            app:layout_constraintTop_toTopOf="@id/container_imatges"
+            app:layout_constraintBottom_toTopOf="@id/galeria_text"
+            android:backgroundTint="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/galeria_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GALERIA D'IMATGES"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="45dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/container_imatges"
+            app:layout_constraintTop_toBottomOf="@id/galeria_img"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ImageView
         android:id="@+id/menu"
         android:layout_width="0dp"

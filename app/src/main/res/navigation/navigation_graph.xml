@@ -70,6 +70,12 @@
         <action
             android:id="@+id/action_modulSocialitzacioFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_modulSocialitzacioFragment_to_galeriaImatgesFragment"
+            app:destination="@id/galeriaImatgesFragment" />
+        <action
+            android:id="@+id/action_modulSocialitzacioFragment_to_llistaContactesFragment"
+            app:destination="@id/llistaContactesFragment" />
     </fragment>
     <fragment
         android:id="@+id/registreFragment"
@@ -82,5 +88,23 @@
         <action
             android:id="@+id/action_registreFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/galeriaImatgesFragment"
+        android:name="com.example.urmetro.GaleriaImatgesFragment"
+        android:label="fragment_galeria_imatges"
+        tools:layout="@layout/fragment_galeria_imatges" >
+        <action
+            android:id="@+id/action_galeriaImatgesFragment_to_modulSocialitzacioFragment"
+            app:destination="@id/modulSocialitzacioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/llistaContactesFragment"
+        android:name="com.example.urmetro.LlistaContactesFragment"
+        android:label="fragment_llista_contactes"
+        tools:layout="@layout/fragment_llista_contactes" >
+        <action
+            android:id="@+id/action_llistaContactesFragment_to_modulSocialitzacioFragment"
+            app:destination="@id/modulSocialitzacioFragment" />
     </fragment>
 </navigation>

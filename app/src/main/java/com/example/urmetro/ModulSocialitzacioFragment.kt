@@ -23,6 +23,12 @@ class ModulSocialitzacioFragment : Fragment() {
         binding.menu.setOnClickListener {
             findNavController().navigate(R.id.action_modulSocialitzacioFragment_to_menuFragment)
         }
+        binding.containerContactes.setOnClickListener {
+            findNavController().navigate(R.id.action_modulSocialitzacioFragment_to_llistaContactesFragment)
+        }
+        binding.containerImatges.setOnClickListener {
+            findNavController().navigate(R.id.action_modulSocialitzacioFragment_to_galeriaImatgesFragment)
+        }
     }
 
 }

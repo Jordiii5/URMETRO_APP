@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_graph.xml">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph.xml"
+    app:startDestination="@id/iniciarSessioFragment">
 
+    <fragment
+        android:id="@+id/iniciarSessioFragment"
+        android:name="com.example.urmetro.IniciarSessioFragment"
+        android:label="fragment_iniciar_sessio"
+        tools:layout="@layout/fragment_iniciar_sessio" >
+        <action
+            android:id="@+id/action_iniciarSessioFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_iniciarSessioFragment_to_registreFragment"
+            app:destination="@id/registreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.urmetro.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_modulEntretenimentFragment"
+            app:destination="@id/modulEntretenimentFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_modulSanitatFragment"
+            app:destination="@id/modulSanitatFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_modulMovilitatFragment"
+            app:destination="@id/modulMovilitatFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_modulSocialitzacioFragment"
+            app:destination="@id/modulSocialitzacioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/modulEntretenimentFragment"
+        android:name="com.example.urmetro.ModulEntretenimentFragment"
+        android:label="fragment_modul_entreteniment"
+        tools:layout="@layout/fragment_modul_entreteniment" />
+    <fragment
+        android:id="@+id/modulSanitatFragment"
+        android:name="com.example.urmetro.ModulSanitatFragment"
+        android:label="fragment_modul_sanitat"
+        tools:layout="@layout/fragment_modul_sanitat" />
+    <fragment
+        android:id="@+id/modulMovilitatFragment"
+        android:name="com.example.urmetro.ModulMovilitatFragment"
+        android:label="fragment_modul_movilitat"
+        tools:layout="@layout/fragment_modul_movilitat" />
+    <fragment
+        android:id="@+id/modulSocialitzacioFragment"
+        android:name="com.example.urmetro.ModulSocialitzacioFragment"
+        android:label="fragment_modul_socialitzacio"
+        tools:layout="@layout/fragment_modul_socialitzacio" />
+    <fragment
+        android:id="@+id/registreFragment"
+        android:name="com.example.urmetro.RegistreFragment"
+        android:label="fragment_registre"
+        tools:layout="@layout/fragment_registre" >
+        <action
+            android:id="@+id/action_registreFragment_to_iniciarSessioFragment"
+            app:destination="@id/iniciarSessioFragment" />
+    </fragment>
 </navigation>

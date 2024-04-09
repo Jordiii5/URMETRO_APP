@@ -7,5 +7,6 @@
     <color name="entreteniment">#FF5B5B</color>
     <color name="movilitat">#6CC2F4</color>
     <color name="socialitzacio">#FFE478</color>
+    <color name="hintColor">#4D4D4D</color>
 
 </resources>

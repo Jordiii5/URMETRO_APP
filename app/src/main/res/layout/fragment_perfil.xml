@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PerfilFragment"
-    android:background="@color/fons">
+    android:background="@color/fons"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_cap"
@@ -15,14 +16,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="40dp"
         android:background="@drawable/rectangle_menu"
         >
 
         <TextView
             android:id="@+id/profileTitle"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/container_cap"
+            app:layout_constraintStart_toEndOf="@id/arrowBack"
+            app:layout_constraintEnd_toEndOf="@id/container_cap"
             app:layout_constraintTop_toTopOf="@id/container_cap"
             app:layout_constraintBottom_toBottomOf="@id/container_cap"
             android:textSize="40dp"
@@ -48,81 +51,110 @@
         app:layout_constraintWidth_percent="0.25"
         app:layout_constraintTop_toBottomOf="@id/container_cap"
         android:background="@drawable/register_rectangle"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         tools:ignore="MissingConstraints" />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/info_container"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/container_cap"
         app:layout_constraintStart_toEndOf="@+id/picture_container"
+        app:layout_constraintTop_toTopOf="@id/picture_container"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/picture_container"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
         tools:ignore="MissingConstraints" >
 
-        <EditText
+        <TextView
             android:id="@+id/nom_field"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/info_container"
+            app:layout_constraintEnd_toEndOf="@id/info_container"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:background="@drawable/register_rectangle"
             app:layout_constraintTop_toTopOf="@+id/info_container"
-            android:hint="nom"/>
+            android:text="NOM"
+            android:textColor="@color/black"/>
 
-        <EditText
+        <TextView
             android:id="@+id/dni_field"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:background="@drawable/register_rectangle"
+            app:layout_constraintStart_toStartOf="@id/info_container"
+            app:layout_constraintEnd_toEndOf="@id/info_container"
             app:layout_constraintTop_toBottomOf="@+id/nom_field"
-            android:hint="dni"/>
+            android:text="DNI"
+            android:textColor="@color/black"
+            />
 
-        <EditText
+        <TextView
             android:id="@+id/adress_field"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:background="@drawable/register_rectangle"
+            app:layout_constraintStart_toStartOf="@id/info_container"
+            app:layout_constraintEnd_toEndOf="@id/info_container"
             app:layout_constraintTop_toBottomOf="@+id/dni_field"
-            android:hint="adreça"/>
-        <EditText
+            android:text="ADREÇA"
+            android:textColor="@color/black"/>
+
+        <TextView
             android:id="@+id/telefon_field"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/register_rectangle"
+            android:text="TELÈFON"
+            android:textColor="@color/black"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:background="@drawable/register_rectangle"
+            app:layout_constraintStart_toStartOf="@+id/info_container"
             app:layout_constraintTop_toBottomOf="@+id/adress_field"
-            android:hint="telefon"/>
-        <EditText
+            />
+        <TextView
             android:id="@+id/telefon_emergenicia_field"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:background="@drawable/register_rectangle"
             app:layout_constraintTop_toBottomOf="@+id/adress_field"
             app:layout_constraintStart_toEndOf="@+id/telefon_field"
-            android:hint="telefon"/>
+            app:layout_constraintEnd_toEndOf="@+id/info_container"
+            android:text="TELÈFON D'EMERGENCIA"
+            android:textColor="@color/black"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/picture_container"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tancar_sessió"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintWidth_percent="0.20"
+            android:text="Tancar sessió"
+            android:textColor="@color/black"
+            android:background="@drawable/register_rectangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="center"
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/tancar_sessió"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.12"
-        app:layout_constraintWidth_percent="0.20"
-        android:text="Tancar sessió"
-        android:textColor="@color/black"
-        android:background="@drawable/register_rectangle"
-        app:layout_constraintTop_toBottomOf="@+id/info_container"
-        app:layout_constraintEnd_toEndOf="@id/info_container"
-        app:layout_constraintStart_toStartOf="@id/info_container"
-        android:textAlignment="center"
 
-        />
+
 
 
 

@@ -11,10 +11,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintWidth_percent="0.4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/container_registro"
         android:src="@drawable/logo"
-        tools:ignore="MissingConstraints" />
+        />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -60,7 +62,8 @@
         android:textColorHint="@color/hintColor"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:ems="13"
+        android:ems="20"
+        android:maxLength="9"
         android:paddingLeft="30dp"
         android:background="@drawable/rectangle_registre"
         />
@@ -78,7 +81,7 @@
         android:textColorHint="@color/hintColor"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:ems="13"
+        android:ems="20"
         android:paddingLeft="30dp"
         android:background="@drawable/rectangle_registre"
         />

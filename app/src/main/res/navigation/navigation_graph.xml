@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_menuFragment_to_modulSocialitzacioFragment"
             app:destination="@id/modulSocialitzacioFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
     </fragment>
     <fragment
         android:id="@+id/modulEntretenimentFragment"
@@ -106,5 +109,26 @@
         <action
             android:id="@+id/action_llistaContactesFragment_to_modulSocialitzacioFragment"
             app:destination="@id/modulSocialitzacioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.example.urmetro.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_perfilFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_perfilFragment_to_editarPerfilFragment"
+            app:destination="@id/editarPerfilFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarPerfilFragment"
+        android:name="com.example.urmetro.EditarPerfilFragment"
+        android:label="fragment_editar_perfil"
+        tools:layout="@layout/fragment_editar_perfil" >
+        <action
+            android:id="@+id/action_editarPerfilFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
     </fragment>
 </navigation>

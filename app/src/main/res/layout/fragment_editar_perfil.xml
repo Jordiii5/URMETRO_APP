@@ -1,14 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarPerfilFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".EditarPerfilFragment"
+    android:background="@color/fons"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_cap"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="1.05"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="40dp"
+        android:background="@drawable/rectangle_menu"
+        >
+
+        <TextView
+            android:id="@+id/profileTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/arrowBack"
+            app:layout_constraintEnd_toEndOf="@id/container_cap"
+            app:layout_constraintTop_toTopOf="@id/container_cap"
+            app:layout_constraintBottom_toBottomOf="@id/container_cap"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="EDITAR PERFIL" />
+
+        <ImageButton
+            android:id="@+id/arrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_arrow_circle_left_24"
+            app:layout_constraintStart_toStartOf="@id/container_cap"
+            android:backgroundTint="@color/fons"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/picture_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.540"
+        app:layout_constraintWidth_percent="0.30"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintTop_toTopOf="@id/info_container"
+        app:layout_constraintBottom_toBottomOf="@+id/info_container"
+        android:background="@drawable/register_rectangle"
+        android:layout_marginStart="890dp"
+        android:layout_marginTop="10dp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/info_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintStart_toEndOf="@+id/picture_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="30dp"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/nom_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/info_container"
+            app:layout_constraintEnd_toEndOf="@id/info_container"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            android:background="@drawable/register_rectangle"
+            app:layout_constraintTop_toTopOf="@+id/info_container"
+            android:text="NOM"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/dni_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            android:background="@drawable/register_rectangle"
+            app:layout_constraintStart_toStartOf="@id/info_container"
+            app:layout_constraintEnd_toEndOf="@id/info_container"
+            app:layout_constraintTop_toBottomOf="@+id/nom_field"
+            android:text="DNI"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/adress_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            android:background="@drawable/register_rectangle"
+            app:layout_constraintStart_toStartOf="@id/info_container"
+            app:layout_constraintEnd_toEndOf="@id/info_container"
+            app:layout_constraintTop_toBottomOf="@+id/dni_field"
+            android:text="ADREÇA"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/telefon_field"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.5"
+            android:layout_height="wrap_content"
+            android:background="@drawable/register_rectangle"
+            android:text="TELÈFON"
+            android:textColor="@color/black"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            app:layout_constraintStart_toStartOf="@+id/info_container"
+            app:layout_constraintTop_toBottomOf="@+id/adress_field"
+            />
+        <EditText
+            android:id="@+id/telefon_emergenicia_field"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.5"
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            android:background="@drawable/register_rectangle"
+            app:layout_constraintTop_toBottomOf="@+id/adress_field"
+            app:layout_constraintStart_toEndOf="@+id/telefon_field"
+            app:layout_constraintEnd_toEndOf="@+id/info_container"
+            android:text="TELÈFON D'EMERGENCIA"
+            android:textColor="@color/black"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_info"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintTop_toBottomOf="@id/picture_container"
+        android:paddingTop="30dp"
+        >
 
-</FrameLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tancar_sessió"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintWidth_percent="0.20"
+            android:text="CONFIRMAR"
+            android:textColor="@color/black"
+            android:background="@drawable/register_rectangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="center"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

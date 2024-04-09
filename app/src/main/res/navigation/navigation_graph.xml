@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_menuFragment_to_modulSocialitzacioFragment"
             app:destination="@id/modulSocialitzacioFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
     </fragment>
     <fragment
         android:id="@+id/modulEntretenimentFragment"
@@ -129,66 +132,24 @@
             app:destination="@id/modulSocialitzacioFragment" />
     </fragment>
     <fragment
-        android:id="@+id/rehabilitacioFragment"
-        android:name="com.example.urmetro.RehabilitacioFragment"
-        android:label="fragment_rehabilitacio"
-        tools:layout="@layout/fragment_rehabilitacio" >
+        android:id="@+id/perfilFragment"
+        android:name="com.example.urmetro.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" >
         <action
-            android:id="@+id/action_rehabilitacioFragment_to_modulSanitatFragment"
-            app:destination="@id/modulSanitatFragment" />
+            android:id="@+id/action_perfilFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_perfilFragment_to_editarPerfilFragment"
+            app:destination="@id/editarPerfilFragment" />
     </fragment>
     <fragment
-        android:id="@+id/citesFragment"
-        android:name="com.example.urmetro.CitesFragment"
-        android:label="fragment_cites"
-        tools:layout="@layout/fragment_cites" >
+        android:id="@+id/editarPerfilFragment"
+        android:name="com.example.urmetro.EditarPerfilFragment"
+        android:label="fragment_editar_perfil"
+        tools:layout="@layout/fragment_editar_perfil" >
         <action
-            android:id="@+id/action_citesFragment_to_modulSanitatFragment"
-            app:destination="@id/modulSanitatFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/medicacionsFragment"
-        android:name="com.example.urmetro.MedicacionsFragment"
-        android:label="fragment_medicacions"
-        tools:layout="@layout/fragment_medicacions" >
-        <action
-            android:id="@+id/action_medicacionsFragment_to_modulSanitatFragment"
-            app:destination="@id/modulSanitatFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/jocsFragment"
-        android:name="com.example.urmetro.JocsFragment"
-        android:label="fragment_jocs"
-        tools:layout="@layout/fragment_jocs" >
-        <action
-            android:id="@+id/action_jocsFragment_to_modulEntretenimentFragment"
-            app:destination="@id/modulEntretenimentFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/canconsFragment"
-        android:name="com.example.urmetro.CanconsFragment"
-        android:label="fragment_cancons"
-        tools:layout="@layout/fragment_cancons" >
-        <action
-            android:id="@+id/action_canconsFragment_to_modulEntretenimentFragment"
-            app:destination="@id/modulEntretenimentFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/periodicsFragment"
-        android:name="com.example.urmetro.PeriodicsFragment"
-        android:label="fragment_periodics"
-        tools:layout="@layout/fragment_periodics" >
-        <action
-            android:id="@+id/action_periodicsFragment_to_modulEntretenimentFragment"
-            app:destination="@id/modulEntretenimentFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/audiollibresFragment"
-        android:name="com.example.urmetro.AudiollibresFragment"
-        android:label="fragment_audiollibres"
-        tools:layout="@layout/fragment_audiollibres" >
-        <action
-            android:id="@+id/action_audiollibresFragment_to_modulEntretenimentFragment"
-            app:destination="@id/modulEntretenimentFragment" />
+            android:id="@+id/action_editarPerfilFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
     </fragment>
 </navigation>

@@ -34,6 +34,9 @@ class MenuFragment : Fragment() {
         binding.movilitat.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_modulMovilitatFragment)
         }
+        binding.perfil.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment_to_perfilFragment)
+        }
     }
 
 }

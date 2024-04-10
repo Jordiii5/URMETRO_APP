@@ -55,6 +55,15 @@
         <action
             android:id="@+id/action_modulSanitatFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_modulSanitatFragment_to_rehabilitacioFragment"
+            app:destination="@id/rehabilitacioFragment" />
+        <action
+            android:id="@+id/action_modulSanitatFragment_to_citesFragment"
+            app:destination="@id/citesFragment" />
+        <action
+            android:id="@+id/action_modulSanitatFragment_to_medicacionsFragment"
+            app:destination="@id/medicacionsFragment" />
     </fragment>
     <fragment
         android:id="@+id/modulMovilitatFragment"
@@ -130,5 +139,32 @@
         <action
             android:id="@+id/action_editarPerfilFragment_to_perfilFragment"
             app:destination="@id/perfilFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rehabilitacioFragment"
+        android:name="com.example.urmetro.RehabilitacioFragment"
+        android:label="fragment_rehabilitacio"
+        tools:layout="@layout/fragment_rehabilitacio" >
+        <action
+            android:id="@+id/action_rehabilitacioFragment_to_modulSanitatFragment"
+            app:destination="@id/modulSanitatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/citesFragment"
+        android:name="com.example.urmetro.CitesFragment"
+        android:label="fragment_cites"
+        tools:layout="@layout/fragment_cites" >
+        <action
+            android:id="@+id/action_citesFragment_to_modulSanitatFragment"
+            app:destination="@id/modulSanitatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicacionsFragment"
+        android:name="com.example.urmetro.MedicacionsFragment"
+        android:label="fragment_medicacions"
+        tools:layout="@layout/fragment_medicacions" >
+        <action
+            android:id="@+id/action_medicacionsFragment_to_modulSanitatFragment"
+            app:destination="@id/modulSanitatFragment" />
     </fragment>
 </navigation>

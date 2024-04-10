@@ -43,6 +43,7 @@
             android:backgroundTint="@color/fons"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/picture_container"
         android:layout_width="0dp"

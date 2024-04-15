@@ -43,6 +43,18 @@
         <action
             android:id="@+id/action_modulEntretenimentFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_modulEntretenimentFragment_to_jocsFragment"
+            app:destination="@id/jocsFragment" />
+        <action
+            android:id="@+id/action_modulEntretenimentFragment_to_canconsFragment"
+            app:destination="@id/canconsFragment" />
+        <action
+            android:id="@+id/action_modulEntretenimentFragment_to_periodicsFragment"
+            app:destination="@id/periodicsFragment" />
+        <action
+            android:id="@+id/action_modulEntretenimentFragment_to_audiollibresFragment"
+            app:destination="@id/audiollibresFragment" />
     </fragment>
     <fragment
         android:id="@+id/modulSanitatFragment"
@@ -142,5 +154,41 @@
         <action
             android:id="@+id/action_medicacionsFragment_to_modulSanitatFragment"
             app:destination="@id/modulSanitatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jocsFragment"
+        android:name="com.example.urmetro.JocsFragment"
+        android:label="fragment_jocs"
+        tools:layout="@layout/fragment_jocs" >
+        <action
+            android:id="@+id/action_jocsFragment_to_modulEntretenimentFragment"
+            app:destination="@id/modulEntretenimentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/canconsFragment"
+        android:name="com.example.urmetro.CanconsFragment"
+        android:label="fragment_cancons"
+        tools:layout="@layout/fragment_cancons" >
+        <action
+            android:id="@+id/action_canconsFragment_to_modulEntretenimentFragment"
+            app:destination="@id/modulEntretenimentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/periodicsFragment"
+        android:name="com.example.urmetro.PeriodicsFragment"
+        android:label="fragment_periodics"
+        tools:layout="@layout/fragment_periodics" >
+        <action
+            android:id="@+id/action_periodicsFragment_to_modulEntretenimentFragment"
+            app:destination="@id/modulEntretenimentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/audiollibresFragment"
+        android:name="com.example.urmetro.AudiollibresFragment"
+        android:label="fragment_audiollibres"
+        tools:layout="@layout/fragment_audiollibres" >
+        <action
+            android:id="@+id/action_audiollibresFragment_to_modulEntretenimentFragment"
+            app:destination="@id/modulEntretenimentFragment" />
     </fragment>
 </navigation>

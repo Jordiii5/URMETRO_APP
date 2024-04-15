@@ -18,18 +18,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/rectangle_entreteniment"
             >
-        <ImageView
+            <ImageView
             android:id="@+id/arrowBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_arrow_circle_left_24"
             app:layout_constraintStart_toStartOf="@+id/container_cap"
             app:layout_constraintBottom_toBottomOf="@+id/periodics_titol"
-            app:layout_constraintTop_toTopOf=""
             android:layout_marginStart="50dp"
             />
-
-        <TextView
+            <TextView
             android:id="@+id/periodics_titol"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -40,12 +38,13 @@
             android:textSize="40dp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="PERIÒDICS" />
+            android:text="PERIÒDICS"
+            tools:ignore="MissingConstraints" />
 
 
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/entreteniment"

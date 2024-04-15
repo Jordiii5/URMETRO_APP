@@ -7,6 +7,7 @@
     android:background="@color/fons"
     tools:context=".JocsFragment">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_cap"
         android:layout_width="0dp"
@@ -15,30 +16,121 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:paddingStart="40dp"
         android:background="@drawable/rectangle_entreteniment"
         >
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/titolJocs"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.7"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/arrowBack"
             app:layout_constraintEnd_toEndOf="@id/container_cap"
+            app:layout_constraintStart_toEndOf="@id/arrowBack"
             app:layout_constraintTop_toTopOf="@id/container_cap"
             app:layout_constraintBottom_toBottomOf="@id/container_cap"
             android:textSize="40dp"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:text="JOCS" />
+
         <ImageButton
             android:id="@+id/arrowBack"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:backgroundTint="#80F38F8F"
             android:src="@drawable/baseline_arrow_circle_left_24"
             app:layout_constraintStart_toStartOf="@id/container_cap"
-            android:backgroundTint="#DC9199"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_joc1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintWidth_percent="0.3"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintBottom_toTopOf="@id/menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/container_joc2"
+        android:background="@drawable/periodics_boto"
+        >
+
+        <ImageView
+            android:id="@+id/imatgejoc"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.6"
+            android:src="@drawable/games"
+            app:layout_constraintTop_toTopOf="@id/container_joc1"
+            app:layout_constraintBottom_toTopOf="@id/contactes_text"
+            android:backgroundTint="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/contactes_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TITOL DE JOC"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="45dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/container_joc1"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_joc2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintWidth_percent="0.3"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintBottom_toTopOf="@id/menu"
+        app:layout_constraintStart_toEndOf="@id/container_joc1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/periodics_boto"
+        >
+        <ImageView
+            android:id="@+id/i"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.6"
+            android:src="@drawable/games"
+            app:layout_constraintTop_toTopOf="@id/container_joc2"
+            app:layout_constraintBottom_toTopOf="@id/galeria_text"
+            android:backgroundTint="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/galeria_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TITOL DE JOC"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="45dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/container_joc2"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.1"
+        app:layout_constraintHeight_percent="0.2"
+        android:src="@drawable/menu_boto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

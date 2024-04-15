@@ -21,17 +21,17 @@ interface ApiInterface {
     suspend fun getUsers(@Url url: String): Response<List<Usuari>>
     @GET
     suspend fun getUsuari(@Url url: String): Response<List<Usuari>>
-    @POST("login")
+    @POST("user/login")
     suspend fun login(@Body usuario: Usuari): Response<ResponseBody>
-    @POST("register")
-    suspend fun register(@Body usuario: List<Usuari>?): Response<ResponseBody>
+    @POST("user/register")
+    suspend fun register(@Body usuario: Usuari): Response<ResponseBody>
     @PUT
     suspend fun updatePost(@Url url: String): Response<Boolean>
     @DELETE()
     suspend fun deletePost(@Url url: String): Response<Boolean>
 
     companion object {
-        val BASE_URL = "http://172.23.6.131:8080/"
+        val BASE_URL = "http://172.23.6.130:8080/"
 
         fun create(dni: String, password: String): ApiInterface {
             val digestAuthenticator = DigestAuthenticator(Credentials(dni, password))

@@ -7,36 +7,36 @@
     android:background="@color/fons"
     tools:context=".PeriodicsFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container_cap"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintWidth_percent="1.05"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/entreteniment_menu"
-        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_cap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="1.05"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/rectangle_entreteniment"
+            >
         <ImageView
             android:id="@+id/arrowBack"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-
+            android:layout_height="wrap_content"
             android:src="@drawable/baseline_arrow_circle_left_24"
             app:layout_constraintStart_toStartOf="@+id/container_cap"
             app:layout_constraintBottom_toBottomOf="@+id/periodics_titol"
+            app:layout_constraintTop_toTopOf=""
+            android:layout_marginStart="50dp"
             />
 
         <TextView
             android:id="@+id/periodics_titol"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="1"
             app:layout_constraintWidth_percent="0.4"
             android:gravity="center"
             app:layout_constraintStart_toEndOf="@+id/arrowBack"
-            app:layout_constraintTop_toTopOf="@id/container_cap"
-            app:layout_constraintBottom_toBottomOf="@id/container_cap"
-
             android:textSize="40dp"
             android:textStyle="bold"
             android:textColor="@color/black"

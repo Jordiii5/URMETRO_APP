@@ -40,7 +40,7 @@
             android:layout_height="match_parent"
             android:src="@drawable/baseline_arrow_circle_left_24"
             app:layout_constraintStart_toStartOf="@id/container_cap"
-            android:backgroundTint="@color/sanitat"
+            android:backgroundTint="#AAD9A9"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -56,7 +56,7 @@
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/titol_cita_layout"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.25"
             android:background="@drawable/rectangle_sanitat"
@@ -94,10 +94,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:src="@drawable/baseline_calendar_month_24"
-            app:layout_constraintTop_toBottomOf="@id/titol_cita_layout"
             app:layout_constraintBottom_toTopOf="@id/comentaris_cita_layout"
-            app:layout_constraintStart_toStartOf="@id/afegir_cita_layout"
             app:layout_constraintEnd_toEndOf="@id/afegir_cita_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titol_cita_layout"
 
             />
 

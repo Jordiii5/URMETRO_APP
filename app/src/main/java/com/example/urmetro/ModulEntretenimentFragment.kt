@@ -33,10 +33,10 @@ class ModulEntretenimentFragment : Fragment() {
         binding.audiollibres.setOnClickListener {
             findNavController().navigate(R.id.action_modulEntretenimentFragment_to_audiollibresFragment)
         }
-        binding.periodics.setOnClickListener {
+        binding.cansons.setOnClickListener {
             findNavController().navigate(R.id.action_modulEntretenimentFragment_to_periodicsFragment)
         }
-       binding.cansons.setOnClickListener {
+       binding.periodics.setOnClickListener {
             findNavController().navigate(R.id.action_modulEntretenimentFragment_to_canconsFragment)
         }
          binding.jocs.setOnClickListener {

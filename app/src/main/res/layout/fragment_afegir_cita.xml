@@ -59,33 +59,94 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.25"
-            android:background="@drawable/rectangle_sanitat"
+            android:background="@drawable/rectangle_medicina"
             app:layout_constraintStart_toStartOf="@id/afegir_cita_layout"
             app:layout_constraintEnd_toEndOf="@id/afegir_cita_layout"
             tools:ignore="MissingConstraints">
-            <TextView
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/titol_cita"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TITOL DE LA CITA"
-                android:textSize="40dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/tilt_neon"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.5"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="1.3"
+                android:paddingBottom="10dp"
+                android:paddingTop="7dp"
                 app:layout_constraintStart_toStartOf="@id/titol_cita_layout"
                 app:layout_constraintTop_toTopOf="@id/titol_cita_layout"
                 app:layout_constraintBottom_toBottomOf="@id/titol_cita_layout"
-                />
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/titol_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:background="@drawable/rectangle_registre"
+                    android:textColorHint="@color/white"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
             <TextView
-                android:id="@+id/hora_cita"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="HORA DE LA CITA"
-                android:textSize="20dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="@+id/titol_cita"
+                app:layout_constraintTop_toTopOf="@id/titol_cita"
+                android:text="TITOL DE LA CITA"
+                android:background="#AAD9A9"
                 android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
                 android:fontFamily="@font/tilt_neon"
+                />
+
+
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/hora_cita"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.5"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="1.345"
+                android:paddingBottom="10dp"
+                android:paddingTop="7dp"
                 app:layout_constraintEnd_toEndOf="@id/titol_cita_layout"
                 app:layout_constraintTop_toTopOf="@id/titol_cita_layout"
                 app:layout_constraintBottom_toBottomOf="@id/titol_cita_layout"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/hora_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:background="@drawable/rectangle_registre"
+                    android:textColorHint="@color/white"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="@+id/hora_cita"
+                app:layout_constraintTop_toTopOf="@id/hora_cita"
+                android:text="HORA DE LA CITA"
+                android:background="#AAD9A9"
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:fontFamily="@font/tilt_neon"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -98,7 +159,6 @@
             app:layout_constraintEnd_toEndOf="@id/afegir_cita_layout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titol_cita_layout"
-
             />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -106,23 +166,51 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.25"
-            android:background="@drawable/rectangle_sanitat"
+            android:background="#AAD9A9"
             app:layout_constraintBottom_toBottomOf="@id/afegir_cita_layout"
             app:layout_constraintStart_toStartOf="@id/afegir_cita_layout"
             app:layout_constraintEnd_toEndOf="@id/afegir_cita_layout"
-            tools:ignore="MissingConstraints">
+            tools:ignore="MissingConstraints"
+            >
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/comentaris"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="1.2"
+                android:paddingBottom="10dp"
+                android:paddingVertical="20dp"
+                aapp:layout_constraintBottom_toBottomOf="@id/afegir_cita_layout"
+                app:layout_constraintStart_toStartOf="@id/afegir_cita_layout"
+                app:layout_constraintEnd_toEndOf="@id/afegir_cita_layout"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/comentaris_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:background="@drawable/rectangle_registre"
+                    android:textColorHint="@color/white"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/comentaris"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="@+id/comentaris"
+                app:layout_constraintTop_toTopOf="@id/comentaris"
                 android:text="COMENTARIS"
-                android:textSize="40dp"
+                android:background="#AAD9A9"
                 android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
                 android:fontFamily="@font/tilt_neon"
-                app:layout_constraintStart_toStartOf="@id/comentaris_cita_layout"
-                app:layout_constraintTop_toTopOf="@id/comentaris_cita_layout"
-                app:layout_constraintBottom_toBottomOf="@id/comentaris_cita_layout"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

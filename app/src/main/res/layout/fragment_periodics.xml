@@ -46,68 +46,61 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/entreteniment"
+    <ImageView
+        android:id="@+id/marca"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_percent="0.4"
         app:layout_constraintHeight_percent="0.355"
         android:background="@drawable/periodics_boto"
-        android:text="LOGO DIARI"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="42dp"
+        android:src="@drawable/marca"
+        android:padding="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/sanitat"
+        app:layout_constraintEnd_toStartOf="@id/v_minutis"
         app:layout_constraintTop_toBottomOf="@id/container_cap"
-        app:layout_constraintBottom_toTopOf="@id/socialitzacio"
+        app:layout_constraintBottom_toTopOf="@id/hola"
         />
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sanitat"
+
+    <ImageView
+        android:id="@+id/v_minutis"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_percent="0.4"
         app:layout_constraintHeight_percent="0.355"
         android:background="@drawable/periodics_boto"
-        android:text="LOGO DIARI"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="42dp"
-        app:layout_constraintStart_toEndOf="@id/entreteniment"
+        android:src="@drawable/minutos"
+        android:padding="20dp"
+        app:layout_constraintStart_toEndOf="@id/marca"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/container_cap"
-        app:layout_constraintBottom_toTopOf="@id/movilitat"
+        app:layout_constraintBottom_toTopOf="@id/el_pais"
         />
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/socialitzacio"
+    <ImageView
+        android:id="@+id/hola"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_percent="0.4"
         app:layout_constraintHeight_percent="0.355"
         android:background="@drawable/periodics_boto"
-        android:text="LOGO DIARI"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="42dp"
+        android:src="@drawable/hola"
+        android:padding="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/movilitat"
-        app:layout_constraintTop_toBottomOf="@id/entreteniment"
+        app:layout_constraintEnd_toStartOf="@id/el_pais"
+        app:layout_constraintTop_toBottomOf="@id/marca"
         app:layout_constraintBottom_toBottomOf="parent"
         />
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/movilitat"
+    <ImageView
+        android:id="@+id/el_pais"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_percent="0.4"
         app:layout_constraintHeight_percent="0.355"
         android:background="@drawable/periodics_boto"
-        android:text="LOGO DIARI"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="42dp"
-        app:layout_constraintStart_toEndOf="@id/socialitzacio"
+        android:src="@drawable/el_pais"
+        android:padding="20dp"
+        app:layout_constraintStart_toEndOf="@id/hola"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sanitat"
+        app:layout_constraintTop_toBottomOf="@id/v_minutis"
         app:layout_constraintBottom_toBottomOf="parent"
         />
 

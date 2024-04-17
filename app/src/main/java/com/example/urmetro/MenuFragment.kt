@@ -25,7 +25,11 @@ class MenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.nomUsuari.text = "HOLA ${viewModel.users.value?.usuari_nom?.uppercase()}"
+        viewModel.currentUsuari.observe(viewLifecycleOwner) { usuario ->
+            usuario?.let {
+                binding.nomUsuari.text = "HOLA ${it.usuari_nom?.uppercase()}"
+            }
+        }
 
         binding.entreteniment.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_modulEntretenimentFragment)
@@ -38,6 +42,9 @@ class MenuFragment : Fragment() {
         }
         binding.movilitat.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_modulMovilitatFragment)
+        }
+        binding.usuari.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment_to_iniciarSessioFragment)
         }
     }
 

@@ -25,7 +25,6 @@ class IniciarSessioFragment : Fragment() {
     lateinit var myPreferences: SharedPreferences
     lateinit var binding: FragmentIniciarSessioBinding
     private val viewModel: MyViewModel by activityViewModels()
-    private lateinit var recordam:Switch
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,33 +39,30 @@ class IniciarSessioFragment : Fragment() {
         myPreferences = requireActivity().getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE)
         setupForm()
 
-        /*
-        if (binding.recordam.isChecked){
+/*
+        if (binding.rememberCheckbox.isChecked){
             findNavController().navigate(R.id.action_iniciarSessioFragment_to_menuFragment)
         }
 
-         */
-
+ */
 
         binding.login.setOnClickListener {
             val dni = binding.dniField.text.toString().uppercase()
             val contra = binding.contrasenyaField.text.toString()
-            recordam=binding.root.findViewById(R.id.login_switch)
-            val check = recordam.isChecked
-
 
             if (dni.isNotEmpty() && contra.isNotEmpty()) {
-                viewModel.users.value = Usuari(0,"", dni, "", 0, 0, "", contra)
+                viewModel.currentUsuari.value = Usuari(0,"", dni, "", 0, 0, "", contra)
                 viewModel.repository = ApiRepository(dni, contra)
 
 
                 CoroutineScope(Dispatchers.IO).launch {
                     val repository = ApiRepository(dni, contra)
-                    val response = repository.login(viewModel.users.value!!)
+                    val response = repository.login(viewModel.currentUsuari.value!!)
                     try {
                         withContext(Dispatchers.Main) {
                             if (response.isSuccessful) {
-                                rememberUser(dni, contra, check)
+                                rememberUser(binding.dniField.text.toString(), binding.contrasenyaField.text.toString(), binding.rememberCheckbox.isChecked)
+                                viewModel.getUsuari(dni)
                                 findNavController().navigate(R.id.action_iniciarSessioFragment_to_menuFragment)
                             } else {
                                 Toast.makeText(context, "Error con el email o contraseña, inténtalo de nuevo", Toast.LENGTH_SHORT).show()
@@ -115,7 +111,7 @@ class IniciarSessioFragment : Fragment() {
             if(username.isNotEmpty()){
                 binding.dniField.setText(username)
                 binding.contrasenyaField.setText(pass)
-                recordam.isChecked = remember
+                binding.rememberCheckbox.isChecked = remember
             }
         }
     }

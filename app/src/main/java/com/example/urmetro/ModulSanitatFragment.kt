@@ -32,6 +32,9 @@ class ModulSanitatFragment : Fragment() {
         binding.medicacions.setOnClickListener {
             findNavController().navigate(R.id.action_modulSanitatFragment_to_medicacionsFragment)
         }
+        binding.help.setOnClickListener {
+            findNavController().navigate(R.id.action_modulSanitatFragment_to_ajudaSanitatFragment)
+        }
     }
 
 }

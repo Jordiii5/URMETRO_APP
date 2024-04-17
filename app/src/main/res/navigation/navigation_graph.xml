@@ -58,6 +58,9 @@
         <action
             android:id="@+id/action_modulEntretenimentFragment_to_audiollibresFragment"
             app:destination="@id/audiollibresFragment" />
+        <action
+            android:id="@+id/action_modulEntretenimentFragment_to_ajudaEntretenimentFragment"
+            app:destination="@id/ajudaEntretenimentFragment" />
     </fragment>
     <fragment
         android:id="@+id/modulSanitatFragment"
@@ -76,6 +79,9 @@
         <action
             android:id="@+id/action_modulSanitatFragment_to_medicacionsFragment"
             app:destination="@id/medicacionsFragment" />
+        <action
+            android:id="@+id/action_modulSanitatFragment_to_ajudaSanitatFragment"
+            app:destination="@id/ajudaSanitatFragment" />
     </fragment>
     <fragment
         android:id="@+id/modulMovilitatFragment"
@@ -214,5 +220,23 @@
         <action
             android:id="@+id/action_audiollibresFragment_to_modulEntretenimentFragment"
             app:destination="@id/modulEntretenimentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ajudaEntretenimentFragment"
+        android:name="com.example.urmetro.AjudaEntretenimentFragment"
+        android:label="fragment_ajuda_entreteniment"
+        tools:layout="@layout/fragment_ajuda_entreteniment" >
+        <action
+            android:id="@+id/action_ajudaEntretenimentFragment_to_modulEntretenimentFragment"
+            app:destination="@id/modulEntretenimentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ajudaSanitatFragment"
+        android:name="com.example.urmetro.AjudaSanitatFragment"
+        android:label="fragment_ajuda_sanitat"
+        tools:layout="@layout/fragment_ajuda_sanitat" >
+        <action
+            android:id="@+id/action_ajudaSanitatFragment_to_modulSanitatFragment"
+            app:destination="@id/modulSanitatFragment" />
     </fragment>
 </navigation>

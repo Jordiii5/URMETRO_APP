@@ -131,7 +131,7 @@
                 tools:ignore="NotSibling">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/comentaris_field"
+                    android:id="@+id/dia_field"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
@@ -160,6 +160,56 @@
 
 
 
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/quantitat_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintWidth_percent="1.1"
+            android:background="#A9D7A8"
+            app:layout_constraintTop_toBottomOf="@+id/dia_i_hora_layout"
+            app:layout_constraintStart_toStartOf="@id/afegir_cita_layout"
+            app:layout_constraintEnd_toEndOf="@id/afegir_cita_layout"
+            tools:ignore="MissingConstraints"
+            >
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/quantitat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="@id/afegir_cita_layout"
+                app:layout_constraintStart_toStartOf="@id/afegir_cita_layout"
+                app:layout_constraintEnd_toEndOf="@id/afegir_cita_layout"
+                tools:ignore="NotSibling">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/quantitat_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/white"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/quantitat_layout"
+            app:layout_constraintTop_toTopOf="@id/quantitat_layout"
+            android:text="QUANTITAT"
+            android:background="#A9D7A8"
+            android:textColor="@color/black"
+            android:layout_marginStart="75dp"
+            android:gravity="top"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:fontFamily="@font/tilt_neon"
+            />
 
 
 

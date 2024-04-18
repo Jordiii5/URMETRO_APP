@@ -31,14 +31,261 @@
             android:textColor="@color/black"
             android:text="MOVILITAT" />
         <ImageButton
+            android:id="@+id/help"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/baseline_flag_circle_24"
             app:layout_constraintEnd_toEndOf="@id/container_cap"
-            android:backgroundTint="#92C4E6"
+            android:backgroundTint="#91C3E4"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottons_layout"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintBottom_toTopOf="@id/menu"
+        android:paddingLeft="30dp"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/boto1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.48"
+            app:layout_constraintHeight_percent="0.8"
+            android:paddingBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="@id/bottons_layout"
+            app:layout_constraintTop_toTopOf="@id/bottons_layout"
+            android:background="@drawable/cercle_movilitat"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/creueta"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.5"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.5"
+                app:layout_constraintBottom_toBottomOf="@id/boto1"
+                app:layout_constraintStart_toStartOf="@id/boto1"
+                app:layout_constraintEnd_toEndOf="@id/boto1"
+                >
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.33"
+                    android:src="@drawable/baseline_arrow_left_24"
+                    android:background="#91C3E4"
+                    app:layout_constraintTop_toTopOf="@id/creueta"
+                    app:layout_constraintBottom_toBottomOf="@id/creueta"
+                    app:layout_constraintStart_toStartOf="@id/creueta"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.33"
+                    android:src="@drawable/baseline_arrow_drop_up_24"
+                    android:background="#91C3E4"
+                    app:layout_constraintTop_toTopOf="@id/creueta"
+                    app:layout_constraintStart_toStartOf="@id/creueta"
+                    app:layout_constraintEnd_toEndOf="@id/creueta"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.33"
+                    android:src="@drawable/baseline_arrow_drop_down_24"
+                    android:background="#91C3E4"
+                    app:layout_constraintBottom_toBottomOf="@id/creueta"
+                    app:layout_constraintStart_toStartOf="@id/creueta"
+                    app:layout_constraintEnd_toEndOf="@id/creueta"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.33"
+                    android:src="@drawable/baseline_arrow_right_24"
+                    android:background="#91C3E4"
+                    app:layout_constraintEnd_toEndOf="@id/creueta"
+                    app:layout_constraintTop_toTopOf="@id/creueta"
+                    app:layout_constraintBottom_toBottomOf="@id/creueta"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fletxadoble"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.5"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.2"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintBottom_toTopOf="@id/creueta"
+                app:layout_constraintStart_toStartOf="@id/boto1"
+                app:layout_constraintEnd_toEndOf="@id/boto1"
+                >
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.33"
+                    android:src="@drawable/baseline_arrow_left_24"
+                    android:background="#91C3E4"
+                    app:layout_constraintTop_toTopOf="@id/fletxadoble"
+                    app:layout_constraintBottom_toBottomOf="@id/fletxadoble"
+                    app:layout_constraintStart_toStartOf="@id/fletxadoble"
+                    />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.33"
+                    android:src="@drawable/baseline_arrow_right_24"
+                    android:background="#91C3E4"
+                    app:layout_constraintEnd_toEndOf="@id/fletxadoble"
+                    app:layout_constraintTop_toTopOf="@id/fletxadoble"
+                    app:layout_constraintBottom_toBottomOf="@id/fletxadoble"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/boto2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.48"
+            app:layout_constraintHeight_percent="0.8"
+            android:paddingBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="@id/bottons_layout"
+            app:layout_constraintTop_toTopOf="@id/bottons_layout"
+            app:layout_constraintStart_toEndOf="@id/boto1"
+            android:background="@drawable/cercle_movilitat"
+            android:layout_marginStart="20dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/creueta2"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.5"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.5"
+                app:layout_constraintBottom_toBottomOf="@id/boto2"
+                app:layout_constraintStart_toStartOf="@id/boto2"
+                app:layout_constraintEnd_toEndOf="@id/boto2"
+                >
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.33"
+                    android:src="@drawable/baseline_arrow_left_24"
+                    android:background="#91C3E4"
+                    app:layout_constraintTop_toTopOf="@id/creueta2"
+                    app:layout_constraintBottom_toBottomOf="@id/creueta2"
+                    app:layout_constraintStart_toStartOf="@id/creueta2"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.33"
+                    android:src="@drawable/baseline_arrow_drop_up_24"
+                    android:background="#91C3E4"
+                    app:layout_constraintTop_toTopOf="@id/creueta2"
+                    app:layout_constraintStart_toStartOf="@id/creueta2"
+                    app:layout_constraintEnd_toEndOf="@id/creueta2"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.33"
+                    android:src="@drawable/baseline_arrow_drop_down_24"
+                    android:background="#91C3E4"
+                    app:layout_constraintBottom_toBottomOf="@id/creueta2"
+                    app:layout_constraintStart_toStartOf="@id/creueta2"
+                    app:layout_constraintEnd_toEndOf="@id/creueta2"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.33"
+                    android:src="@drawable/baseline_arrow_right_24"
+                    android:background="#91C3E4"
+                    app:layout_constraintEnd_toEndOf="@id/creueta2"
+                    app:layout_constraintTop_toTopOf="@id/creueta2"
+                    app:layout_constraintBottom_toBottomOf="@id/creueta2"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fletxadoble2"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.5"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.2"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintBottom_toTopOf="@id/creueta2"
+                app:layout_constraintStart_toStartOf="@id/boto2"
+                app:layout_constraintEnd_toEndOf="@id/boto2"
+                >
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.33"
+                    android:src="@drawable/baseline_arrow_drop_up_24"
+                    android:background="#91C3E4"
+                    app:layout_constraintTop_toTopOf="@id/fletxadoble2"
+                    app:layout_constraintBottom_toBottomOf="@id/fletxadoble2"
+                    app:layout_constraintStart_toStartOf="@id/fletxadoble2"
+                    />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.33"
+                    android:src="@drawable/baseline_arrow_drop_down_24"
+                    android:background="#91C3E4"
+                    app:layout_constraintEnd_toEndOf="@id/fletxadoble2"
+                    app:layout_constraintTop_toTopOf="@id/fletxadoble2"
+                    app:layout_constraintBottom_toBottomOf="@id/fletxadoble2"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/formes_layout"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="30dp"
+        android:paddingTop="20"
+        android:background="@drawable/rectangle_robot"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintBottom_toTopOf="@id/menu"
+        app:layout_constraintStart_toEndOf="@id/bottons_layout"
+        >
+        <TextView
+            android:id="@+id/formes_titol"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            android:textSize="30"
+            android:gravity="center"
+            android:text="FORMES"
+            android:textColor="@color/black"
+            android:fontFamily="@font/tilt_neon"
+            app:layout_constraintStart_toStartOf="@id/formes_layout"
+            app:layout_constraintEnd_toEndOf="@id/formes_layout"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
     <ImageView
         android:id="@+id/menu"
         android:layout_width="0dp"

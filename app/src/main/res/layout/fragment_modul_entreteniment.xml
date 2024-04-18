@@ -16,9 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/rectangle_entreteniment"
-
-        >
+        android:background="@drawable/rectangle_entreteniment">
 
         <TextView
             android:layout_width="match_parent"
@@ -29,8 +27,11 @@
             android:textSize="40dp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="ENTRETENIMENT" />
+            android:text="ENTRETENIMENT"
+            android:fontFamily="@font/tilt_neon"/>
+
         <ImageButton
+            android:id="@+id/help"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/baseline_flag_circle_24"
@@ -39,6 +40,110 @@
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintBottom_toTopOf="@id/menu"
+        app:layoutDescription="@xml/fragment_modul_entreteniment_scene">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/jocs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/entreteniment_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_cap"
+            app:layout_constraintBottom_toTopOf="@id/menu"
+            android:text="JOCS"
+            android:fontFamily="@font/tilt_neon"
+            android:textStyle="bold"
+            android:textSize="80dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/periodics"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/entreteniment_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_cap"
+            app:layout_constraintBottom_toTopOf="@id/menu"
+            android:text="DIARIS"
+            android:fontFamily="@font/tilt_neon"
+            android:textStyle="bold"
+            android:textSize="80dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/audiollibres"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/entreteniment_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_cap"
+            app:layout_constraintBottom_toTopOf="@id/menu"
+            android:text="AUDIOLLIBRES"
+            android:fontFamily="@font/tilt_neon"
+            android:textStyle="bold"
+            android:textSize="80dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cansons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/entreteniment_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_cap"
+            app:layout_constraintBottom_toTopOf="@id/menu"
+            android:text="CANÇONS"
+            android:fontFamily="@font/tilt_neon"
+            android:textStyle="bold"
+            android:textSize="80dp"
+            />
+
+        <androidx.constraintlayout.helper.widget.Carousel
+            android:id="@+id/carousel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:carousel_backwardTransition="@+id/backward"
+            app:carousel_firstView="@id/jocs"
+            app:carousel_forwardTransition="@+id/forward"
+            app:carousel_nextState="@+id/next"
+            app:carousel_previousState="@+id/previous"
+            app:constraint_referenced_ids="jocs,periodics,audiollibres,cansons" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+      <ImageView
+          android:id="@+id/arrowBack"
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          app:layout_constraintHeight_percent="0.85"
+          app:layout_constraintWidth_percent="0.15"
+          android:src="@drawable/baseline_arrow_back_24"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          />
+    <ImageView
+        android:id="@+id/arrowNext"
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.85"
+          app:layout_constraintWidth_percent="0.15"
+          android:src="@drawable/baseline_arrow_forward_24"
+          app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+          />
 
     <ImageView
         android:id="@+id/menu"
@@ -49,8 +154,6 @@
         android:src="@drawable/menu_boto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,18 +16,26 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.security.MessageDigest
 
 class RegistreFragment : Fragment() {
     lateinit var binding: FragmentRegistreBinding
     private val viewModel: MyViewModel by activityViewModels()
 
+    object HashUtils{
+        fun hashPassword(contra: String): String {
+            val bytes = contra.toByteArray()
+            val md = MessageDigest.getInstance("SHA-256")
+            val digest = md.digest(bytes)
+            return digest.fold("") { str, it -> str + "%02x".format(it) }
+        }
+    }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentRegistreBinding.inflate(layoutInflater)
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.crearCompte.setOnClickListener {
             val dni = binding.dniField.text.toString().uppercase()
             val contra = binding.contrasenyaField.text.toString()
@@ -46,13 +54,15 @@ class RegistreFragment : Fragment() {
                 //faltara crear un toast para poder avisar que el dni no puede ser diferente a 9 caracteres
                 Toast.makeText(context, "El DNI tiene que contener 9 caracteres.", Toast.LENGTH_SHORT).show()
             }else{
-                viewModel.users.value = Usuari(0,nom, dni, "", 0, 0, "", contra)
-                viewModel.repository = ApiRepository(dni, contra)
+                val hashedPassword = HashUtils.hashPassword(binding.contrasenyaField.text.toString())
+                viewModel.currentUsuari.value = Usuari(0,binding.nameField.text.toString(), binding.dniField.text.toString().uppercase(), "", 0, 0, "", hashedPassword)
+                viewModel.repository = ApiRepository(binding.dniField.text.toString(), hashedPassword)
                 CoroutineScope(Dispatchers.IO).launch {
-                    val repository = ApiRepository(dni, contra)
-                    val response = repository.register(viewModel.users.value!!)
+                    val repository = ApiRepository(binding.dniField.text.toString().uppercase(), hashedPassword)
+                    val response = repository.register(viewModel.currentUsuari.value!!)
                     withContext(Dispatchers.Main){
                         if (response.isSuccessful){
+                            Toast.makeText(context, "Registre correctament", Toast.LENGTH_SHORT).show()
                             findNavController().navigate(R.id.action_registreFragment_to_menuFragment)
                         }else{
                             //faltara crear un toast para poder avisar que el usuario no se ha podido registrar

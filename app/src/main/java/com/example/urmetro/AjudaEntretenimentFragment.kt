@@ -36,6 +36,7 @@ class AjudaEntretenimentFragment : Fragment() {
         binding.exit.setOnClickListener {
             findNavController().navigate(R.id.action_ajudaEntretenimentFragment_to_modulEntretenimentFragment)
         }
+        var zoom=true
         binding.arrowBack.setOnClickListener {
             binding.arrowNext.visibility=View.VISIBLE
             binding.arrowNext.isClickable=true
@@ -47,6 +48,7 @@ class AjudaEntretenimentFragment : Fragment() {
                 binding.arrowBack.visibility=View.INVISIBLE
                 binding.arrowBack.isClickable=false
             }
+
             when(posicio){
                 0-> {
                     binding.marca1.setImageResource(R.drawable.baseline_circle_entreteniment)
@@ -84,7 +86,7 @@ class AjudaEntretenimentFragment : Fragment() {
                     binding.marca5.setImageResource(R.drawable.baseline_circle_entreteniment)
                 }
             }
-
+            binding.scroll.scrollTo(0, -10000)
         }
         binding.arrowNext.setOnClickListener {
             binding.arrowBack.visibility=View.VISIBLE
@@ -97,6 +99,7 @@ class AjudaEntretenimentFragment : Fragment() {
                 binding.arrowNext.visibility=View.INVISIBLE
                 binding.arrowNext.isClickable=false
             }
+
             when(posicio){
                 0-> {
                     binding.marca1.setImageResource(R.drawable.baseline_circle_entreteniment)
@@ -134,7 +137,16 @@ class AjudaEntretenimentFragment : Fragment() {
                     binding.marca5.setImageResource(R.drawable.baseline_circle_entreteniment)
                 }
             }
+            binding.scroll.scrollTo(0, -10000)
         }
+
+        binding.zoom.setOnClickListener {
+            zoom=!zoom
+            if (zoom) text.textSize=30F
+            else  text.textSize=40F
+
+        }
+
     }
 
 

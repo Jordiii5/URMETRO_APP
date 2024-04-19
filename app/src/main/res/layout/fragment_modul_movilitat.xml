@@ -34,6 +34,7 @@
             android:id="@+id/help"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+
             android:src="@drawable/baseline_flag_circle_24"
             app:layout_constraintEnd_toEndOf="@id/container_cap"
             android:backgroundTint="#91C3E4"
@@ -65,7 +66,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/creueta"
                 android:layout_width="0dp"
-                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintWidth_percent="0.6"
                 android:layout_height="0dp"
                 app:layout_constraintHeight_percent="0.5"
                 app:layout_constraintBottom_toBottomOf="@id/boto1"
@@ -116,7 +117,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/fletxadoble"
                 android:layout_width="0dp"
-                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintWidth_percent="0.6"
                 android:layout_height="0dp"
                 app:layout_constraintHeight_percent="0.2"
                 android:layout_marginBottom="50dp"
@@ -126,7 +127,7 @@
                 >
                 <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
                     app:layout_constraintHeight_percent="0.33"
                     android:src="@drawable/baseline_arrow_left_24"
                     android:background="#91C3E4"
@@ -137,8 +138,8 @@
 
                 <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    app:layout_constraintHeight_percent="0.33"
+                    android:layout_height="match_parent"
+                    app:layout_constraintHeight_percent="0.6"
                     android:src="@drawable/baseline_arrow_right_24"
                     android:background="#91C3E4"
                     app:layout_constraintEnd_toEndOf="@id/fletxadoble"
@@ -169,7 +170,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/creueta2"
                 android:layout_width="0dp"
-                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintWidth_percent="0.6"
                 android:layout_height="0dp"
                 app:layout_constraintHeight_percent="0.5"
                 app:layout_constraintBottom_toBottomOf="@id/boto2"
@@ -220,7 +221,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/fletxadoble2"
                 android:layout_width="0dp"
-                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintWidth_percent="0.6"
                 android:layout_height="0dp"
                 app:layout_constraintHeight_percent="0.2"
                 android:layout_marginBottom="50dp"
@@ -230,7 +231,7 @@
                 >
                 <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
                     app:layout_constraintHeight_percent="0.33"
                     android:src="@drawable/baseline_arrow_drop_up_24"
                     android:background="#91C3E4"
@@ -241,7 +242,7 @@
 
                 <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
                     app:layout_constraintHeight_percent="0.33"
                     android:src="@drawable/baseline_arrow_drop_down_24"
                     android:background="#91C3E4"
@@ -259,33 +260,128 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/formes_layout"
         android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.25"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.5"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="30dp"
-        android:paddingTop="20"
         android:background="@drawable/rectangle_robot"
-        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        android:paddingTop="20dp"
         app:layout_constraintBottom_toTopOf="@id/menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toEndOf="@id/bottons_layout"
-        >
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintVertical_bias="0.691"
+        app:layout_constraintWidth_percent="0.25">
+
         <TextView
             android:id="@+id/formes_titol"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.15"
-            android:textSize="30"
+            android:fontFamily="@font/tilt_neon"
             android:gravity="center"
             android:text="FORMES"
             android:textColor="@color/black"
-            android:fontFamily="@font/tilt_neon"
-            app:layout_constraintStart_toStartOf="@id/formes_layout"
+            android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="@id/formes_layout"
-            />
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintStart_toStartOf="@id/formes_layout"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/forma_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@drawable/rectangle_movilitat_formes"
+            app:layout_constraintHeight_percent="0.20"
+            app:layout_constraintTop_toBottomOf="@id/formes_titol"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_image_24"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FORMA"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/forma_layout"
+                app:layout_constraintTop_toTopOf="@+id/forma_layout"
+                app:layout_constraintBottom_toBottomOf="@id/forma_layout"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/forma_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@drawable/rectangle_movilitat_formes"
+            app:layout_constraintHeight_percent="0.20"
+            app:layout_constraintTop_toBottomOf="@id/forma_layout"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:layout_marginTop="15dp"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_image_24"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FORMA"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/forma_layout2"
+                app:layout_constraintTop_toTopOf="@+id/forma_layout2"
+                app:layout_constraintBottom_toBottomOf="@id/forma_layout2"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/forma_layout3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@drawable/rectangle_movilitat_formes"
+            app:layout_constraintHeight_percent="0.20"
+            app:layout_constraintTop_toBottomOf="@id/forma_layout2"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:layout_marginTop="15dp"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_image_24"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FORMA"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/forma_layout3"
+                app:layout_constraintTop_toTopOf="@+id/forma_layout3"
+                app:layout_constraintBottom_toBottomOf="@id/forma_layout3"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    
+
     <ImageView
         android:id="@+id/menu"
         android:layout_width="0dp"

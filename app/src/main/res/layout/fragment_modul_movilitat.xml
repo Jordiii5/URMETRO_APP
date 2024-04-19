@@ -56,7 +56,7 @@
             android:id="@+id/boto1"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintWidth_percent="0.48"
+            app:layout_constraintWidth_percent="0.43"
             app:layout_constraintHeight_percent="0.8"
             android:paddingBottom="40dp"
             app:layout_constraintBottom_toBottomOf="@id/bottons_layout"
@@ -157,7 +157,7 @@
             android:id="@+id/boto2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintWidth_percent="0.48"
+            app:layout_constraintWidth_percent="0.43"
             app:layout_constraintHeight_percent="0.8"
             android:paddingBottom="40dp"
             app:layout_constraintBottom_toBottomOf="@id/bottons_layout"
@@ -267,7 +267,7 @@
         app:layout_constraintBottom_toTopOf="@id/menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.5"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toEndOf="@id/bottons_layout"
         app:layout_constraintTop_toBottomOf="@id/container_cap"
         app:layout_constraintVertical_bias="0.691"
@@ -365,6 +365,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/baseline_image_24"
                 tools:ignore="MissingConstraints" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

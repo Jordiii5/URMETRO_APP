@@ -30,7 +30,6 @@
         android:text="HOLA [Nom]" />
 
     <ImageButton
-        android:id="@+id/perfil"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:src="@drawable/baseline_account_circle_24"

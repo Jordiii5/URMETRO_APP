@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_menuFragment_to_perfilFragment"
             app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_iniciarSessioFragment"
+            app:destination="@id/iniciarSessioFragment" />
     </fragment>
     <fragment
         android:id="@+id/modulEntretenimentFragment"

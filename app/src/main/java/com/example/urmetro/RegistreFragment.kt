@@ -39,7 +39,7 @@ class RegistreFragment : Fragment() {
         binding.crearCompte.setOnClickListener {
             val dni = binding.dniField.text.toString().uppercase()
             val contra = binding.contrasenyaField.text.toString()
-            val nom = binding.nameField.text.toString()
+            val nom = binding.textField.text.toString()
             val repetircontra = binding.confirmarContrasenyaField.text.toString()
 
 
@@ -55,7 +55,7 @@ class RegistreFragment : Fragment() {
                 Toast.makeText(context, "El DNI tiene que contener 9 caracteres.", Toast.LENGTH_SHORT).show()
             }else{
                 val hashedPassword = HashUtils.hashPassword(binding.contrasenyaField.text.toString())
-                viewModel.currentUsuari.value = Usuari(0,binding.nameField.text.toString(), binding.dniField.text.toString().uppercase(), "", 0, 0, "", hashedPassword)
+                viewModel.currentUsuari.value = Usuari(0,binding.textField.text.toString(), binding.dniField.text.toString().uppercase(), "", 0, 0, "", hashedPassword)
                 viewModel.repository = ApiRepository(binding.dniField.text.toString(), hashedPassword)
                 CoroutineScope(Dispatchers.IO).launch {
                     val repository = ApiRepository(binding.dniField.text.toString().uppercase(), hashedPassword)

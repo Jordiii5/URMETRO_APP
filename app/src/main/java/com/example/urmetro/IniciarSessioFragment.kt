@@ -53,8 +53,8 @@ class IniciarSessioFragment : Fragment() {
         binding.rememberCheckbox.isChecked = saveCredentials
 
         if (viewModel.loginClean){
-            binding.dniField.text.clear()
-            binding.contrasenyaField.text.clear()
+            binding.dniField.text?.clear()
+            binding.contrasenyaField.text?.clear()
             binding.rememberCheckbox.isChecked = false
             viewModel.loginClean = false
         }

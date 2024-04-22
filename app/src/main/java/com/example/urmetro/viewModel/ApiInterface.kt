@@ -31,7 +31,7 @@ interface ApiInterface {
     suspend fun deletePost(@Url url: String): Response<Boolean>
 
     companion object {
-        val BASE_URL = "http://172.23.6.130:8080/"
+        val BASE_URL = "http://172.23.6.131:8080/"
 
         fun create(dni: String, password: String): ApiInterface {
             val digestAuthenticator = DigestAuthenticator(Credentials(dni, password))

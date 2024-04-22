@@ -34,12 +34,12 @@ class JocMenuTrivialFragment : Fragment() {
 
         binding.helpTrivial.setOnClickListener {
             val alertDialog = AlertDialog.Builder(this.context).create()
-            alertDialog.setTitle("Instrucciones")
-            alertDialog.setMessage("El juego consiste en responder las diferentes preguntas que te proponemos con un total de 10 segundos por pregunta. Una vez pasado el tiempo, saltarás a la siguiente pregunta."
-                    + "Puedes escoger la temática que más te interese, te ves capaz para hacerlas todas?" +
-                    "Al finalizar la partida conseguiras unos puntos totales por cada pregunta acertada en su tiempo, estos puntos quedaran registrados en el ranking con el resto de jugadores.")
+            alertDialog.setTitle("Instruccions")
+            alertDialog.setMessage("El joc consisteix a respondre les diferents preguntes que us proposem amb un total de 10 segons per pregunta. Un cop passat el temps, saltaràs a la pregunta següent.\n" +
+                    "\"Pots escollir la temàtica que més t'interessi, et veus capaç per fer-les totes?\n" +
+                    "\"En finalitzar la partida aconseguiràs uns punts totals per cada pregunta encertada al seu temps.")
             alertDialog.setButton(
-                AlertDialog.BUTTON_NEUTRAL, "ACEPTAR"
+                AlertDialog.BUTTON_NEUTRAL, "ACCEPTAR"
             ) { dialog, which -> dialog.dismiss() }
             alertDialog.show()
         }

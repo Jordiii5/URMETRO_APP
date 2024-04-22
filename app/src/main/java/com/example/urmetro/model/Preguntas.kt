@@ -4,84 +4,84 @@ package com.example.urmetro.model
 object preguntas {
     val preguntasDeCine: MutableList<MutableList<String>> = mutableListOf(
         mutableListOf(
-            "¿A que dia viaja Marty en Regreso al futuro 2? ",
-            "f_6 DE ENERO DE 2030",
-            "f_14 DE JULIO DE 2016",
-            "c_21 DE OCTUBRE DE 2015",
-            "f_4 DE NOVIEMBRE DE 2020"
+            "A quin dia viatja Marty a Retorn al futur 2?",
+            "f_6 DE GENER DE 2030",
+            "f_14 DE JULIOL DE 2016",
+            "c_21 D'OCTUBRE DE 2015",
+            "f_4 DE NOVEMBRE DE 2020"
         ),
         mutableListOf(
-            "¿Que actor fue el último en interpretar a Superman?",
+            "Quin actor va ser l'últim a interpretar Superman?",
             "f_NICOLAS CAGE",
             "f_TOM WELLING",
             "c_HENRY CAVILL",
             "f_CHRISTOPHER REEVE"
         ),
         mutableListOf(
-            "¿Quien dirigio la pelicula Titanic (1998)?",
+            "Qui va dirigir la pel·lícula Titanic (1998)?",
             "c_JAMES CAMERON",
             "f_CHRISTOPHER NOLAN",
             "f_STEVEN SPIELBERG",
             "f_QUENTIN TARANTINO"
         ),
         mutableListOf(
-            "¿Quien dijo la mítica frase “Un gran poder, conlleva una gran responsabilidad”?",
+            "Qui va dir la mítica frase “Un gran poder, comporta una gran responsabilitat”?",
             "f_BRUCE WAYNE / BATMAN",
             "f_PETER PARKER / SPIDER-MAN",
             "c_BENJAMIN FRANKLIN PARKER",
             "f_CLARK KENT / SUPERMAN"
         ),
         mutableListOf(
-            "¿Cual es la película que más ha recaudado en la historia del cine?",
+            "Quina és la pel·lícula que més ha recaptat en la història del cinema?",
             "f_SPIDER-MAN: NO WAY HOME",
             "f_STAR WARS: EPISODE VII",
             "f_VENGADORES: ENDGAME",
             "c_AVATAR"
         ),
         mutableListOf(
-            "En Harry Potter, ¿Qué hechizo debes conjurar para arreglar unas gafas?",
+            "A Harry Potter, quin encanteri has de conjurar per arreglar unes ulleres?",
             "c_OCULUS REPARO",
             "f_OCULUS REPARADO",
             "f_GLAFULUS ARREGLO",
             "f_CHIMICHANGLUS OCULOREPAR"
         ),
         mutableListOf(
-            "¿De qué metal están hechas las garras de Lobezno?",
-            "f_HIERRO",
-            "f_VIBRANIUM",
-            "c_ADAMANTIUM",
-            "f_ACERO"
+            "De quin metall estan fetes les urpes de Lobezno?",
+            "f_ FERRO",
+            "f_ VIBRANIUM",
+            "c_ ADAMANTIUM",
+            "f_ ACER"
         ),
         mutableListOf(
-            "En 'The Walking Dead' ¿Cómo se llama el bate de Negan?",
+            "A 'The Walking Dead' Com es diu el bat de Negan?",
             "f_LUBELLY",
             "c_LUCILLE",
             "f_VAMPYRE",
             "f_MAX POWER"
         ),
         mutableListOf(
-            "En Star Wars ¿Cuál es el planeta de Luke Skywalker?",
+            "A Star Wars Quin és el planeta de Luke Skywalker?",
             "f_ALDERAAN",
             "f_NABOO",
             "f_CORUSCANT",
             "c_TATOOINE"
         ),
         mutableListOf(
-            "¿Por si no nos vemos luego...",
-            "f_(...)NO TE OLVIDES EL PARAGUA",
-            "f_(...)RECUERDA COMPRAR LECHE",
-            "c_(...)BUENOS DÍAS, BUENAS TARDES, BUENAS NOCHES",
-            "f_(...)TODA MI ESPADA, LLEVALA POR MI"
+            "Per si no ens veiem després...",
+            "f_(...)NO T'OBLIDIS EL PARAGUA",
+            "f_(...)RECORDA COMPRAR LLET",
+            "c_(...)BONS DIES, BONES VESPRADAS, BONES NITS",
+            "f_(...)TOTA LA MEVA ESPADA, PORTA-LA PEL MEU"
         ),
         mutableListOf(
-            "¿En qué año se estrenó la mítica película Jurassic Park?",
+            "Quin any es va estrenar la mítica pel·lícula Jurassic Park?",
             "c_1993",
             "f_1991",
             "f_1995",
             "f_1997"
         ),
         mutableListOf(
-            "¿Cómo se llama la madre de Simba?",
+            "Com es diu la mare de Simba?",
             "f_NALA",
             "c_SARABI",
             "f_OKOYE",
@@ -91,72 +91,72 @@ object preguntas {
 
     val preguntasDeCiencia: MutableList<MutableList<String>> = mutableListOf(
         mutableListOf(
-            "¿Quien fue la primera mujer en ganar un premio Nobel? ",
+            "Qui va ser la primera dona a guanyar un premi Nobel? ",
             "f_SAMANTHA LAYER",
             "c_MARIE CURIE",
             "f_PAMELA FANCY",
             "f_ANABELLE MENCHER"
         ),
         mutableListOf(
-            "¿Cuál es la capa más caliente de nuestro planeta?",
-            "c_NUCLEO",
-            "f_MANTO",
-            "f_CORTEZA",
-            "f_MAGNÉTOCA"
+            "Quina és la capa més calenta del nostre planeta?",
+            "c_NUCLI",
+            "f_MANTELL",
+            "f_CORTESA",
+            "f_MAGNÈTOCA"
         ),
         mutableListOf(
-            "¿Cuál es la unidad básica de un elemento químico?",
+            "Quina és la unitat bàsica d'un element químic?",
             "f_MOLÈCULA",
-            "f_SUB ÁTOMO",
-            "f_CÉLULA",
-            "c_ÁTOMO"
+            "f_SUB ÀTOM",
+            "f_CÈL·LULA",
+            "c_ÀTOM"
         ),
         mutableListOf(
-            "¿Cuál es el primer paso del método científico?",
-            "f_PLANEAR EN GRUPO LA TEORIA",
-            "f_PROBAR LAS DIFERENTES TEORIAS",
+            "Quin és el primer pas del mètode científic?",
+            "f_PLANEJAR EN GRUP LA TEORIA",
+            "f_PROVAR LES DIFERENTS TEÒRIES",
             "c_IDENTIFICAR EL PROBLEMA",
-            "f_PENSAR LOS DIFERENTES PASOS"
+            "f_PENSAR ELS DIFERENTS PASSOS"
         ),
         mutableListOf(
-            "¿Qué contiene el núcleo de una célula?",
-            "f_LISOSOMAS",
+            "Què conté el nucli d'una cèl·lula?",
+            "f_LISOSOMES",
             "c_ADN",
-            "f_RIBOSOMAS",
-            "f_ORGÁNULOS"
+            "f_RIBOSOMES",
+            "f_ORGÀNULS"
         )
     )
     val preguntasDeHistoria: MutableList<MutableList<String>> = mutableListOf(
         mutableListOf(
-            "La Guerra Fría fue entre Estados Unidos y ¿qué otra potencia mundial?",
+            "La Guerra Freda va ser entre els Estats Units i quina altra potència mundial?",
             "f_ITALIA",
-            "c_LA UNIÓN SOVIÉTICA",
+            "c_LA UNIÓ SOVIÈTICA",
             "f_RUSIA",
-            "f_ALEMANIA"
+            "f_ALEMANYA"
         ),
         mutableListOf(
-            "¿Quién fue la primera ministra de la Gran Bretaña?",
+            "Qui va ser la primera ministra de la Gran Bretanya?",
             "f_QUEEN ELIZABETH II",
             "f_FLORENCE NIGHTINGALE",
             "c_MARGARET THATCHER",
             "f_JANE AUSTEN"
         ),
         mutableListOf(
-            "¿De qué partido era líder Adolf Hitler?",
+            "De quin partit era líder Adolf Hitler?",
             "f_FRANQUISTA",
             "f_URSS",
             "f_COMUNISTA",
             "c_NAZI"
         ),
         mutableListOf(
-            "¿Qué continente fue devastado por la peste negra en el siglo XIV?",
+            "Quin continent va ser devastat per la pesta negra al segle XIV?",
             "c_EUROPA",
             "f_ASIA",
             "f_ÁFRICA",
             "f_AMÉRICA"
         ),
         mutableListOf(
-            "¿En qué año comenzó la Primera Guerra Mundial?",
+            "En quin any va començar la Primera Guerra Mundial?",
             "f_1913",
             "c_1914",
             "f_1917",
@@ -165,102 +165,109 @@ object preguntas {
     )
     val preguntasDeArte: MutableList<MutableList<String>> = mutableListOf(
         mutableListOf(
-            "En mitología griega, ¿quién traslada a los muertos hacia el inframundo?",
+            "En mitologia grega, qui trasllada els morts cap a l'inframón?",
             "f_ORFEO",
             "c_CARONTE",
             "f_MINOS",
             "f_TALOS"
         ),
         mutableListOf(
-            "¿Quién pintó \"La Gioconda\"?",
+            "Qui va pintar \"La Gioconda\"?",
             "f_DONATELLO",
             "f_RAPHAEL",
             "c_LEONARDO DA VINCI",
             "f_MIGUEL ANGEL"
         ),
         mutableListOf(
-            "¿La obra llamada \"Guernica\" es de…",
-            "f_DIEGO RIVERA",
+            "L'obra anomenada \"Guernica\" és de…",
+            "f_DIEG RIVERA",
             "f_SALVADOR DALÍ",
             "f_HENRI MATISSE",
             "c_PABLO PICASSO"
         ),
         mutableListOf(
-            "¿Como se llama la saga de la famosas escritora J. K ROWLING?",
+            "Com es diu la saga de la famoses escriptora J. K ROWLING?",
             "c_HARRY POTTER",
-            "f_LOS JUEGOS DEL HAMBRE",
-            "f_DIVERGENTE",
-            "f_EL CORREDOR DEL LABERINTO"
+            "f_ELS JOCS DE LA FAM",
+            "f_DIVERGENT",
+            "f_EL CORREDOR DEL LABERINT"
+        ),
+        mutableListOf(
+            "Quin és el nom del moviment artístic que va sorgir a Itàlia durant el segle XVI?",
+            "f_Impressionisme",
+            "c_Manierisme",
+            "f_Realisme",
+            "f_Rococó"
         )
     )
     val preguntasDeDeportes: MutableList<MutableList<String>> = mutableListOf(
         mutableListOf(
-            "¿Que equipo de fútbol fue traicionado por Kylian Mbappe en el mercado de fichajes de 2022?",
+            "Quin equip de futbol va ser traït per Kylian Mbappe al mercat de fitxatges del 2022?",
             "f_FC BARCELONA",
             "c_REAL MADRID",
             "f_LIVERPOOL",
             "f_BAYERN DE MUNICH"
         ),
         mutableListOf(
-            "¿Que jugador famoso de baloncesto participó en la película animada Space Jam (1996)?",
+            "¿Quin jugador famós de bàsquet va participar a la pel·lícula animada Space Jam (1996)?",
             "f_KOBE BRYANT",
             "f_LEBRON JAMES",
             "c_MICHAEL JORDAN",
             "f_STEPHEN CURRY"
         ),
         mutableListOf(
-            "¿Quién ganó el Dakar en 2018?",
+            "Qui va guanyar el Dakar el 2018?",
             "f_FERNANDO ALONSO",
             "f_RAFA NADAL",
             "f_CRISTIANO RONALDO",
             "c_CARLOS SAINZ"
         ),
         mutableListOf(
-            "¿Quién es el jugador con más Balones de Oro en la historia del fútbol?",
+            "Qui és el jugador amb més Balons d'Or a la història del futbol?",
             "c_LEO MESSI",
             "f_CRISTIANO RONALDO",
             "f_ANDRES INIESTA",
             "f_LUKA MODRIC"
         ),
         mutableListOf(
-            "¿Qué torneo ganó el jugador español de tenis Carlos Alcaraz por primera vez en su carrera profesional?",
-            "f_OPEN DE AUSTRALIA",
+            "Quin torneig va guanyar el jugador espanyol de tennis Carlos Alcaraz per primera vegada a la seva carrera professional?",
+            "f_OPEN D'AUSTRÀLIA",
             "f_ROLAND GARROS",
-            "f_CAMPEONATO DE WIMBLEDON",
-            "c_OPEN DE USA"
+            "f_CAMPIONAT DE WIMBLEDON",
+            "c_OPEN D'USA"
         )
     )
     val preguntasDeGeografia: MutableList<MutableList<String>> = mutableListOf(
         mutableListOf(
-            "¿Cual es el país más poblado del mundo?",
+            "Quin és el país més poblat del món?",
             "f_RUSIA",
-            "c_CHINA",
-            "f_ESTADOS UNIDOS",
+            "c_XINA",
+            "f_ESTATS UNITS",
             "f_BRASIL"
         ),
         mutableListOf(
-            "¿Cómo se llama el pozo más profundo del mundo localizado en Rusia, el cual fue perforado hacia el interior de la tierra?",
-            "f_POZO DE VRTOGLAVICA",
-            "f_POZO DE JOIDA",
-            "c_POZO DE KOLA",
-            "f_POZO DE EZEIZA"
+            "Com es diu el pou més profund del món localitzat a Rússia, el qual va ser perforat cap a l'interior de la terra?",
+            "f_POU DE VRTOGLAVICA",
+            "f_POU DE JOIDA",
+            "c_POU DE KOLA",
+            "f_POU D'EZEIZA"
         ),
         mutableListOf(
-            "¿En qué continente se encuentran las montañas más altas del mundo?",
+            "¿En quin continent es troben les muntanyes més altes del món?",
             "f_EUROPA",
-            "f_AMÉRICA",
-            "f_ÁFRICA",
+            "f_AMÈRICA",
+            "f_ÀFRICA",
             "c_ASIA"
         ),
         mutableListOf(
-            "¿Cuál es el país más pequeño del mundo?",
+            "Quin és el país més petit del món?",
             "c_SEALAND",
-            "f_EL VATICANO",
+            "f_EL VATICÀ",
             "f_MONACO",
             "f_TUVALU"
         ),
         mutableListOf(
-            "¿Cuál es la capital de Armenia?",
+            "Quina és la capital d'Armènia?",
             "f_TAIWAN ",
             "c_EREVÁN",
             "f_REVAN",

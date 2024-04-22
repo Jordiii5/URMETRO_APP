@@ -316,6 +316,9 @@
         <action
             android:id="@+id/action_tematicaTrivialFragment_to_playGameTrivialFragment"
             app:destination="@id/playGameTrivialFragment" />
+        <action
+            android:id="@+id/action_tematicaTrivialFragment_to_jocMenuTrivialFragment"
+            app:destination="@id/jocMenuTrivialFragment" />
     </fragment>
     <fragment
         android:id="@+id/playGameTrivialFragment"

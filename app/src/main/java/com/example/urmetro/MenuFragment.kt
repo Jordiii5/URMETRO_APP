@@ -42,13 +42,13 @@ class MenuFragment : Fragment() {
         }
         binding.movilitat.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_modulMovilitatFragment)
-        }
-        binding.usuari.setOnClickListener {
-            findNavController().navigate(R.id.action_menuFragment_to_iniciarSessioFragment)
+
+            binding.perfil.setOnClickListener {
+                findNavController().navigate(R.id.action_menuFragment_to_perfilFragment)
+            }
         }
         binding.perfil.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_perfilFragment)
         }
     }
-
 }

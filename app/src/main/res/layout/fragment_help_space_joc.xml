@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".HelpSpaceJocFragment"
+android:background="@drawable/spacebackground">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="0dp"
+    android:fontFamily="@font/robotomono"
+    android:text="EXPLICACIÓN DEL JUEGO"
+    android:textColor="#FFEB3B"
+    android:textSize="20sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="30dp"/>
+
+<TextView
+    android:layout_width="370dp"
+    android:layout_height="0dp"
+    android:fontFamily="@font/robotomono"
+    android:text="ALERTA ROJA, ALERTA ROJA, ALERTA ROJA!!! EL IMPERIO SE APROXIMA A LA BASE DE LOS REBELDES."
+    android:textColor="#FFEB3B"
+    android:textSize="20sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="90dp"/>
+
+<TextView
+    android:layout_width="370dp"
+    android:layout_height="0dp"
+    android:fontFamily="@font/robotomono"
+    android:text="NECESITAMOS QUE SALGAS AL DESPEGUE, PARA QUE PROTEJAS LA BASE MIENTRAS ESPERAMOS LOS REFUERZOS DE LOS JEDIS."
+    android:textColor="#FFEB3B"
+    android:textSize="20sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="230dp"/>
+
+<TextView
+    android:layout_width="370dp"
+    android:layout_height="0dp"
+    android:fontFamily="@font/robotomono"
+    android:text="TEN CUIDADO CON LO CAZAS TIE QUE EL MALVADO DARTH VADER HA SOLTADO POR LA GALAXIA PARA ATACARNOS."
+    android:textColor="#FFEB3B"
+    android:textSize="20sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="360dp"/>
+
+<TextView
+    android:layout_width="370dp"
+    android:layout_height="0dp"
+    android:fontFamily="@font/robotomono"
+    android:text="PROBABLEMENTE CADA VEZ QUE PASE EL TIEMPO IRAN APARECIENDO MÁS ENEMIGOS POR TUS ALREDEDORES, ASÍ QUE RESISTE Y BUENA SUERTE PILOTO."
+    android:textColor="#FFEB3B"
+    android:textSize="20sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="490dp"/>
+
+<Button
+    android:id="@+id/volveralmenu"
+    android:layout_width="250dp"
+    android:layout_height="60dp"
+    android:text="VOLVER AL MENU"
+    android:textColor="@color/white"
+    android:backgroundTint="#FF0000"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginBottom="30dp"
+    android:layout_marginTop="20dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

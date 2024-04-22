@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/spacebackground"
+tools:context=".JocMenuFragment">
+
+<ImageView
+    android:id="@+id/logogame"
+    android:layout_width="250dp"
+    android:layout_height="250dp"
+    android:src="@drawable/powerup"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/titlegame"
+    />
+
+<ImageView
+    android:id="@+id/titlegame"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/tittlegame"
+    app:layout_constraintTop_toBottomOf="@+id/logogame"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/logogame"
+    android:layout_marginHorizontal="20dp"/>
+
+<Button
+    android:id="@+id/play"
+    android:layout_width="150dp"
+    android:layout_height="60dp"
+    android:text="JUGAR"
+    android:textColor="@color/white"
+    android:backgroundTint="#FF0000"
+    app:layout_constraintTop_toBottomOf="@+id/titlegame"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/help"
+    />
+
+<Button
+    android:id="@+id/help"
+    android:layout_width="150dp"
+    android:layout_height="60dp"
+    android:text="AYUDA"
+    android:textColor="@color/white"
+    android:backgroundTint="#FF0000"
+    app:layout_constraintTop_toBottomOf="@+id/play"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/back"
+    />
+
+    <Button
+    android:id="@+id/back"
+    android:layout_width="150dp"
+    android:layout_height="60dp"
+    android:text="SALIR"
+    android:textColor="@color/white"
+    android:backgroundTint="#FF0000"
+    app:layout_constraintTop_toBottomOf="@+id/help"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+    />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".ConclusionSpaceJocFragment"
+android:background="@drawable/spacebackground">
+
+<ImageView
+    android:id="@+id/finalscoretitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/finalscoretitle"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginTop="20dp"
+    android:layout_marginHorizontal="10dp"
+    tools:ignore="MissingConstraints" />
+
+<ImageView
+    android:id="@+id/xwingfrontal"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:src="@drawable/xwingfrontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/finalscoretitle"
+    android:layout_marginHorizontal="10dp"
+    tools:ignore="MissingConstraints" />
+
+<TextView
+    android:id="@+id/defeatedEnemies"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/xwingfrontal"
+    android:text="Score"
+    android:textSize="100sp"
+    android:textColor="#FF0000"
+    android:fontFamily="@font/tilt_neon"/>
+
+<Button
+    android:id="@+id/tryagain"
+    android:layout_width="250dp"
+    android:layout_height="60dp"
+    android:text="VOLVER A JUGAR"
+    android:textColor="@color/white"
+    android:backgroundTint="#FF0000"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="470dp"/>
+<Button
+    android:id="@+id/backmenu"
+    android:layout_width="250dp"
+    android:layout_height="60dp"
+    android:text="VOLVER AL MENU"
+    android:textColor="@color/white"
+    android:backgroundTint="#FF0000"
+    app:layout_constraintTop_toBottomOf="@+id/tryagain"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="20dp"/>
+
+<Button
+    android:id="@+id/sharescore"
+    android:layout_width="250dp"
+    android:layout_height="60dp"
+    android:text="COMPARTIR PUNTUACIÓN"
+    android:textColor="@color/white"
+    android:backgroundTint="#FF0000"
+    app:layout_constraintTop_toBottomOf="@+id/backmenu"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="20dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

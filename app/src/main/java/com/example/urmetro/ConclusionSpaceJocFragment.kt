@@ -1,0 +1,47 @@
+package com.example.urmetro
+
+import android.content.Intent
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.urmetro.databinding.FragmentConclusionSpaceJocBinding
+
+class ConclusionSpaceJocFragment : Fragment() {
+
+
+    lateinit var binding: FragmentConclusionSpaceJocBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        binding = FragmentConclusionSpaceJocBinding.inflate(inflater,container,false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.defeatedEnemies.text = arguments?.getInt("enemiesDefeated").toString()
+
+        binding.tryagain.setOnClickListener {
+            findNavController().navigate(R.id.action_conclusionSpaceJocFragment_to_jocSpaceFragment)
+        }
+
+        binding.backmenu.setOnClickListener {
+            findNavController().navigate(R.id.action_conclusionSpaceJocFragment_to_jocMenuFragment)
+        }
+
+        binding.sharescore.setOnClickListener {
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT,"Ey, mira la puntuación que he optenido en IMPERIALS INVADERS, podras superarlo?")
+            intent.type = "text/plain"
+            startActivity(Intent.createChooser(intent, "Share via"))
+        }
+    }
+}

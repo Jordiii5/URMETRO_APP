@@ -23,23 +23,18 @@ class ResultTrivialGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.scorePoints.text = "$score p"
+        binding.scorePoints.text = "${score}pts"
 
         binding.returnMenuButton.setOnClickListener {
             findNavController().navigate(R.id.action_resultTrivialGameFragment_to_jocMenuTrivialFragment)
         }
 
         binding.returnTematicaButton.setOnClickListener {
-            findNavController().navigate(R.id.action_jocMenuTrivialFragment_to_tematicaTrivialFragment)
+            findNavController().navigate(R.id.action_resultTrivialGameFragment_to_tematicaTrivialFragment)
         }
 
-        binding.shareButton.setOnClickListener {
-            val intent = Intent()
-            intent.action = Intent.ACTION_SEND
-            intent.putExtra(Intent.EXTRA_TEXT,"Ey, mira la puntuación que he optenido en Tonto o Listo, podras superarlo? $score puntos:")
-            intent.type = "text/plain"
-            startActivity(Intent.createChooser(intent, "Share via"))
-        }
+
+
 
     }
 }

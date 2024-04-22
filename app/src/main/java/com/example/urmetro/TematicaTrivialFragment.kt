@@ -59,11 +59,7 @@ class TematicaTrivialFragment : Fragment() {
 
         }
 
-        binding.tematica7.setOnClickListener{
-            tematicaPartida = 6
-            findNavController().navigate(R.id.action_tematicaTrivialFragment_to_playGameTrivialFragment)
 
-        }
     }
 
 

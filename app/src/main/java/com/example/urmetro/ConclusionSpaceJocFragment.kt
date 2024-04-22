@@ -36,12 +36,7 @@ class ConclusionSpaceJocFragment : Fragment() {
             findNavController().navigate(R.id.action_conclusionSpaceJocFragment_to_jocMenuFragment)
         }
 
-        binding.sharescore.setOnClickListener {
-            val intent = Intent()
-            intent.action = Intent.ACTION_SEND
-            intent.putExtra(Intent.EXTRA_TEXT,"Ey, mira la puntuación que he optenido en IMPERIALS INVADERS, podras superarlo?")
-            intent.type = "text/plain"
-            startActivity(Intent.createChooser(intent, "Share via"))
-        }
+
+
     }
 }

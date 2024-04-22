@@ -11,96 +11,111 @@ android:background="@drawable/fondo_app1">
     android:id="@+id/tematica_tittle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="30dp"
     android:src="@drawable/tematicalogo"
     android:textAppearance="@style/TextAppearance.AppCompat.Headline"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/container_tematica"/>
 
-<Button
-    android:id="@+id/tematica1"
-    android:layout_width="350dp"
-    android:layout_height="45dp"
-    android:layout_marginTop="40dp"
-    android:text="CINE"
-    android:backgroundTint="@color/black"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/tematica_tittle"
-    app:layout_constraintWidth_percent="0.5"
-    />
 
-<Button
-    android:id="@+id/tematica2"
-    android:layout_width="350dp"
-    android:layout_height="45dp"
-    android:layout_marginTop="30dp"
-    android:text="CIENCIA"
-    android:backgroundTint="#39A626"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/tematica1"
-    app:layout_constraintWidth_percent="0.5" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_tematica"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintTop_toBottomOf="@id/tematica_tittle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
 
-<Button
-    android:id="@+id/tematica3"
-    android:layout_width="350dp"
-    android:layout_height="45dp"
-    android:layout_marginTop="30dp"
-    android:text="HISTORIA"
-    android:backgroundTint="#FF5722"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/tematica2"
-    app:layout_constraintWidth_percent="0.5" />
+    <Button
+        android:id="@+id/tematica1"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="CINE"
+        android:fontFamily="@font/tilt_neon"
+        android:textSize="30dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/tematica4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tematica2"
+         />
 
-<Button
-    android:id="@+id/tematica4"
-    android:layout_width="350dp"
-    android:layout_height="45dp"
-    android:layout_marginTop="30dp"
-    android:text="ARTE"
-    android:backgroundTint="#FD0505"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/tematica3"
-    app:layout_constraintWidth_percent="0.5" />
+    <Button
+        android:id="@+id/tematica2"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="CIENCIA"
+        android:backgroundTint="#39A626"
+        app:layout_constraintEnd_toStartOf="@id/tematica5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tematica1"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintBottom_toTopOf="@id/tematica3"
+        />
 
-<Button
-    android:id="@+id/tematica5"
-    android:layout_width="350dp"
-    android:layout_height="45dp"
-    android:layout_marginTop="30dp"
-    android:text="DEPORTES"
-    android:backgroundTint="#009688"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/tematica4"
-    app:layout_constraintWidth_percent="0.5" />
+    <Button
+        android:id="@+id/tematica3"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="HISTORIA"
+        android:fontFamily="@font/tilt_neon"
+        android:textSize="30dp"
+        android:backgroundTint="#FF5722"
+        app:layout_constraintEnd_toStartOf="@id/tematica6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tematica2"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-<Button
-    android:id="@+id/tematica6"
-    android:layout_width="350dp"
-    android:layout_height="45dp"
-    android:layout_marginTop="30dp"
-    android:text="GEOGRAFIA"
-    android:backgroundTint="#0724C6"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/tematica5"
-    app:layout_constraintWidth_percent="0.5" />
+    <Button
+        android:id="@+id/tematica4"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="ARTE"
+        android:fontFamily="@font/tilt_neon"
+        android:textSize="30dp"
+        android:backgroundTint="#FD0505"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tematica1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintBottom_toTopOf="@id/tematica5"/>
 
-<Button
-    android:id="@+id/tematica7"
-    android:layout_width="350dp"
-    android:layout_height="45dp"
-    android:layout_marginTop="30dp"
-    android:text="VIDEOJUEGOS"
-    android:backgroundTint="#673AB7"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/tematica6"
-    app:layout_constraintWidth_percent="0.5" />
+    <Button
+        android:id="@+id/tematica5"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="DEPORTES"
+        android:fontFamily="@font/tilt_neon"
+        android:textSize="30dp"
+        android:backgroundTint="#009688"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tematica2"
+        app:layout_constraintTop_toBottomOf="@id/tematica4"
+        app:layout_constraintBottom_toTopOf="@id/tematica6"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <Button
+        android:id="@+id/tematica6"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="GEOGRAFIA"
+        android:fontFamily="@font/tilt_neon"
+        android:textSize="30dp"
+        android:backgroundTint="#0724C6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tematica3"
+        app:layout_constraintTop_toBottomOf="@id/tematica5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

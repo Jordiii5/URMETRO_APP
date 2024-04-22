@@ -8,69 +8,100 @@ tools:context=".HelpSpaceJocFragment"
 android:background="@drawable/spacebackground">
 
 <TextView
+    android:id="@+id/tittle"
     android:layout_width="wrap_content"
     android:layout_height="0dp"
-    android:fontFamily="@font/robotomono"
+    android:fontFamily="@font/tilt_neon"
     android:text="EXPLICACIÓN DEL JUEGO"
     android:textColor="#FFEB3B"
-    android:textSize="20sp"
+    android:textSize="50sp"
+    android:textStyle="bold"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    android:layout_marginTop="30dp"/>
+    android:layout_marginTop="15dp"/>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containera_ajuda"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.7"
+            app:layout_constraintTop_toBottomOf="@id/tittle"
+            app:layout_constraintBottom_toTopOf="@id/volveralmenu"
+            android:layout_gravity="center"
+            >
+
 
 <TextView
-    android:layout_width="370dp"
-    android:layout_height="0dp"
-    android:fontFamily="@font/robotomono"
+    android:id="@+id/text1"
+    android:layout_width="800dp"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/tilt_neon"
     android:text="ALERTA ROJA, ALERTA ROJA, ALERTA ROJA!!! EL IMPERIO SE APROXIMA A LA BASE DE LOS REBELDES."
     android:textColor="#FFEB3B"
-    android:textSize="20sp"
+    android:textSize="25dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    android:layout_marginTop="90dp"/>
+    app:layout_constraintStart_toStartOf="@id/containera_ajuda"
+    app:layout_constraintBottom_toTopOf="@id/text2"
+    android:layout_marginBottom="30dp"
+    android:textStyle="bold"
+   />
 
 <TextView
-    android:layout_width="370dp"
-    android:layout_height="0dp"
-    android:fontFamily="@font/robotomono"
+    android:id="@+id/text2"
+    android:layout_width="800dp"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/tilt_neon"
     android:text="NECESITAMOS QUE SALGAS AL DESPEGUE, PARA QUE PROTEJAS LA BASE MIENTRAS ESPERAMOS LOS REFUERZOS DE LOS JEDIS."
     android:textColor="#FFEB3B"
-    android:textSize="20sp"
+    android:textSize="25dp"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/text1"
+    app:layout_constraintBottom_toTopOf="@id/text3"
     app:layout_constraintStart_toStartOf="parent"
-    android:layout_marginTop="230dp"/>
+    android:layout_marginBottom="30dp"
+    android:textStyle="bold"/>
 
 <TextView
-    android:layout_width="370dp"
-    android:layout_height="0dp"
-    android:fontFamily="@font/robotomono"
+    android:id="@+id/text3"
+    android:layout_width="800dp"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/tilt_neon"
     android:text="TEN CUIDADO CON LO CAZAS TIE QUE EL MALVADO DARTH VADER HA SOLTADO POR LA GALAXIA PARA ATACARNOS."
     android:textColor="#FFEB3B"
-    android:textSize="20sp"
+    android:textSize="25dp"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/text2"
+    app:layout_constraintBottom_toTopOf="@id/text4"
     app:layout_constraintStart_toStartOf="parent"
-    android:layout_marginTop="360dp"/>
+    android:layout_marginBottom="30dp"
+    android:textStyle="bold"/>
 
 <TextView
-    android:layout_width="370dp"
-    android:layout_height="0dp"
-    android:fontFamily="@font/robotomono"
+    android:id="@+id/text4"
+    android:layout_width="800dp"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/tilt_neon"
     android:text="PROBABLEMENTE CADA VEZ QUE PASE EL TIEMPO IRAN APARECIENDO MÁS ENEMIGOS POR TUS ALREDEDORES, ASÍ QUE RESISTE Y BUENA SUERTE PILOTO."
     android:textColor="#FFEB3B"
-    android:textSize="20sp"
+    android:textSize="25dp"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/text3"
+    app:layout_constraintBottom_toBottomOf="@id/containera_ajuda"
     app:layout_constraintStart_toStartOf="parent"
-    android:layout_marginTop="490dp"/>
+    android:layout_marginBottom="30dp"
+    android:textStyle="bold"
+    />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 <Button
     android:id="@+id/volveralmenu"
-    android:layout_width="250dp"
-    android:layout_height="60dp"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
     android:text="VOLVER AL MENU"
     android:textColor="@color/white"
     android:backgroundTint="#FF0000"
@@ -78,6 +109,9 @@ android:background="@drawable/spacebackground">
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
     android:layout_marginBottom="30dp"
+    android:fontFamily="@font/tilt_neon"
+    android:textStyle="bold"
+    android:textSize="30dp"
     android:layout_marginTop="20dp"/>
 
 

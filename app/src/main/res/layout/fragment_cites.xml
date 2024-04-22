@@ -40,5 +40,14 @@
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <CalendarView
+        android:id="@+id/calendari_medicines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        android:background="@color/fons"
+        android:layout_marginTop="30dp"
+        android:weekSeparatorLineColor="@color/sanitat"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,6 +27,9 @@ class PerfilFragment : Fragment() {
         binding.editButton.setOnClickListener {
             findNavController().navigate(R.id.action_perfilFragment_to_editarPerfilFragment)
         }
+        binding.tancarSessi.setOnClickListener {
+            findNavController().navigate(R.id.action_perfilFragment_to_iniciarSessioFragment)
+        }
     }
 
 }

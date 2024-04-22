@@ -1,14 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/fons"
     tools:context=".AfegirCitaFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_cap"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="1.05"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rectangle_sanitat"
+        >
+
+        <TextView
+            android:id="@+id/afegir_cita_titol"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.5"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/arrowBack"
+            app:layout_constraintTop_toTopOf="@id/container_cap"
+            app:layout_constraintBottom_toBottomOf="@id/container_cap"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="AFEGIR CITA"
+            android:fontFamily="@font/tilt_neon"/>
+
+        <ImageButton
+            android:id="@+id/arrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_arrow_circle_left_24"
+            app:layout_constraintStart_toStartOf="@id/container_cap"
+            android:backgroundTint="#AAD9A9"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/afegir_cita_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/container_cap"
+        app:layout_constraintBottom_toTopOf="@+id/afegir_cita_button"
+        android:paddingHorizontal="5dp"
+        android:layout_marginVertical="50dp"
+        android:layout_marginHorizontal="90dp"
+        android:background="@drawable/rectangle_medicina"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/titol_cita_layout"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="1.1"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.25"
+            android:background="@drawable/rectangle_medicina"
+            app:layout_constraintStart_toStartOf="@id/afegir_cita_layout"
+            app:layout_constraintEnd_toEndOf="@id/afegir_cita_layout"
+            tools:ignore="MissingConstraints">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/titol_cita"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.5"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle_medicina"
+                app:layout_constraintStart_toStartOf="@id/titol_cita_layout"
+                app:layout_constraintTop_toTopOf="@id/titol_cita_layout"
+                app:layout_constraintBottom_toBottomOf="@id/titol_cita_layout"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/titol_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="@+id/titol_cita"
+                app:layout_constraintTop_toTopOf="@id/titol_cita_layout"
+                android:text="TITOL DE LA CITA"
+                android:background="#AAD9A9"
+                android:textColor="@color/black"
+                android:layout_marginStart="75dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:fontFamily="@font/tilt_neon"
+                />
+
+
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/hora_cita"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="1"
+                android:layout_height="match_parent"
+
+                app:layout_constraintStart_toEndOf="@id/titol_cita"
+                app:layout_constraintTop_toTopOf="@id/titol_cita_layout"
+                app:layout_constraintBottom_toBottomOf="@id/titol_cita_layout"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/hora_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="@+id/hora_cita"
+                app:layout_constraintTop_toTopOf="@id/titol_cita_layout"
+                android:text="HORA DE LA CITA"
+                android:background="#A3E291"
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:fontFamily="@font/tilt_neon"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/baseline_calendar_month_24"
+            android:background="@color/fons"
+            app:layout_constraintBottom_toTopOf="@id/comentaris_cita_layout"
+            app:layout_constraintEnd_toEndOf="@id/afegir_cita_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titol_cita_layout"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/comentaris_cita_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintWidth_percent="1.1"
+            android:background="@drawable/rectangle_medicina"
+            app:layout_constraintBottom_toBottomOf="@id/afegir_cita_layout"
+            app:layout_constraintStart_toStartOf="@id/afegir_cita_layout"
+            app:layout_constraintEnd_toEndOf="@id/afegir_cita_layout"
+            tools:ignore="MissingConstraints"
+            >
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/comentaris"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="@id/afegir_cita_layout"
+                app:layout_constraintStart_toStartOf="@id/afegir_cita_layout"
+                app:layout_constraintEnd_toEndOf="@id/afegir_cita_layout"
+                tools:ignore="NotSibling">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/comentaris_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/white"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="@+id/comentaris"
+                app:layout_constraintTop_toTopOf="@id/comentaris"
+                android:text="COMENTARIS"
+                android:background="#AAD9A9"
+                android:textColor="@color/black"
+                android:layout_marginStart="75dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:fontFamily="@font/tilt_neon"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/afegir_cita_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintWidth_percent="0.20"
+        android:text="AFEGIR CITA"
+        android:textColor="@color/black"
+        android:background="@drawable/rectangle_medicina"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/tilt_neon"
+        android:layout_marginBottom="20dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

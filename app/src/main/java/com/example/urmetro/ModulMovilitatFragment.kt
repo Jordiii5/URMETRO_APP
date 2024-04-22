@@ -23,6 +23,9 @@ class ModulMovilitatFragment : Fragment() {
         binding.menu.setOnClickListener {
             findNavController().navigate(R.id.action_modulMovilitatFragment_to_menuFragment)
         }
+        binding.help.setOnClickListener {
+            findNavController().navigate(R.id.action_modulMovilitatFragment_to_ajudaMobilitatFragment)
+        }
     }
 
 }

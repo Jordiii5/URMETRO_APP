@@ -94,6 +94,9 @@
         <action
             android:id="@+id/action_modulMovilitatFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_modulMovilitatFragment_to_ajudaMobilitatFragment"
+            app:destination="@id/ajudaMobilitatFragment" />
     </fragment>
     <fragment
         android:id="@+id/modulSocialitzacioFragment"
@@ -109,6 +112,9 @@
         <action
             android:id="@+id/action_modulSocialitzacioFragment_to_llistaContactesFragment"
             app:destination="@id/llistaContactesFragment" />
+        <action
+            android:id="@+id/action_modulSocialitzacioFragment_to_ajudaSocialitzacioFragment"
+            app:destination="@id/ajudaSocialitzacioFragment" />
     </fragment>
     <fragment
         android:id="@+id/registreFragment"
@@ -340,5 +346,23 @@
         <action
             android:id="@+id/action_resultTrivialGameFragment_to_tematicaTrivialFragment2"
             app:destination="@id/tematicaTrivialFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ajudaSocialitzacioFragment"
+        android:name="com.example.urmetro.AjudaSocialitzacioFragment"
+        android:label="fragment_ajuda_socialitzacio"
+        tools:layout="@layout/fragment_ajuda_socialitzacio" >
+        <action
+            android:id="@+id/action_ajudaSocialitzacioFragment_to_modulSocialitzacioFragment"
+            app:destination="@id/modulSocialitzacioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ajudaMobilitatFragment"
+        android:name="com.example.urmetro.AjudaMobilitatFragment"
+        android:label="fragment_ajuda_mobilitat"
+        tools:layout="@layout/fragment_ajuda_mobilitat" >
+        <action
+            android:id="@+id/action_ajudaMobilitatFragment_to_modulMovilitatFragment"
+            app:destination="@id/modulMovilitatFragment" />
     </fragment>
 </navigation>

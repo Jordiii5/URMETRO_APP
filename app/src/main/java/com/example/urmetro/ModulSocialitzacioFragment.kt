@@ -29,6 +29,9 @@ class ModulSocialitzacioFragment : Fragment() {
         binding.containerImatges.setOnClickListener {
             findNavController().navigate(R.id.action_modulSocialitzacioFragment_to_galeriaImatgesFragment)
         }
+        binding.help.setOnClickListener {
+            findNavController().navigate(R.id.action_modulSocialitzacioFragment_to_ajudaSocialitzacioFragment)
+        }
     }
 
 }

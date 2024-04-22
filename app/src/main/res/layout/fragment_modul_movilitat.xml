@@ -17,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/rectangle_movilitat"
-
         >
 
         <TextView
@@ -257,6 +256,8 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/formes_layout"
         android:layout_width="0dp"
@@ -394,6 +395,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

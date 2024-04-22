@@ -24,6 +24,12 @@ class JocsFragment : Fragment() {
         binding.arrowBack.setOnClickListener {
             findNavController().navigate(R.id.action_jocsFragment_to_modulEntretenimentFragment)
         }
+        binding.containerJoc1.setOnClickListener {
+            findNavController().navigate(R.id.action_jocsFragment_to_jocMenuFragment)
+        }
+        binding.containerJoc2.setOnClickListener {
+            findNavController().navigate(R.id.action_jocsFragment_to_jocMenuTrivialFragment)
+        }
     }
 
 }

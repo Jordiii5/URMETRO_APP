@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".PlayGameTrivialFragment">
+
+<ImageView
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBCC7A"
+    android:contentDescription="background" />
+
+<ProgressBar
+    android:id="@+id/timerDown"
+    style="?android:attr/progressBarStyleHorizontal"
+    android:layout_width="0dp"
+    app:layout_constraintWidth_percent="0.7"
+    android:layout_height="10dp"
+    android:layout_marginHorizontal="20dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="45sp"
+    tools:ignore="MissingConstraints"
+    tools:layout_editor_absoluteX="10dp"
+    tools:progress="100"
+    android:progressTint="@color/white"/>
+
+<TextView
+    android:id="@+id/round"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/fondo_enunciados_preguntas"
+    android:padding="20sp"
+    android:text="RONDA"
+    android:textColor="#FFFFFF"
+    android:textSize="20sp"
+    android:fontFamily="@font/tilt_neon"
+    android:layout_marginTop="20dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/timerDown"
+    tools:ignore="MissingConstraints" />
+
+<TextView
+    android:id="@+id/question"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/fondo_enunciados_preguntas"
+    android:maxWidth="850dp"
+    android:padding="20sp"
+    android:text="PREGUNTA"
+    android:textAlignment="center"
+    android:textColor="@color/white"
+    android:textSize="55sp"
+    android:fontFamily="@font/tilt_neon"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/round"
+    app:layout_constraintBottom_toTopOf="@+id/answer1"
+
+    tools:ignore="MissingConstraints" />
+
+<Button
+    android:id="@+id/answer1"
+    android:layout_width="0dp"
+    app:layout_constraintWidth_percent="0.4"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:tag="1"
+    android:background="@color/white"
+    android:text="RESPUESTA 1"
+    android:textColor="@color/black"
+    android:textSize="25sp"
+    android:fontFamily="@font/tilt_neon"
+    app:backgroundTint="@null"
+    app:layout_constraintEnd_toStartOf="@id/answer2"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/question"
+    app:layout_constraintBottom_toTopOf="@id/answer3"
+    />
+
+<Button
+    android:id="@+id/answer2"
+    android:layout_width="0dp"
+    app:layout_constraintWidth_percent="0.4"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:tag="2"
+    android:background="@color/white"
+    android:text="RESPUESTA 2"
+    android:textColor="@color/black"
+    android:textSize="25sp"
+    android:fontFamily="@font/tilt_neon"
+    app:backgroundTint="@null"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/answer1"
+    app:layout_constraintTop_toTopOf="@id/answer1"
+    app:layout_constraintBottom_toBottomOf="@id/answer1"/>
+
+    <Button
+        android:id="@+id/answer3"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.4"
+        android:layout_height="wrap_content"
+
+        android:background="@color/white"
+        android:padding="15dp"
+        android:tag="3"
+        android:text="RESPUESTA 3"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:fontFamily="@font/tilt_neon"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/answer4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/answer1" />
+
+    <Button
+        android:id="@+id/answer4"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.4"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="15dp"
+        android:tag="4"
+        android:text="RESPUESTA 4"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:fontFamily="@font/tilt_neon"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/answer3"
+        app:layout_constraintTop_toBottomOf="@id/answer2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

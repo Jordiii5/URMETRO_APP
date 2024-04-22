@@ -31,7 +31,8 @@
             android:textSize="40dp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="JOCS" />
+            android:text="JOCS"
+            android:fontFamily="@font/tilt_neon"/>
 
         <ImageButton
             android:id="@+id/arrowBack"
@@ -49,10 +50,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingBottom="15dp"
-        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintHeight_percent="0.65"
         app:layout_constraintWidth_percent="0.3"
         app:layout_constraintTop_toBottomOf="@id/container_cap"
-        app:layout_constraintBottom_toTopOf="@id/menu"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/container_joc2"
         android:background="@drawable/periodics_boto"
@@ -63,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.6"
-            android:src="@drawable/games"
+            android:src="@drawable/powerup"
             app:layout_constraintTop_toTopOf="@id/container_joc1"
             app:layout_constraintBottom_toTopOf="@id/contactes_text"
             android:backgroundTint="@color/black"
@@ -73,8 +74,9 @@
             android:id="@+id/contactes_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TITOL DE JOC"
+            android:text="IMPERIALS INVADERS"
             android:textStyle="bold"
+            android:fontFamily="@font/tilt_neon"
             android:textColor="@color/black"
             android:textSize="45dp"
             android:gravity="center"
@@ -88,10 +90,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingBottom="15dp"
-        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintHeight_percent="0.65"
         app:layout_constraintWidth_percent="0.3"
         app:layout_constraintTop_toBottomOf="@id/container_cap"
-        app:layout_constraintBottom_toTopOf="@id/menu"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/container_joc1"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/periodics_boto"
@@ -101,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.6"
-            android:src="@drawable/games"
+            android:src="@drawable/logotrivial"
             app:layout_constraintTop_toTopOf="@id/container_joc2"
             app:layout_constraintBottom_toTopOf="@id/galeria_text"
             android:backgroundTint="@color/black"
@@ -111,8 +113,9 @@
             android:id="@+id/galeria_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TITOL DE JOC"
+            android:text="DIGUES QUANT SAPS DE...?"
             android:textStyle="bold"
+            android:fontFamily="@font/tilt_neon"
             android:textColor="@color/black"
             android:textSize="45dp"
             android:gravity="center"
@@ -121,16 +124,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/menu"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintWidth_percent="0.1"
-        app:layout_constraintHeight_percent="0.2"
-        android:src="@drawable/menu_boto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

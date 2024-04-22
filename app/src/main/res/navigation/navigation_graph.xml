@@ -196,6 +196,12 @@
         <action
             android:id="@+id/action_jocsFragment_to_modulEntretenimentFragment"
             app:destination="@id/modulEntretenimentFragment" />
+        <action
+            android:id="@+id/action_jocsFragment_to_jocMenuFragment"
+            app:destination="@id/jocMenuFragment" />
+        <action
+            android:id="@+id/action_jocsFragment_to_jocMenuTrivialFragment"
+            app:destination="@id/jocMenuTrivialFragment" />
     </fragment>
     <fragment
         android:id="@+id/canconsFragment"
@@ -241,5 +247,98 @@
         <action
             android:id="@+id/action_ajudaSanitatFragment_to_modulSanitatFragment"
             app:destination="@id/modulSanitatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jocMenuFragment"
+        android:name="com.example.urmetro.JocMenuFragment"
+        android:label="fragment_joc_menu"
+        tools:layout="@layout/fragment_joc_menu" >
+        <action
+            android:id="@+id/action_jocMenuFragment_to_jocsFragment"
+            app:destination="@id/jocsFragment" />
+        <action
+            android:id="@+id/action_jocMenuFragment_to_jocSpaceFragment"
+            app:destination="@id/jocSpaceFragment" />
+        <action
+            android:id="@+id/action_jocMenuFragment_to_helpSpaceJocFragment"
+            app:destination="@id/helpSpaceJocFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jocSpaceFragment"
+        android:name="com.example.urmetro.JocSpaceFragment"
+        android:label="fragment_joc_space"
+        tools:layout="@layout/fragment_joc_space" >
+        <action
+            android:id="@+id/action_jocSpaceFragment_to_conclusionSpaceJocFragment"
+            app:destination="@id/conclusionSpaceJocFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpSpaceJocFragment"
+        android:name="com.example.urmetro.HelpSpaceJocFragment"
+        android:label="fragment_help_space_joc"
+        tools:layout="@layout/fragment_help_space_joc" >
+        <action
+            android:id="@+id/action_helpSpaceJocFragment_to_jocMenuFragment"
+            app:destination="@id/jocMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/conclusionSpaceJocFragment"
+        android:name="com.example.urmetro.ConclusionSpaceJocFragment"
+        android:label="fragment_conclusion_space_joc"
+        tools:layout="@layout/fragment_conclusion_space_joc" >
+        <action
+            android:id="@+id/action_conclusionSpaceJocFragment_to_jocSpaceFragment"
+            app:destination="@id/jocSpaceFragment" />
+        <action
+            android:id="@+id/action_conclusionSpaceJocFragment_to_jocMenuFragment"
+            app:destination="@id/jocMenuFragment" />
+        <argument
+            android:name="enemiesDefeated"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/jocMenuTrivialFragment"
+        android:name="com.example.urmetro.JocMenuTrivialFragment"
+        android:label="fragment_joc_menu_trivial"
+        tools:layout="@layout/fragment_joc_menu_trivial" >
+        <action
+            android:id="@+id/action_jocMenuTrivialFragment_to_jocsFragment"
+            app:destination="@id/jocsFragment" />
+        <action
+            android:id="@+id/action_jocMenuTrivialFragment_to_tematicaTrivialFragment"
+            app:destination="@id/tematicaTrivialFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tematicaTrivialFragment"
+        android:name="com.example.urmetro.TematicaTrivialFragment"
+        android:label="fragment_tematica_trivial"
+        tools:layout="@layout/fragment_tematica_trivial" >
+        <action
+            android:id="@+id/action_tematicaTrivialFragment_to_playGameTrivialFragment"
+            app:destination="@id/playGameTrivialFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playGameTrivialFragment"
+        android:name="com.example.urmetro.PlayGameTrivialFragment"
+        android:label="fragment_play_game_trivial"
+        tools:layout="@layout/fragment_play_game_trivial" >
+        <action
+            android:id="@+id/action_playGameTrivialFragment_to_resultTrivialGameFragment"
+            app:destination="@id/resultTrivialGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultTrivialGameFragment"
+        android:name="com.example.urmetro.ResultTrivialGameFragment"
+        android:label="fragment_result_trivial_game"
+        tools:layout="@layout/fragment_result_trivial_game" >
+        <action
+            android:id="@+id/action_resultTrivialGameFragment_to_tematicaTrivialFragment"
+            app:destination="@id/tematicaTrivialFragment" />
+        <action
+            android:id="@+id/action_resultTrivialGameFragment_to_jocMenuTrivialFragment"
+            app:destination="@id/jocMenuTrivialFragment" />
+        <action
+            android:id="@+id/action_resultTrivialGameFragment_to_tematicaTrivialFragment2"
+            app:destination="@id/tematicaTrivialFragment" />
     </fragment>
 </navigation>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".JocMenuTrivialFragment"
+android:background="@drawable/fondo_app1">
+
+<ImageView
+    android:id="@+id/logo_juego"
+    android:layout_width="276dp"
+    android:layout_height="313dp"
+    android:layout_marginTop="16dp"
+    android:src="@drawable/logotrivial"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.496"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/titlegame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logoname"
+        app:layout_constraintTop_toBottomOf="@+id/logo_juego"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="20dp"/>
+
+    <Button
+        android:id="@+id/playTrivial"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/tilt_neon"
+        android:textSize="40dp"
+        android:text="JUGAR"
+        android:textColor="@color/white"
+        android:backgroundTint="#0C0C0C"
+        app:layout_constraintTop_toBottomOf="@+id/titlegame"
+        app:layout_constraintEnd_toStartOf="@id/helpTrivial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <Button
+        android:id="@+id/helpTrivial"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="AYUDA"
+        android:textSize="40dp"
+        android:fontFamily="@font/tilt_neon"
+        android:textColor="@color/white"
+        android:backgroundTint="#100F0F"
+        app:layout_constraintTop_toBottomOf="@+id/titlegame"
+        app:layout_constraintEnd_toStartOf="@id/backMenu"
+        app:layout_constraintStart_toEndOf="@id/playTrivial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <Button
+        android:id="@+id/backMenu"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="SALIR"
+        android:textSize="40dp"
+        android:fontFamily="@font/tilt_neon"
+        android:textColor="@color/white"
+        android:backgroundTint="#0B0A0A"
+        app:layout_constraintTop_toBottomOf="@+id/titlegame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/helpTrivial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

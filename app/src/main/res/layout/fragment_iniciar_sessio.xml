@@ -45,6 +45,7 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="20dp"
+        android:fontFamily="@font/tilt_neon"
         android:textAlignment="center"
 
         />
@@ -68,6 +69,7 @@
         android:background="@drawable/rectangle_registre"
         />
 
+
     <EditText
         android:id="@+id/contrasenya_field"
         android:layout_width="wrap_content"
@@ -78,6 +80,8 @@
         app:layout_constraintTop_toBottomOf="@id/dni_field"
         app:layout_constraintBottom_toTopOf="@id/remember_checkbox"
         android:hint="CONTRASENYA"
+        app:passwordToggleEnabled="true"
+        android:password="true"
         android:textColorHint="@color/hintColor"
         android:textColor="@color/black"
         android:textStyle="bold"

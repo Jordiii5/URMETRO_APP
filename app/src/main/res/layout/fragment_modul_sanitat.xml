@@ -32,12 +32,87 @@
             android:textColor="@color/black"
             android:text="SANITAT" />
         <ImageButton
+            android:id="@+id/help"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/baseline_flag_circle_24"
             app:layout_constraintEnd_toEndOf="@id/container_cap"
             android:backgroundTint="#ABDAAA"
             />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/robot_img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.45"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintBottom_toTopOf="@id/menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/container_sanitat"
+        android:src="@drawable/robot"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_sanitat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.45"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintBottom_toTopOf="@id/menu"
+        app:layout_constraintStart_toEndOf="@id/robot_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/rehabilitacio"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.95"
+            app:layout_constraintHeight_percent="0.3"
+            android:background="@drawable/sanitat_boto"
+            app:layout_constraintStart_toStartOf="@id/container_sanitat"
+            app:layout_constraintEnd_toEndOf="@id/container_sanitat"
+            app:layout_constraintTop_toTopOf="@id/container_sanitat"
+            app:layout_constraintBottom_toTopOf="@id/cites"
+            android:text="REHABILITACIÓ"
+            android:textStyle="bold"
+            android:textSize="45dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cites"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.95"
+            app:layout_constraintHeight_percent="0.3"
+            android:background="@drawable/sanitat_boto"
+            app:layout_constraintStart_toStartOf="@id/container_sanitat"
+            app:layout_constraintEnd_toEndOf="@id/container_sanitat"
+            app:layout_constraintTop_toBottomOf="@id/rehabilitacio"
+            app:layout_constraintBottom_toTopOf="@id/medicacions"
+            android:text="CALENDARI DE CITES"
+            android:textStyle="bold"
+            android:textSize="45dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/medicacions"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.95"
+            app:layout_constraintHeight_percent="0.3"
+            android:background="@drawable/sanitat_boto"
+            app:layout_constraintStart_toStartOf="@id/container_sanitat"
+            app:layout_constraintEnd_toEndOf="@id/container_sanitat"
+            app:layout_constraintBottom_toBottomOf="@id/container_sanitat"
+            app:layout_constraintTop_toBottomOf="@id/cites"
+            android:text="HORARI DE MEDICINES"
+            android:textStyle="bold"
+            android:textSize="45dp"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <ImageView
@@ -51,6 +126,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

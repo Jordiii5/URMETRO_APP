@@ -61,4 +61,18 @@ class MyViewModel : ViewModel(){
             }
         }
     }
+
+    suspend fun deleteUser(): Boolean {
+        val dniToDelete = currentUsuari.value?.usuari_dni ?: return false
+
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = repository.deleteUser(dniToDelete)
+                response.isSuccessful
+            } catch (e: Exception) {
+                Log.e("Error", "Excepción en la corrutina: ${e.message}", e)
+                false
+            }
+        }
+    }
 }

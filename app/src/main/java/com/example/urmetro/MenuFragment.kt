@@ -46,9 +46,7 @@ class MenuFragment : Fragment() {
         binding.usuari.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_iniciarSessioFragment)
         }
-        binding.perfil.setOnClickListener {
-            findNavController().navigate(R.id.action_menuFragment_to_perfilFragment)
-        }
+
     }
 
 }

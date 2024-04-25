@@ -235,6 +235,9 @@
         <action
             android:id="@+id/action_audiollibresFragment_to_modulEntretenimentFragment"
             app:destination="@id/modulEntretenimentFragment" />
+        <action
+            android:id="@+id/action_audiollibresFragment_to_audiollibreDetallFragment"
+            app:destination="@id/audiollibreDetallFragment" />
     </fragment>
     <fragment
         android:id="@+id/ajudaEntretenimentFragment"
@@ -364,5 +367,17 @@
         <action
             android:id="@+id/action_ajudaMobilitatFragment_to_modulMovilitatFragment"
             app:destination="@id/modulMovilitatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/audiollibreDetallFragment"
+        android:name="com.example.urmetro.audiollibres.utils.AudiollibreDetallFragment"
+        android:label="fragment_audiollibre_detall"
+        tools:layout="@layout/fragment_audiollibre_detall" >
+        <action
+            android:id="@+id/action_audiollibreDetallFragment_to_audiollibresFragment"
+            app:destination="@id/audiollibresFragment" />
+        <argument
+            android:name="id"
+            app:argType="string" />
     </fragment>
 </navigation>

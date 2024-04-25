@@ -15,6 +15,7 @@ import retrofit2.http.POST
 import retrofit2.http.Url
 import retrofit2.Response
 import retrofit2.http.PUT
+import retrofit2.http.Path
 
 interface ApiInterface {
     @GET
@@ -25,8 +26,8 @@ interface ApiInterface {
     suspend fun login(@Body usuario: Usuari): Response<ResponseBody>
     @POST("user/register")
     suspend fun register(@Body usuario: Usuari): Response<ResponseBody>
-    @PUT
-    suspend fun updatePost(@Url url: String): Response<Boolean>
+    @PUT("/update/dades/{usuari_dni}/{usuari_nom}/{usuari_adreça}/{usuari_telefon}/{usuari_contacte_emergencia}")
+    suspend fun updateUsuari(@Path("usuari_dni") usuari_dni: String, @Path("usuari_nom") usuari_nom: String, @Path("usuari_adreça") usuari_adreça: String, @Path("usuari_telefon") usuari_telefon: String, @Path("usuari_contacte_emergencia") usuari_contacte_emergencia: String): Response<ResponseBody>
     @DELETE()
     suspend fun deletePost(@Url url: String): Response<Boolean>
 

@@ -53,8 +53,8 @@
         app:layout_constraintTop_toBottomOf="@id/container_cap"
         app:layout_constraintTop_toTopOf="@id/info_container"
         app:layout_constraintBottom_toBottomOf="@+id/info_container"
-        android:background="@drawable/register_rectangle"
-        android:layout_marginStart="890dp"
+        android:background="@drawable/robot"
+        android:layout_margin="890dp"
         android:layout_marginTop="10dp"
         tools:ignore="MissingConstraints" />
 
@@ -89,6 +89,12 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
+                android:text="Hola"
+                android:textSize="25dp"
+                android:fontFamily="@font/tilt_neon"
+                android:textStyle="bold"
+                android:paddingTop="30dp"
+                android:paddingLeft="20dp"
                 android:background="@drawable/rectangle_registre"
                 android:textColorHint="@color/white"/>
 
@@ -124,6 +130,12 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
+                android:text="Hola"
+                android:textSize="25dp"
+                android:fontFamily="@font/tilt_neon"
+                android:textStyle="bold"
+                android:paddingTop="30dp"
+                android:paddingLeft="20dp"
                 android:background="@drawable/rectangle_registre"
                 android:textColorHint="@color/white"/>
 
@@ -161,6 +173,12 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
+                android:text="Hola"
+                android:textSize="25dp"
+                android:fontFamily="@font/tilt_neon"
+                android:textStyle="bold"
+                android:paddingTop="30dp"
+                android:paddingLeft="20dp"
                 android:background="@drawable/rectangle_registre"
                 android:textColorHint="@color/white"/>
 
@@ -200,6 +218,12 @@
                 android:layout_marginEnd="10dp"
                 android:inputType="phone"
                 android:textColor="@color/black"
+                android:text="Hola"
+                android:textSize="25dp"
+                android:fontFamily="@font/tilt_neon"
+                android:textStyle="bold"
+                android:paddingTop="30dp"
+                android:paddingLeft="20dp"
                 android:background="@drawable/rectangle_registre"
                 android:textColorHint="@color/white"/>
 
@@ -242,6 +266,12 @@
                 android:layout_marginTop="10dp"
                 android:inputType="phone"
                 android:textColor="@color/black"
+                android:text="Hola"
+                android:textSize="25dp"
+                android:fontFamily="@font/tilt_neon"
+                android:textStyle="bold"
+                android:paddingTop="30dp"
+                android:paddingLeft="20dp"
                 android:background="@drawable/rectangle_registre"
                 android:textColorHint="@color/white"/>
 

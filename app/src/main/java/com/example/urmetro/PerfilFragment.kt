@@ -34,6 +34,7 @@ class PerfilFragment : Fragment() {
             findNavController().navigate(R.id.action_perfilFragment_to_editarPerfilFragment)
         }
         binding.tancarSessi.setOnClickListener {
+            Toast.makeText(requireContext(), "Sessió tancada correctament", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_perfilFragment_to_editarPerfilFragment)
         }
         binding.bin.setOnClickListener {

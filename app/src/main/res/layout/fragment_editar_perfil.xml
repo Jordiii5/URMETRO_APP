@@ -60,7 +60,7 @@
         tools:ignore="MissingConstraints" >
 
         <ImageView
-            android:id="@+id/userImage"
+            android:id="@+id/fotoPerfilUsuarioEdit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/baseline_account_circle_24"

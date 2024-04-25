@@ -1,5 +1,6 @@
 package com.example.urmetro.viewModel
 
+import android.net.Uri
 import android.os.Looper
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -21,6 +22,9 @@ class MyViewModel : ViewModel(){
     var data = MutableLiveData<List<Usuari>>()
     val success = MutableLiveData<Boolean>()
     val showToast: MutableLiveData<Boolean> = MutableLiveData()
+    var image : Uri? = null
+    var fotohecha = true
+    var camara = false
 
     fun fetchData(){
         success.postValue(false)

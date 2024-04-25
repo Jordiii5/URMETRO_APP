@@ -48,7 +48,7 @@ class AudiollibreDetallFragment : Fragment() {
         binding.llibreCopy.text = "Any de publicació: ${book.copyright_year}"
         binding.llibreCapitols.text = "Nombre de capìtols: ${book.num_sections}"
         binding.llibreIdioma.text = "Idioma: ${book.language}"
-        binding.llibreTemps.text = "duració total: ${book.totaltime}"
+        binding.llibreTemps.text = "Duració total: ${book.totaltime}"
 
     }
     private fun openLink(url: String) {

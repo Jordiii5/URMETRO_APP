@@ -140,21 +140,11 @@
         android:src="@drawable/baseline_circle_24"
         app:layout_constraintWidth_percent="0.07"
         app:layout_constraintStart_toEndOf="@id/marca3"
-        app:layout_constraintEnd_toStartOf="@id/marca5"
-        app:layout_constraintTop_toTopOf="@id/nav"
-        app:layout_constraintBottom_toBottomOf="@id/nav"
-        />
-    <ImageView
-        android:id="@+id/marca5"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:src="@drawable/baseline_circle_24"
-        app:layout_constraintWidth_percent="0.07"
-        app:layout_constraintStart_toEndOf="@id/marca4"
         app:layout_constraintEnd_toStartOf="@id/arrow_next"
         app:layout_constraintTop_toTopOf="@id/nav"
         app:layout_constraintBottom_toBottomOf="@id/nav"
         />
+
 
 
     <ImageView
@@ -163,7 +153,7 @@
         android:layout_height="match_parent"
         android:src="@drawable/baseline_arrow_forward_24"
         app:layout_constraintWidth_percent="0.13"
-        app:layout_constraintStart_toEndOf="@id/marca5"
+        app:layout_constraintStart_toEndOf="@id/marca4"
         app:layout_constraintEnd_toEndOf="@id/nav"
         app:layout_constraintTop_toTopOf="@id/nav"
         app:layout_constraintBottom_toBottomOf="@id/nav"

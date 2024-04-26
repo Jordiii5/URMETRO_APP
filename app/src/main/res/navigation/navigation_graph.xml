@@ -53,9 +53,6 @@
             android:id="@+id/action_modulEntretenimentFragment_to_jocsFragment"
             app:destination="@id/jocsFragment" />
         <action
-            android:id="@+id/action_modulEntretenimentFragment_to_canconsFragment"
-            app:destination="@id/canconsFragment" />
-        <action
             android:id="@+id/action_modulEntretenimentFragment_to_periodicsFragment"
             app:destination="@id/periodicsFragment" />
         <action
@@ -208,15 +205,6 @@
         <action
             android:id="@+id/action_jocsFragment_to_jocMenuTrivialFragment"
             app:destination="@id/jocMenuTrivialFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/canconsFragment"
-        android:name="com.example.urmetro.CanconsFragment"
-        android:label="fragment_cancons"
-        tools:layout="@layout/fragment_cancons" >
-        <action
-            android:id="@+id/action_canconsFragment_to_modulEntretenimentFragment"
-            app:destination="@id/modulEntretenimentFragment" />
     </fragment>
     <fragment
         android:id="@+id/periodicsFragment"

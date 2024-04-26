@@ -27,7 +27,6 @@ class AjudaEntretenimentFragment : Fragment() {
             "En el nostre apartat d'entreteniment, et donem opcions perquè gaudeixis al màxim. Pots jugar a jocs divertits, escoltar emocionants audiollibres i trobar llistes de música per a qualsevol moment. També pots estar informat amb enllaços a notícies en línia. Volem que t'ho passis bé i trobis el que més t'agrada fer a la nostra app. Així que si busques passar un bon moment, estàs al lloc adequat!",
             "A l'apartat de jocs, trobaràs una varietat d'opcions per a divertir-te. Gaudeix de jocs senzills i addictius dissenyats per entretenir-te en qualsevol moment. Explora la nostra selecció i troba el joc perfecte per a tu!",
             "A l'apartat de diaris, trobaràs quatre diaris reconeguts nacionalment. Cada botó et portarà directament a la pàgina web del diari corresponent, on podràs accedir a les notícies més actualitzades. Mantingues-te al dia amb només un clic!",
-            "A l'apartat de cançons, trobaràs una àmplia llista de reproducció amb música de tots els gèneres. Explora les nostres seleccions i reprodueix les teves cançons favorites en qualsevol moment. Gaudeix de la música que més t'agrada, tot en un mateix lloc!",
             "En l'apartat d'audiollibres, trobaràs una llista de llibres disponibles. Quan seleccionis un llibre, seràs redirigit a la pàgina web on es troba l'audiollibre corresponent. Allà podràs escoltar-lo i gaudir de la història sense haver de llegir. És una manera perfecta de descobrir noves aventures i entretenir-te en qualsevol moment.")
         var posicio=0
         text.text = llistaText[posicio]
@@ -55,36 +54,26 @@ class AjudaEntretenimentFragment : Fragment() {
                     binding.marca2.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca3.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca4.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca5.setImageResource(R.drawable.baseline_circle_24)
                 }
                 1-> {
                     binding.marca1.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca2.setImageResource(R.drawable.baseline_circle_entreteniment)
                     binding.marca3.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca4.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca5.setImageResource(R.drawable.baseline_circle_24)
                 }
                 2-> {
                     binding.marca1.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca2.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca3.setImageResource(R.drawable.baseline_circle_entreteniment)
                     binding.marca4.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca5.setImageResource(R.drawable.baseline_circle_24)
                 }
                 3-> {
                     binding.marca1.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca2.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca3.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca4.setImageResource(R.drawable.baseline_circle_entreteniment)
-                    binding.marca5.setImageResource(R.drawable.baseline_circle_24)
                 }
-                4-> {
-                    binding.marca1.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca2.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca3.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca4.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca5.setImageResource(R.drawable.baseline_circle_entreteniment)
-                }
+
             }
             binding.scroll.scrollTo(0, -10000)
         }
@@ -106,36 +95,26 @@ class AjudaEntretenimentFragment : Fragment() {
                     binding.marca2.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca3.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca4.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca5.setImageResource(R.drawable.baseline_circle_24)
                 }
                 1-> {
                     binding.marca1.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca2.setImageResource(R.drawable.baseline_circle_entreteniment)
                     binding.marca3.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca4.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca5.setImageResource(R.drawable.baseline_circle_24)
                 }
                 2-> {
                     binding.marca1.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca2.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca3.setImageResource(R.drawable.baseline_circle_entreteniment)
                     binding.marca4.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca5.setImageResource(R.drawable.baseline_circle_24)
                 }
                 3-> {
                     binding.marca1.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca2.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca3.setImageResource(R.drawable.baseline_circle_24)
                     binding.marca4.setImageResource(R.drawable.baseline_circle_entreteniment)
-                    binding.marca5.setImageResource(R.drawable.baseline_circle_24)
                 }
-                4-> {
-                    binding.marca1.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca2.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca3.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca4.setImageResource(R.drawable.baseline_circle_24)
-                    binding.marca5.setImageResource(R.drawable.baseline_circle_entreteniment)
-                }
+
             }
             binding.scroll.scrollTo(0, -10000)
         }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.urmetro.databinding.FragmentGaleriaImatgesBinding
 
 class GaleriaImatgesFragment : Fragment() {
@@ -20,6 +21,8 @@ class GaleriaImatgesFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.recyclerView.layoutManager=GridLayoutManager(requireContext(), 3)
 
         binding.arrowBack.setOnClickListener {
             findNavController().navigate(R.id.action_galeriaImatgesFragment_to_modulSocialitzacioFragment)

@@ -30,21 +30,41 @@ class AudiollibresFragment : Fragment() , MyOnClickListener {
 
         viewModel.fetchData()
 
+        // Observa els canvis a les dades del ViewModel i actualitza el RecyclerView
+        // amb les noves dades rebudes.
         viewModel.data.observe(viewLifecycleOwner){
+            // Configura el RecyclerView amb les dades rebudes
             setUpRecyclerView(it as MutableList<Book>?)
         }
 
+        //Fem una navegació a al módul d'entreteniment al polsar en aquest botó
         binding.arrowBack.setOnClickListener {
             findNavController().navigate(R.id.action_audiollibresFragment_to_modulEntretenimentFragment)
         }
     }
 
+    /**
+     *@author Joel Garcia
+     *
+     * @params [book] rep totes les dades del llibre que hem polsat a la llista
+     *
+     * Agafa el llibre al que hem polsat y fa una navegació al detall enviant la id del llibre com a valor
+     */
     override fun onClick(book: Book) {
         val viewModel= ViewModelProvider(requireActivity())[BooksViewModel::class.java]
         viewModel.currentBook.postValue(book)
         val action = AudiollibresFragmentDirections.actionAudiollibresFragmentToAudiollibreDetallFragment(book.id)
         findNavController().navigate(action)
     }
+
+    /**
+     * @author Joel Garcia
+     *
+     * Configura el RecyclerView amb la llista de llibres proporcionada.
+     *
+     * @param lista La llista de llibres per mostrar en el RecyclerView.
+     * Si és nul·la, el RecyclerView es deixarà buit.
+     */
     private fun setUpRecyclerView(lista: MutableList<Book>?){
 
         val myAdapter= lista.let { BookAdapter(it, this) }

@@ -133,7 +133,7 @@
                 app:layout_constraintStart_toStartOf="@+id/hora_cita"
                 app:layout_constraintTop_toTopOf="@id/titol_cita_layout"
                 android:text="HORA DE LA CITA"
-                android:background="#A3E291"
+                android:background="#AAD9A9"
                 android:textColor="@color/black"
                 android:layout_marginStart="25dp"
                 android:textSize="20dp"
@@ -145,16 +145,31 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/calendari_layout"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/baseline_calendar_month_24"
             android:background="@color/fons"
+            app:layout_constraintWidth_percent="1"
             app:layout_constraintBottom_toTopOf="@id/comentaris_cita_layout"
-            app:layout_constraintEnd_toEndOf="@id/afegir_cita_layout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titol_cita_layout"
-            />
+            >
+
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/calendari_layout"
+                app:layout_constraintBottom_toBottomOf="@id/calendari_layout"
+                app:layout_constraintStart_toStartOf="@id/calendari_layout"
+                app:layout_constraintEnd_toEndOf="@id/calendari_layout"
+                android:calendarTextColor="@color/sanitat"
+                android:headerBackground="@color/medicina"
+                android:datePickerMode="spinner"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/comentaris_cita_layout"

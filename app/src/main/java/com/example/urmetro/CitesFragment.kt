@@ -25,7 +25,9 @@ class CitesFragment : Fragment() {
         binding.arrowBack.setOnClickListener {
             findNavController().navigate(R.id.action_citesFragment_to_modulSanitatFragment)
         }
-
+        binding.afegirCitaButton.setOnClickListener {
+            findNavController().navigate(R.id.action_citesFragment_to_afegirCitaFragment)
+        }
     }
 
 

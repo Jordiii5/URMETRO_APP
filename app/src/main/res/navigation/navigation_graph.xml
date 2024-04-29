@@ -187,6 +187,9 @@
         <action
             android:id="@+id/action_citesFragment_to_modulSanitatFragment"
             app:destination="@id/modulSanitatFragment" />
+        <action
+            android:id="@+id/action_citesFragment_to_afegirCitaFragment"
+            app:destination="@id/afegirCitaFragment" />
     </fragment>
     <fragment
         android:id="@+id/medicacionsFragment"
@@ -343,6 +346,15 @@
         <action
             android:id="@+id/action_resultTrivialGameFragment_to_tematicaTrivialFragment2"
             app:destination="@id/tematicaTrivialFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/afegirCitaFragment"
+        android:name="com.example.urmetro.AfegirCitaFragment"
+        android:label="fragment_afegir_cita"
+        tools:layout="@layout/fragment_afegir_cita" >
+        <action
+            android:id="@+id/action_afegirCitaFragment_to_citesFragment"
+            app:destination="@id/citesFragment" />
     </fragment>
     <fragment
         android:id="@+id/ajudaSocialitzacioFragment"

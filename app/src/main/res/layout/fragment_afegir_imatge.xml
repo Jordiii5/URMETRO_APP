@@ -60,7 +60,9 @@
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.25"
             android:background="@drawable/rectangle_groc"
-            >
+            android:paddingStart="50dp"
+            tools:ignore="MissingConstraints">
+
             <TextView
                 android:id="@+id/nom_usuari"
                 android:layout_width="wrap_content"
@@ -71,10 +73,59 @@
                 android:textSize="40dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-
+                android:fontFamily="@font/tilt_neon"
                 />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/nom_usuari_layout"
+            app:layout_constraintBottom_toTopOf="@id/peu_imatge"
+            android:src="@drawable/baseline_upload_24"
+
+            />
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/peu_imatge"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintBottom_toBottomOf="@id/pujarImatgeLayout"
+
+
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/peu_imatge_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:background="@drawable/rectangle_groc"
+                android:textColorHint="@color/white"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/peu_imatge"
+            app:layout_constraintTop_toTopOf="@id/peu_imatge"
+            android:text="ESCRIU UN PEU D'IMATGE "
+            android:background="#DAD4A7"
+            android:textColor="@color/black"
+            android:layout_marginStart="25dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:fontFamily="@font/tilt_neon"
+            />
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.appcompat.widget.AppCompatButton

@@ -15,6 +15,7 @@ import retrofit2.http.POST
 import retrofit2.http.Url
 import retrofit2.Response
 import retrofit2.http.PUT
+import retrofit2.http.Path
 
 interface ApiInterface {
     @GET
@@ -26,9 +27,9 @@ interface ApiInterface {
     @POST("user/register")
     suspend fun register(@Body usuario: Usuari): Response<ResponseBody>
     @PUT
-    suspend fun updatePost(@Url url: String): Response<Boolean>
-    @DELETE()
-    suspend fun deletePost(@Url url: String): Response<Boolean>
+    suspend fun updateUser(@Url url: String): Response<Boolean>
+    @DELETE("usuaris/{usuari_dni}")
+    suspend fun deleteUser(@Path("usuari_dni") dni: String): Response<Boolean>
 
     companion object {
         val BASE_URL = "http://172.23.6.130:8080/"

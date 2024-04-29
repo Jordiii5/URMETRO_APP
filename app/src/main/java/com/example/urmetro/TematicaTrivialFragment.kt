@@ -59,6 +59,11 @@ class TematicaTrivialFragment : Fragment() {
 
         }
 
+        binding.volverMenuTrivial.setOnClickListener{
+            findNavController().navigate(R.id.action_tematicaTrivialFragment_to_jocMenuTrivialFragment)
+
+        }
+
 
     }
 

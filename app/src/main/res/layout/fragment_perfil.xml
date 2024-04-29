@@ -56,7 +56,16 @@
         android:background="@drawable/register_rectangle"
         android:layout_marginStart="890dp"
         android:layout_marginTop="10dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/fotoPerfilUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_account_circle_24"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/info_container"
@@ -287,7 +296,7 @@
             android:id="@+id/tancar_sessió"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintHeight_percent="0.9"
             app:layout_constraintWidth_percent="0.20"
             android:textSize="30dp"
             android:fontFamily="@font/tilt_neon"

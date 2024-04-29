@@ -160,6 +160,9 @@
         <action
             android:id="@+id/action_perfilFragment_to_editarPerfilFragment"
             app:destination="@id/editarPerfilFragment" />
+        <action
+            android:id="@+id/action_perfilFragment_to_iniciarSessioFragment"
+            app:destination="@id/iniciarSessioFragment" />
     </fragment>
     <fragment
         android:id="@+id/editarPerfilFragment"
@@ -169,6 +172,9 @@
         <action
             android:id="@+id/action_editarPerfilFragment_to_perfilFragment"
             app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_editarPerfilFragment_to_camaraFragment"
+            app:destination="@id/camaraFragment" />
     </fragment>
     <fragment
         android:id="@+id/rehabilitacioFragment"
@@ -322,6 +328,9 @@
         <action
             android:id="@+id/action_tematicaTrivialFragment_to_playGameTrivialFragment"
             app:destination="@id/playGameTrivialFragment" />
+        <action
+            android:id="@+id/action_tematicaTrivialFragment_to_jocMenuTrivialFragment"
+            app:destination="@id/jocMenuTrivialFragment" />
     </fragment>
     <fragment
         android:id="@+id/playGameTrivialFragment"
@@ -403,5 +412,14 @@
         <action
             android:id="@+id/action_lesMevesImatgesFragment_to_galeriaImatgesFragment"
             app:destination="@id/galeriaImatgesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/camaraFragment"
+        android:name="com.example.urmetro.CamaraFragment"
+        android:label="fragment_camara"
+        tools:layout="@layout/fragment_camara" >
+        <action
+            android:id="@+id/action_camaraFragment_to_editarPerfilFragment"
+            app:destination="@id/editarPerfilFragment" />
     </fragment>
 </navigation>

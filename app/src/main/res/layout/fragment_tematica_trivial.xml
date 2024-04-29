@@ -18,6 +18,17 @@ android:background="@drawable/fondo_app1">
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintBottom_toTopOf="@id/container_tematica"/>
 
+    <ImageView
+        android:id="@+id/volverMenuTrivial"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/baseline_arrow_circle_left_24"
+        android:fontFamily="@font/tilt_neon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_tematica"
@@ -35,7 +46,7 @@ android:background="@drawable/fondo_app1">
         android:id="@+id/tematica1"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="CINE"
+        android:text="CINEMA"
         android:fontFamily="@font/tilt_neon"
         android:textSize="30dp"
         android:backgroundTint="@color/black"
@@ -51,7 +62,7 @@ android:background="@drawable/fondo_app1">
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:textSize="30dp"
-        android:text="CIENCIA"
+        android:text="CIÈNCIA"
         android:backgroundTint="#39A626"
         app:layout_constraintEnd_toStartOf="@id/tematica5"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +75,7 @@ android:background="@drawable/fondo_app1">
         android:id="@+id/tematica3"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="HISTORIA"
+        android:text="HISTÒRIA"
         android:fontFamily="@font/tilt_neon"
         android:textSize="30dp"
         android:backgroundTint="#FF5722"
@@ -78,7 +89,7 @@ android:background="@drawable/fondo_app1">
         android:id="@+id/tematica4"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="ARTE"
+        android:text="ART"
         android:fontFamily="@font/tilt_neon"
         android:textSize="30dp"
         android:backgroundTint="#FD0505"
@@ -92,7 +103,7 @@ android:background="@drawable/fondo_app1">
         android:id="@+id/tematica5"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="DEPORTES"
+        android:text="ESPORTS"
         android:fontFamily="@font/tilt_neon"
         android:textSize="30dp"
         android:backgroundTint="#009688"

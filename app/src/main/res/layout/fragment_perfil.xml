@@ -58,13 +58,6 @@
         android:layout_marginTop="10dp"
         tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/fotoPerfilUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/baseline_account_circle_24"
-            />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,7 +95,7 @@
                 android:textSize="25dp"
                 android:fontFamily="@font/tilt_neon"
                 android:textStyle="bold"
-                android:paddingTop="30dp"
+                android:paddingTop="20dp"
                 android:paddingLeft="20dp"
                 android:background="@drawable/rectangle_registre"
                 android:textColorHint="@color/white"/>
@@ -143,7 +136,7 @@
                 android:textSize="25dp"
                 android:fontFamily="@font/tilt_neon"
                 android:textStyle="bold"
-                android:paddingTop="30dp"
+                android:paddingTop="20dp"
                 android:paddingLeft="20dp"
                 android:background="@drawable/rectangle_registre"
                 android:textColorHint="@color/white"/>
@@ -186,7 +179,7 @@
                 android:textSize="25dp"
                 android:fontFamily="@font/tilt_neon"
                 android:textStyle="bold"
-                android:paddingTop="30dp"
+                android:paddingTop="20dp"
                 android:paddingLeft="20dp"
                 android:background="@drawable/rectangle_registre"
                 android:textColorHint="@color/white"/>
@@ -231,7 +224,7 @@
                 android:textSize="25dp"
                 android:fontFamily="@font/tilt_neon"
                 android:textStyle="bold"
-                android:paddingTop="30dp"
+                android:paddingTop="20dp"
                 android:paddingLeft="20dp"
                 android:background="@drawable/rectangle_registre"
                 android:textColorHint="@color/white"/>
@@ -279,7 +272,7 @@
                 android:textSize="25dp"
                 android:fontFamily="@font/tilt_neon"
                 android:textStyle="bold"
-                android:paddingTop="30dp"
+                android:paddingTop="20dp"
                 android:paddingLeft="20dp"
                 android:background="@drawable/rectangle_registre"
                 android:textColorHint="@color/white"/>

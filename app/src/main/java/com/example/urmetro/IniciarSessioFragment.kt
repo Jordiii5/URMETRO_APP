@@ -79,50 +79,50 @@ class IniciarSessioFragment : Fragment() {
             val contra = binding.contrasenyaField.text.toString()
             val saveCredentials = binding.rememberCheckbox.isChecked
             val hashedPassword = hashPassword(contra)
-            //if (dni.isNotEmpty() && contra.isNotEmpty()) {
-//                val prefs: SharedPreferences.Editor = requireActivity().getSharedPreferences(
-//                    PREFS_NAME, Context.MODE_PRIVATE).edit()
-//
-//                if (saveCredentials) {
-//                    prefs.putString("usuari_dni", dni)
-//                    prefs.putString("usuari_contra", contra)
-//                }
-//                else {
-//                    prefs.remove("usuari_dni")
-//                    prefs.remove("usuari_contra")
-//                }
-//                prefs.putBoolean("saveCredentials", saveCredentials)
-//                prefs.apply()
+            if (dni.isNotEmpty() && contra.isNotEmpty()) {
+                val prefs: SharedPreferences.Editor = requireActivity().getSharedPreferences(
+                    PREFS_NAME, Context.MODE_PRIVATE).edit()
 
-//                viewModel.currentUsuari.value = Usuari(0,"", dni.uppercase(), "", 0, 0, "", hashedPassword)
-//                viewModel.repository = ApiRepository(dni, hashedPassword)
+                if (saveCredentials) {
+                    prefs.putString("usuari_dni", dni)
+                    prefs.putString("usuari_contra", contra)
+                }
+                else {
+                    prefs.remove("usuari_dni")
+                    prefs.remove("usuari_contra")
+                }
+                prefs.putBoolean("saveCredentials", saveCredentials)
+                prefs.apply()
+
+                viewModel.currentUsuari.value = Usuari(0,"", dni.uppercase(), "", 0, 0, "", hashedPassword)
+                viewModel.repository = ApiRepository(dni, hashedPassword)
 
 
-//                CoroutineScope(Dispatchers.IO).launch {
-//                    val repository = ApiRepository(dni, contra)
-//                    val response = repository.login(viewModel.currentUsuari.value!!)
-//
-//                    withContext(Dispatchers.Main) {
-//                        if (response.isSuccessful) {
-//                            CoroutineScope(Dispatchers.IO).launch {
-//                                viewModel.getUsuari(dni)
-//
-//                                withContext(Dispatchers.Main){
-//                                    viewModel.success.observe(viewLifecycleOwner) { success ->
-//                                        if (success == true){
+                CoroutineScope(Dispatchers.IO).launch {
+                    val repository = ApiRepository(dni, contra)
+                    val response = repository.login(viewModel.currentUsuari.value!!)
+
+                    withContext(Dispatchers.Main) {
+                        if (response.isSuccessful) {
+                            CoroutineScope(Dispatchers.IO).launch {
+                                viewModel.getUsuari(dni)
+
+                                withContext(Dispatchers.Main){
+                                    viewModel.success.observe(viewLifecycleOwner) { success ->
+                                        if (success == true){
                                             findNavController().navigate(R.id.action_iniciarSessioFragment_to_menuFragment)
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        } else {
-//                            Toast.makeText(context, "Error con el email o contraseña, inténtalo de nuevo", Toast.LENGTH_SHORT).show()
-//                        }
-//                    }
-//                }
-//            } else {
-//                Toast.makeText(context, "Has dejado espacios vacíos, rellénalos todos", Toast.LENGTH_SHORT).show()
-//            }
+                                        }
+                                    }
+                                }
+                            }
+                        } else {
+                            Toast.makeText(context, "Error con el email o contraseña, inténtalo de nuevo", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+            } else {
+                Toast.makeText(context, "Has dejado espacios vacíos, rellénalos todos", Toast.LENGTH_SHORT).show()
+            }
         }
         binding.registrat.setOnClickListener {
             findNavController().navigate(R.id.action_iniciarSessioFragment_to_registreFragment)

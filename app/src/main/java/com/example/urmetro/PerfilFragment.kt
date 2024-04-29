@@ -18,8 +18,6 @@ import kotlinx.coroutines.launch
 class PerfilFragment : Fragment() {
     lateinit var binding: FragmentPerfilBinding
     private val viewModel: MyViewModel by activityViewModels()
-
-    private val viewModel: MyViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

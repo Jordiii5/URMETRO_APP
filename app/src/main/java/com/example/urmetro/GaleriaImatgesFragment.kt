@@ -27,6 +27,12 @@ class GaleriaImatgesFragment : Fragment() {
         binding.arrowBack.setOnClickListener {
             findNavController().navigate(R.id.action_galeriaImatgesFragment_to_modulSocialitzacioFragment)
         }
+        binding.containerMeves.setOnClickListener {
+            findNavController().navigate(R.id.action_galeriaImatgesFragment_to_lesMevesImatgesFragment)
+        }
+        binding.containerPujar.setOnClickListener {
+            findNavController().navigate(R.id.action_galeriaImatgesFragment_to_afegirImatgeFragment)
+        }
     }
 
 }

@@ -133,6 +133,12 @@
         <action
             android:id="@+id/action_galeriaImatgesFragment_to_modulSocialitzacioFragment"
             app:destination="@id/modulSocialitzacioFragment" />
+        <action
+            android:id="@+id/action_galeriaImatgesFragment_to_afegirImatgeFragment"
+            app:destination="@id/afegirImatgeFragment" />
+        <action
+            android:id="@+id/action_galeriaImatgesFragment_to_lesMevesImatgesFragment"
+            app:destination="@id/lesMevesImatgesFragment" />
     </fragment>
     <fragment
         android:id="@+id/llistaContactesFragment"
@@ -367,5 +373,23 @@
         <argument
             android:name="id"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/afegirImatgeFragment"
+        android:name="com.example.urmetro.AfegirImatgeFragment"
+        android:label="fragment_afegir_imatge"
+        tools:layout="@layout/fragment_afegir_imatge" >
+        <action
+            android:id="@+id/action_afegirImatgeFragment_to_galeriaImatgesFragment"
+            app:destination="@id/galeriaImatgesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lesMevesImatgesFragment"
+        android:name="com.example.urmetro.LesMevesImatgesFragment"
+        android:label="fragment_les_meves_imatges"
+        tools:layout="@layout/fragment_les_meves_imatges" >
+        <action
+            android:id="@+id/action_lesMevesImatgesFragment_to_galeriaImatgesFragment"
+            app:destination="@id/galeriaImatgesFragment" />
     </fragment>
 </navigation>

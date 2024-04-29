@@ -156,6 +156,7 @@ android:background="@color/fons">
             android:layout_height="match_parent"
             android:textColor="@color/black"
             android:background="@drawable/rectangle_registre"
+            android:inputType="textPassword"
             android:textColorHint="@color/white"
             />
 
@@ -199,6 +200,7 @@ android:background="@color/fons">
             android:layout_height="match_parent"
             android:textColor="@color/black"
             android:background="@drawable/rectangle_registre"
+            android:inputType="textPassword"
             android:textColorHint="@color/white"
             />
 

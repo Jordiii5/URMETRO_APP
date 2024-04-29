@@ -26,13 +26,13 @@ interface ApiInterface {
     suspend fun login(@Body usuario: Usuari): Response<ResponseBody>
     @POST("user/register")
     suspend fun register(@Body usuario: Usuari): Response<ResponseBody>
-    @PUT
-    suspend fun updateUser(@Url url: String): Response<Boolean>
-    @DELETE("usuaris/{usuari_dni}")
-    suspend fun deleteUser(@Path("usuari_dni") dni: String): Response<Boolean>
+    @PUT("/update/dades/{usuari_dni}/{usuari_nom}/{usuari_adreça}/{usuari_telefon}/{usuari_contacte_emergencia}")
+    suspend fun updateUsuari(@Path("usuari_dni") usuari_dni: String, @Path("usuari_nom") usuari_nom: String, @Path("usuari_adreça") usuari_adreça: String, @Path("usuari_telefon") usuari_telefon: String, @Path("usuari_contacte_emergencia") usuari_contacte_emergencia: String): Response<ResponseBody>
+    @DELETE()
+    suspend fun deletePost(@Url url: String): Response<Boolean>
 
     companion object {
-        val BASE_URL = "http://172.23.6.130:8080/"
+        val BASE_URL = "http://172.23.6.131:8080/"
 
         fun create(dni: String, password: String): ApiInterface {
             val digestAuthenticator = DigestAuthenticator(Credentials(dni, password))

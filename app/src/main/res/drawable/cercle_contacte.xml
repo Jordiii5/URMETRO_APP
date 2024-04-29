@@ -5,7 +5,5 @@
         android:width="2sp"
         >
     </stroke>
-    <solid
-        android:color="@color/fons"
-        />
+
 </shape>

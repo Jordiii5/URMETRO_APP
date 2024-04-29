@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/fons"
-    tools:context=".AfegirImatgeFragment">
+    tools:context=".GaleriaImatgesFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_cap"
@@ -29,7 +29,8 @@
             android:textSize="40dp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="GALERIA D'IMATGES" />
+            android:text="PUBLICAR UNA IMATGE"
+            android:fontFamily="@font/tilt_neon"/>
         <ImageButton
             android:id="@+id/arrowBack"
             android:layout_width="wrap_content"
@@ -40,6 +41,61 @@
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pujarImatgeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rectangle_medicacio_gris"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nom_usuari_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.25"
+            android:background="@drawable/rectangle_groc"
+            >
+            <TextView
+                android:id="@+id/nom_usuari"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NOM DE L'USUARI"
+                app:layout_constraintTop_toTopOf="@id/nom_usuari_layout"
+                app:layout_constraintBottom_toBottomOf="@id/nom_usuari_layout"
+                android:textSize="40dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/afegir_cita_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintWidth_percent="0.20"
+        android:text="PUJAR IMATGE"
+        android:textColor="@color/black"
+        android:background="@drawable/rectangle_groc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/tilt_neon"
+        android:layout_marginBottom="20dp"
+        />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

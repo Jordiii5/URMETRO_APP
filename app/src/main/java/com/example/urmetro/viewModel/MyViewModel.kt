@@ -1,11 +1,14 @@
 package com.example.urmetro.viewModel
 
 import android.net.Uri
+import android.os.Build
 import android.os.Looper
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.urmetro.model.Publicacions
 import com.example.urmetro.model.Usuari
 import com.example.urmetro.view.ApiRepository
 import kotlinx.coroutines.CoroutineScope
@@ -90,6 +93,13 @@ class MyViewModel : ViewModel(){
                 Log.e("Error", "Excepción en la corrutina: ${e.message}", e)
                 false
             }
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun postResena(post: Publicacions, image: Uri?){
+        CoroutineScope(Dispatchers.IO).launch {
+            repository.postPublicacio("",post.publicacio_peu_foto,post.usuari_id,image)
         }
     }
 }

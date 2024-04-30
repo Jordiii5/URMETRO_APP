@@ -403,6 +403,9 @@
         <action
             android:id="@+id/action_afegirImatgeFragment_to_galeriaImatgesFragment"
             app:destination="@id/galeriaImatgesFragment" />
+        <action
+            android:id="@+id/action_afegirImatgeFragment_to_lesMevesImatgesFragment"
+            app:destination="@id/lesMevesImatgesFragment" />
     </fragment>
     <fragment
         android:id="@+id/lesMevesImatgesFragment"

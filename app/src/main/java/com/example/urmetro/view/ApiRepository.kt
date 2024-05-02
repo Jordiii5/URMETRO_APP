@@ -1,5 +1,9 @@
 package com.example.urmetro.view
 
+import android.net.Uri
+import android.os.Build
+import androidx.annotation.RequiresApi
+import com.example.urmetro.model.Publicacions
 import com.example.urmetro.model.Usuari
 import com.example.urmetro.viewModel.ApiInterface
 import com.google.gson.Gson

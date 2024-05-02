@@ -148,6 +148,9 @@
         <action
             android:id="@+id/action_llistaContactesFragment_to_modulSocialitzacioFragment"
             app:destination="@id/modulSocialitzacioFragment" />
+        <action
+            android:id="@+id/action_llistaContactesFragment_to_afegirContacteFragment"
+            app:destination="@id/afegirContacteFragment" />
     </fragment>
     <fragment
         android:id="@+id/perfilFragment"
@@ -205,6 +208,9 @@
         <action
             android:id="@+id/action_medicacionsFragment_to_modulSanitatFragment"
             app:destination="@id/modulSanitatFragment" />
+        <action
+            android:id="@+id/action_medicacionsFragment_to_afegirMedicacioFragment"
+            app:destination="@id/afegirMedicacioFragment" />
     </fragment>
     <fragment
         android:id="@+id/jocsFragment"
@@ -421,5 +427,22 @@
         <action
             android:id="@+id/action_camaraFragment_to_editarPerfilFragment"
             app:destination="@id/editarPerfilFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/afegirContacteFragment"
+        android:name="com.example.urmetro.AfegirContacteFragment"
+        android:label="fragment_afegir_contacte"
+        tools:layout="@layout/fragment_afegir_contacte" >
+        <action
+            android:id="@+id/action_afegirContacteFragment_to_llistaContactesFragment"
+            app:destination="@id/llistaContactesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/afegirMedicacioFragment"
+        android:name="com.example.urmetro.AfegirMedicacioFragment"
+        android:label="AfegirMedicacioFragment" >
+        <action
+            android:id="@+id/action_afegirMedicacioFragment_to_medicacionsFragment"
+            app:destination="@id/medicacionsFragment" />
     </fragment>
 </navigation>

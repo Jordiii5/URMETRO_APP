@@ -26,8 +26,9 @@ class LlistaContactesFragment : Fragment() {
             findNavController().navigate(R.id.action_llistaContactesFragment_to_modulSocialitzacioFragment)
         }
         binding.afegirContacteButton.setOnClickListener{
+            findNavController().navigate(R.id.action_llistaContactesFragment_to_afegirContacteFragment)
             val builder = AlertDialog.Builder( this.context)
-            val view = layoutInflater.inflate(R.layout.dialog_contactes,null)
+            val view = layoutInflater.inflate(R.layout.dialog_afegir_contacte,null)
             builder.setView(view)
             val dialog = builder.create()
             dialog.show()

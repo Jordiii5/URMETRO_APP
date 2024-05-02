@@ -24,6 +24,9 @@ class MedicacionsFragment : Fragment() {
         binding.arrowBack.setOnClickListener {
             findNavController().navigate(R.id.action_medicacionsFragment_to_modulSanitatFragment)
         }
+        binding.afegirMedicacioButton.setOnClickListener {
+            findNavController().navigate(R.id.action_medicacionsFragment_to_afegirMedicacioFragment)
+        }
     }
 
 }

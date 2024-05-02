@@ -29,7 +29,8 @@
             android:textSize="40dp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="HORARI DE MEDICINES" />
+            android:text="HORARI DE MEDICINES"
+            android:fontFamily="@font/tilt_neon"/>
         <ImageButton
             android:id="@+id/arrowBack"
             android:layout_width="wrap_content"
@@ -40,5 +41,183 @@
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/calendari_medicines"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintBottom_toTopOf="@id/afegir_medicacio_button"
+        android:background="@drawable/rectangle_medicina"
+        android:paddingTop="10dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/week_changer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:paddingHorizontal="10dp"
+            tools:ignore="MissingConstraints">
+
+            <ImageButton
+                app:layout_constraintStart_toStartOf="@id/week_changer_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_arrow_left_24"
+                android:background="@color/medicina"
+                />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_arrow_right_24"
+                android:background="@color/medicina"
+                app:layout_constraintEnd_toEndOf="@id/week_changer_layout"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="@id/week_changer_layout"
+                app:layout_constraintEnd_toEndOf="@id/week_changer_layout"
+                android:text="SETMANA"
+                android:gravity="center"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/tilt_neon"
+                android:textColor="@color/black"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/week_days_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintTop_toBottomOf="@id/week_changer_layout"
+            android:layout_marginTop="10dp"
+            >
+            <TextView
+                android:id="@+id/hora"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintWidth_percent="0.12"
+                android:text="HORA"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:fontFamily="@font/tilt_neon"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/dilluns"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintWidth_percent="0.125"
+                android:text="DILLUNS"
+                android:gravity="center"
+                android:textSize="25dp"
+                app:layout_constraintStart_toEndOf="@id/hora"
+                android:fontFamily="@font/tilt_neon"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/dimarts"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintWidth_percent="0.125"
+                android:text="DIMARTS"
+                android:gravity="center"
+                android:textSize="25dp"
+                app:layout_constraintStart_toEndOf="@id/dilluns"
+                android:fontFamily="@font/tilt_neon"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/dimecres"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintWidth_percent="0.125"
+                android:text="DIMECRES"
+                android:gravity="center"
+                android:textSize="25dp"
+                app:layout_constraintStart_toEndOf="@id/dimarts"
+                android:fontFamily="@font/tilt_neon"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/dijous"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintWidth_percent="0.125"
+                android:text="DIJOUS"
+                android:gravity="center"
+                android:textSize="25dp"
+                app:layout_constraintStart_toEndOf="@id/dimecres"
+                android:fontFamily="@font/tilt_neon"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/divendres"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintWidth_percent="0.125"
+                android:text="DIVENDRES"
+                android:gravity="center"
+                android:textSize="25dp"
+                app:layout_constraintStart_toEndOf="@id/dijous"
+                android:fontFamily="@font/tilt_neon"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/dissabte"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintWidth_percent="0.125"
+                android:text="DISSABTE"
+                android:gravity="center"
+                android:textSize="25dp"
+                app:layout_constraintStart_toEndOf="@id/divendres"
+                android:fontFamily="@font/tilt_neon"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/diumenge"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintWidth_percent="0.125"
+                android:text="DIUMENGE"
+                android:gravity="center"
+                android:textSize="25dp"
+                app:layout_constraintStart_toEndOf="@id/dissabte"
+                android:fontFamily="@font/tilt_neon"
+                android:textColor="@color/black"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/afegir_medicacio_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintWidth_percent="0.20"
+        android:text="AFEGIR MEDICACIÓ"
+        android:textColor="@color/black"
+        android:background="@drawable/rectangle_medicina"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/tilt_neon"
+        android:layout_marginBottom="20dp"
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

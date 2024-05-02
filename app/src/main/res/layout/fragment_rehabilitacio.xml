@@ -38,7 +38,14 @@
             app:layout_constraintStart_toStartOf="@id/container_cap"
             android:backgroundTint="#ABDAAA"
             />
-
+        <ImageButton
+            android:id="@+id/program_robot"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_category_24"
+            app:layout_constraintEnd_toEndOf="@id/container_cap"
+            android:backgroundTint="#ABDAAA"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -22,13 +22,13 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/boto_si"
+        android:id="@+id/boto_no"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.5"
         app:layout_constraintWidth_percent="0.3"
         android:layout_marginTop="60dp"
-        android:text="SI"
+        android:text="NO"
         android:textColor="@color/black"
         android:background="@drawable/rectangle_vermell"
         app:layout_constraintStart_toStartOf="@id/pregunta_text"
@@ -38,12 +38,12 @@
         android:fontFamily="@font/tilt_neon"
         />
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/boto_no"
+        android:id="@+id/boto_si"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.5"
         app:layout_constraintWidth_percent="0.3"
-        android:text="NO"
+        android:text="SI"
         android:layout_marginTop="60dp"
         android:textColor="@color/black"
         android:background="@drawable/rectangle_verd"

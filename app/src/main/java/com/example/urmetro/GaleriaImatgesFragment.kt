@@ -34,5 +34,4 @@ class GaleriaImatgesFragment : Fragment() {
             findNavController().navigate(R.id.action_galeriaImatgesFragment_to_afegirImatgeFragment)
         }
     }
-
 }

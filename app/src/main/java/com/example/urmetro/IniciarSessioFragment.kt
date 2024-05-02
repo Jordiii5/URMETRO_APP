@@ -94,7 +94,7 @@ class IniciarSessioFragment : Fragment() {
                 prefs.putBoolean("saveCredentials", saveCredentials)
                 prefs.apply()
 
-                viewModel.currentUsuari.value = Usuari(0,"", dni.uppercase(), "", 0, 0, "", hashedPassword)
+                viewModel.currentUsuari.value = Usuari(0,"", dni.uppercase(), 0, 0, hashedPassword)
                 viewModel.repository = ApiRepository(dni, hashedPassword)
 
 
@@ -172,7 +172,7 @@ class IniciarSessioFragment : Fragment() {
 
         if (hashedPassword == savedHashedPassword) {
             // Contraseña válida, proceder con el inicio de sesión
-            viewModel.currentUsuari.value = Usuari(0, "", username, "", 0, 0, "", password )
+            viewModel.currentUsuari.value = Usuari(0, "", username, 0, 0, password )
             viewModel.repository = ApiRepository(username, hashedPassword)
 
             CoroutineScope(Dispatchers.IO).launch {

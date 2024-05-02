@@ -30,8 +30,8 @@ interface ApiInterface {
     suspend fun login(@Body usuario: Usuari): Response<ResponseBody>
     @POST("user/register")
     suspend fun register(@Body usuario: Usuari): Response<ResponseBody>
-    @PUT("/update/dades/{usuari_dni}/{usuari_nom}/{usuari_adreça}/{usuari_telefon}/{usuari_contacte_emergencia}")
-    suspend fun updateUsuari(@Path("usuari_dni") usuari_dni: String, @Path("usuari_nom") usuari_nom: String, @Path("usuari_adreça") usuari_adreça: String, @Path("usuari_telefon") usuari_telefon: String, @Path("usuari_contacte_emergencia") usuari_contacte_emergencia: String): Response<ResponseBody>
+    @PUT("usuaris/update/dades/{usuari_dni}/{usuari_nom}/{usuari_telefon}/{usuari_contacte_emergencia}")
+    suspend fun updateUsuari(@Path("usuari_dni") usuari_dni: String, @Path("usuari_nom") usuari_nom: String, @Path("usuari_telefon") usuari_telefon: String, @Path("usuari_contacte_emergencia") usuari_contacte_emergencia: String): Response<ResponseBody>
     @DELETE()
     suspend fun deleteUser(@Url url: String): Response<Boolean>
 

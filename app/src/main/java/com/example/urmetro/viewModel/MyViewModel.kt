@@ -69,12 +69,12 @@ class MyViewModel : ViewModel(){
         }
     }
 
-    fun updateDades (usuari_nom:String, usuari_adreça:String, usuari_telefon: String, usuari_contacte_emergencia: String){
+    fun updateDades (usuari_nom:String, usuari_telefon: String, usuari_contacte_emergencia: String){
         val usuari_dni = currentUsuari.value?.usuari_dni
         if (usuari_dni != null){
             viewModelScope.launch(Dispatchers.IO){
                 try {
-                    repository.updateUser(usuari_dni, usuari_nom, usuari_adreça, usuari_telefon, usuari_contacte_emergencia)
+                    repository.updateUser(usuari_dni, usuari_nom, usuari_telefon, usuari_contacte_emergencia)
                 } catch (e: Exception){
                     Log.d("TRY CATCH FUNCION", "${e.message}")
                 }

@@ -32,7 +32,6 @@ class PerfilFragment : Fragment() {
             usuario?.let {
                 binding.nomField.text = it.usuari_nom.uppercase()
                 binding.dniField.text = it.usuari_dni.uppercase()
-                binding.adressField.text = it.usuari_adreça
                 binding.telefonField.text = it.usuari_telefon.toString()
                 binding.telefonEmergeniciaField.text = it.usuari_contacte_emergencia.toString()
             }

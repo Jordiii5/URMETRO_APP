@@ -1,6 +1,5 @@
 package com.example.urmetro.view
 
-import android.net.Uri
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.example.urmetro.model.Publicacions
@@ -8,6 +7,7 @@ import com.example.urmetro.model.Usuari
 import com.example.urmetro.viewModel.ApiInterface
 import com.google.gson.Gson
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 
@@ -24,6 +24,40 @@ class ApiRepository(dni: String, password: String) {
     suspend fun getImage(url: String)= apiInterface.getPhoto(url)
     suspend fun deletePost(url: String) = apiInterface.deletePost(url)
 
+    suspend fun postPublicacio(image: MultipartBody.Part,publicacio_peu_foto:RequestBody, usuari_id:RequestBody) = apiInterface.addPost(image, publicacio_peu_foto, usuari_id)
+
+
+    /*
+    @RequiresApi(Build.VERSION_CODES.O)
+    suspend fun postPublicacio(
+        postPhoto: String,
+        description: String,
+        owner: Int,
+        file: MultipartBody.Part
+    ) {
+        val request = Publicacions(0, postPhoto, description,0,owner)
+        val file= File(file?.path )
+        val gson = Gson()
+        return try {
+            val response = apiInterface.addPost(
+                image = MultipartBody.Part
+                    .createFormData(
+                        "image",
+                        file.name,
+                        file.asRequestBody()
+                    ),
+                description,
+                owner
+            )
+        }
+        catch (e: Exception){
+            println(e.message)
+        }
+    }
+
+     */
+
+    /*
     @RequiresApi(Build.VERSION_CODES.O)
     suspend fun postPublicacio(
         postPhoto: String,
@@ -50,5 +84,6 @@ class ApiRepository(dni: String, password: String) {
             println(e.message)
         }
     }
+     */
 
 }

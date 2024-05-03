@@ -1,10 +1,8 @@
 package com.example.urmetro.viewModel
 
 import android.net.Uri
-import android.os.Build
 import android.os.Looper
 import android.util.Log
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -15,6 +13,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import java.io.File
+import android.content.ContentValues.TAG
+import android.os.Build
+import androidx.annotation.RequiresApi
+import okhttp3.RequestBody.Companion.toRequestBody
 
 val PREFS_NAME = "MyPrefsFile"
 class MyViewModel : ViewModel(){
@@ -28,6 +34,9 @@ class MyViewModel : ViewModel(){
     var image : Uri? = null
     var fotohecha = true
     var camara = false
+    val dni = MutableLiveData<String>()
+    val password = MutableLiveData<String>()
+
 
     fun fetchData(){
         success.postValue(false)
@@ -96,10 +105,39 @@ class MyViewModel : ViewModel(){
         }
     }
 
+    /*
     @RequiresApi(Build.VERSION_CODES.O)
-    fun postResena(post: Publicacions, image: Uri?){
+    fun postPublicacio(post: Publicacions, image: File){
         CoroutineScope(Dispatchers.IO).launch {
             repository.postPublicacio("",post.publicacio_peu_foto,post.usuari_id,image)
         }
     }
+
+     */
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun postPublicacio(post: Publicacions, image: File){
+        CoroutineScope(Dispatchers.IO).launch {
+            val imagePart = MultipartBody.Part.createFormData("jpeg", image.name, image.asRequestBody("image/*".toMediaType()))
+            val resposta = dni.value?.let {
+                password.value?.let { it1 ->
+                    ApiRepository(it, it1).postPublicacio(
+                        imagePart,
+                        post.publicacio_id.toRequestBody("text/plain".toMediaType()),
+                        post.usuari_id.toRequestBody("text/plain".toMediaType()),
+                    )
+                }
+            }
+            withContext(Dispatchers.Main){
+                if (resposta != null) {
+                    if(resposta.isSuccessful){
+                        Log.d(TAG, "Juego añadido")
+                    }else{
+                        Log.d(TAG, "Ha habido un error")
+                    }
+                }
+            }
+        }
+    }
+
 }

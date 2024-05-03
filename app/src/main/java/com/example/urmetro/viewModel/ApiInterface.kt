@@ -9,6 +9,7 @@ import com.burgstaller.okhttp.digest.Credentials
 import com.example.urmetro.model.Publicacions
 import com.example.urmetro.model.Usuari
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -46,15 +47,28 @@ interface ApiInterface {
     @POST("posts")
     suspend fun addPost(
         @Part image: MultipartBody.Part,
+        @Part ("publicacio_peu_foto") publicacio_peu_foto: RequestBody,
+        @Part ("usuari_id") usuari_id: RequestBody
+    ): Response<Boolean>
+
+
+/*
+    @Multipart
+    @POST("posts")
+    suspend fun addPost(
+        @Part image: MultipartBody.Part,
         @Part ("publicacio_peu_foto") description: String,
         @Part ("usuari_id") owner: Int
     ): Response<Publicacions>
+
+ */
+
 
     @DELETE()
     suspend fun deletePost(@Url url: String): Response<Boolean>
 
     companion object {
-        val BASE_URL = "http://172.23.6.130:8080/"
+        val BASE_URL = "http://172.23.6.131:8080/"
 
         fun create(dni: String, password: String): ApiInterface {
             val digestAuthenticator = DigestAuthenticator(Credentials(dni, password))

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.urmetro.databinding.FragmentRehabilitacioBinding
 
@@ -44,8 +45,15 @@ class RehabilitacioFragment : Fragment() {
             dialog.hide()
         }
         botonSi.setOnClickListener {
-            if(codi.text.toString() == codiSeg) findNavController().navigate(R.id.action_rehabilitacioFragment_to_programarRobotFragment)
-            dialog.hide()
+            if(codi.text.toString() == codiSeg) {
+                findNavController().navigate(R.id.action_rehabilitacioFragment_to_programarRobotFragment)
+                dialog.hide()
+            } else if (codi.text.toString() == "")  {
+                Toast.makeText(context, "Introdueix el codi de seguretat", Toast.LENGTH_SHORT).show()
+            }
+            else   Toast.makeText(context, "Codi de seguretat incorrecte", Toast.LENGTH_SHORT).show()
+
+
         }
         dialog.show()
     }

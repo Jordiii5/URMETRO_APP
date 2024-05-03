@@ -26,13 +26,12 @@ class ApiRepository(dni: String, password: String) {
 
     @RequiresApi(Build.VERSION_CODES.O)
     suspend fun postPublicacio(
-
         postPhoto: String,
         description: String,
         owner: Int,
         file: Uri?
     ) {
-        val request = Publicacions(0, postPhoto, description,0,0)
+        val request = Publicacions(0, postPhoto, description,0,owner)
         val file= File(file?.path )
         val gson = Gson()
         return try {

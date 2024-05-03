@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_height="400dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/socialitzacio_boto"
+
+    android:paddingVertical="20dp">
+    <TextView
+        android:id="@+id/pregunta_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ESTÀS SEGUR QUE VOLS TRUCAR A"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/tilt_neon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/boto_si"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintWidth_percent="0.3"
+        android:layout_marginTop="60dp"
+        android:text="SI"
+        android:textColor="@color/black"
+        android:background="@drawable/rectangle_vermell"
+        app:layout_constraintStart_toStartOf="@id/pregunta_text"
+        app:layout_constraintTop_toBottomOf="@id/pregunta_text"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/tilt_neon"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/boto_no"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintWidth_percent="0.3"
+        android:text="NO"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/black"
+        android:background="@drawable/rectangle_verd"
+        app:layout_constraintEnd_toEndOf="@id/pregunta_text"
+        app:layout_constraintTop_toBottomOf="@id/pregunta_text"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/tilt_neon"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

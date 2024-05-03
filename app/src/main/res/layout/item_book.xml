@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:focusable="true"
+
+    android:layout_marginBottom="20sp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        >
+
+    <TextView
+        android:id="@+id/titol"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/item"
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/tilt_neon"
+        android:textSize="40dp"
+        />
+
+    <TextView
+        android:id="@+id/nom"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/titol"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/tilt_neon"
+        android:textSize="25dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/titol"
+        app:layout_constraintBottom_toBottomOf="@id/titol"
+        android:text="-"
+        android:textSize="20dp"
+        android:fontFamily="@font/tilt_neon"
+        app:layout_constraintStart_toEndOf="@id/titol"
+        app:layout_constraintEnd_toStartOf="@id/nom"
+        />
+
+    <TextView
+        android:id="@+id/cognom"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/titol"
+        app:layout_constraintBottom_toBottomOf="@id/titol"
+        app:layout_constraintStart_toEndOf="@id/nom"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/tilt_neon"
+        android:textSize="25dp"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

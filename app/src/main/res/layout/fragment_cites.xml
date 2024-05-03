@@ -38,7 +38,36 @@
             app:layout_constraintStart_toStartOf="@id/container_cap"
             android:backgroundTint="#ABDAAA"
             />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <CalendarView
+        android:id="@+id/calendari_cites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        android:background="@color/fons"
+        android:layout_marginTop="30dp"
+        android:weekSeparatorLineColor="@color/sanitat"
+        android:layout_marginHorizontal="30dp"
+        >
+    </CalendarView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/afegir_cita_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintWidth_percent="0.20"
+        android:text="AFEGIR CITA"
+        android:textColor="@color/black"
+        android:background="@drawable/rectangle_medicina"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/tilt_neon"
+        android:layout_marginBottom="20dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,11 +1,14 @@
 package com.example.urmetro.viewModel
 
 import android.net.Uri
+import android.os.Build
 import android.os.Looper
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.urmetro.model.Publicacions
 import com.example.urmetro.model.Usuari
 import com.example.urmetro.view.ApiRepository
 import kotlinx.coroutines.CoroutineScope
@@ -66,6 +69,19 @@ class MyViewModel : ViewModel(){
         }
     }
 
+    fun updateDades (usuari_nom:String, usuari_telefon: String, usuari_contacte_emergencia: String){
+        val usuari_dni = currentUsuari.value?.usuari_dni
+        if (usuari_dni != null){
+            viewModelScope.launch(Dispatchers.IO){
+                try {
+                    repository.updateUser(usuari_dni, usuari_nom, usuari_telefon, usuari_contacte_emergencia)
+                } catch (e: Exception){
+                    Log.d("TRY CATCH FUNCION", "${e.message}")
+                }
+            }
+        }
+    }
+
     suspend fun deleteUser(): Boolean {
         val dniToDelete = currentUsuari.value?.usuari_dni ?: return false
 
@@ -77,6 +93,13 @@ class MyViewModel : ViewModel(){
                 Log.e("Error", "Excepción en la corrutina: ${e.message}", e)
                 false
             }
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun postResena(post: Publicacions, image: Uri?){
+        CoroutineScope(Dispatchers.IO).launch {
+            repository.postPublicacio("",post.publicacio_peu_foto,post.usuari_id,image)
         }
     }
 }

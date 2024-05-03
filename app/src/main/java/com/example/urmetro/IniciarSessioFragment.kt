@@ -53,8 +53,8 @@ class IniciarSessioFragment : Fragment() {
         binding.rememberCheckbox.isChecked = saveCredentials
 
         if (viewModel.loginClean){
-            binding.dniField.text.clear()
-            binding.contrasenyaField.text.clear()
+            binding.dniField.text?.clear()
+            binding.contrasenyaField.text?.clear()
             binding.rememberCheckbox.isChecked = false
             viewModel.loginClean = false
         }
@@ -80,21 +80,21 @@ class IniciarSessioFragment : Fragment() {
             val saveCredentials = binding.rememberCheckbox.isChecked
             val hashedPassword = hashPassword(contra)
             if (dni.isNotEmpty() && contra.isNotEmpty()) {
-//                val prefs: SharedPreferences.Editor = requireActivity().getSharedPreferences(
-//                    PREFS_NAME, Context.MODE_PRIVATE).edit()
-//
-//                if (saveCredentials) {
-//                    prefs.putString("usuari_dni", dni)
-//                    prefs.putString("usuari_contra", contra)
-//                }
-//                else {
-//                    prefs.remove("usuari_dni")
-//                    prefs.remove("usuari_contra")
-//                }
-//                prefs.putBoolean("saveCredentials", saveCredentials)
-//                prefs.apply()
+                val prefs: SharedPreferences.Editor = requireActivity().getSharedPreferences(
+                    PREFS_NAME, Context.MODE_PRIVATE).edit()
 
-                viewModel.currentUsuari.value = Usuari(0,"", dni.uppercase(), "", 0, 0, "", hashedPassword)
+                if (saveCredentials) {
+                    prefs.putString("usuari_dni", dni)
+                    prefs.putString("usuari_contra", contra)
+                }
+                else {
+                    prefs.remove("usuari_dni")
+                    prefs.remove("usuari_contra")
+                }
+                prefs.putBoolean("saveCredentials", saveCredentials)
+                prefs.apply()
+
+                viewModel.currentUsuari.value = Usuari(0,"", dni.uppercase(), 0, 0, hashedPassword)
                 viewModel.repository = ApiRepository(dni, hashedPassword)
 
 
@@ -172,7 +172,7 @@ class IniciarSessioFragment : Fragment() {
 
         if (hashedPassword == savedHashedPassword) {
             // Contraseña válida, proceder con el inicio de sesión
-            viewModel.currentUsuari.value = Usuari(0, "", username, "", 0, 0, "", password )
+            viewModel.currentUsuari.value = Usuari(0, "", username, 0, 0, password )
             viewModel.repository = ApiRepository(username, hashedPassword)
 
             CoroutineScope(Dispatchers.IO).launch {

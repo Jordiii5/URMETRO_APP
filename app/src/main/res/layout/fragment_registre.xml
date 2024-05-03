@@ -17,7 +17,7 @@ android:background="@color/fons">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/container_registro"
         android:src="@drawable/logo"
-         />
+        />
 
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +31,8 @@ android:background="@color/fons">
     app:layout_constraintEnd_toEndOf="parent"
     android:layout_marginEnd="20dp"
     android:background="@drawable/rectangle_registre"
-    tools:ignore="RtlHardcoded" />
+    tools:ignore="RtlHardcoded"
+    />
 
 <TextView
     android:id="@+id/titolRegistre"
@@ -40,85 +41,185 @@ android:background="@color/fons">
     app:layout_constraintStart_toStartOf="@id/container_registro"
     app:layout_constraintEnd_toEndOf="@id/container_registro"
     app:layout_constraintTop_toTopOf="@id/container_registro"
-    app:layout_constraintBottom_toTopOf="@id/name_field"
+    app:layout_constraintBottom_toTopOf="@id/name_field_layout"
     android:text="REGISTRE D'USUARI"
     android:textColor="@color/black"
     android:textStyle="bold"
     android:textSize="20dp"
     android:textAlignment="center"
+    android:fontFamily="@font/tilt_neon"
     />
 
-    <EditText
-        android:id="@+id/name_field"
-        android:layout_width="wrap_content"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_field_layout"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.34"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.140"
+        app:layout_constraintHeight_percent="0.165"
+        android:paddingBottom="10dp"
+        android:paddingTop="7dp"
         app:layout_constraintStart_toStartOf="@id/container_registro"
         app:layout_constraintEnd_toEndOf="@id/container_registro"
         app:layout_constraintTop_toBottomOf="@id/titolRegistre"
-        app:layout_constraintBottom_toTopOf="@id/dni_field"
-        android:hint="NOM"
-        android:textColorHint="@color/hintColor"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:ems="20"
-        android:paddingLeft="30dp"
-        android:background="@drawable/register_rectangle"
+        app:layout_constraintBottom_toTopOf="@id/dni_field_layout"
+        >
 
-        />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:background="@drawable/rectangle_registre"
+            android:textColorHint="@color/white"
+            />
 
-<EditText
-    android:id="@+id/dni_field"
-    android:layout_width="wrap_content"
-    android:layout_height="0dp"
-    app:layout_constraintHeight_percent="0.140"
-    app:layout_constraintStart_toStartOf="@id/container_registro"
-    app:layout_constraintEnd_toEndOf="@id/container_registro"
-    app:layout_constraintTop_toBottomOf="@id/name_field"
-    app:layout_constraintBottom_toTopOf="@id/contrasenya_field"
-    android:hint="DNI"
-    android:textColorHint="@color/hintColor"
-    android:textColor="@color/black"
-    android:textStyle="bold"
-    android:ems="20"
-    android:maxLength="9"
-    android:paddingLeft="30dp"
-    android:background="@drawable/register_rectangle"
-    />
+    </com.google.android.material.textfield.TextInputLayout>
 
-<EditText
-    android:id="@+id/contrasenya_field"
-    android:layout_width="wrap_content"
-    android:layout_height="0dp"
-    app:layout_constraintHeight_percent="0.140"
-    app:layout_constraintStart_toStartOf="@id/container_registro"
-    app:layout_constraintEnd_toEndOf="@id/container_registro"
-    app:layout_constraintTop_toBottomOf="@id/dni_field"
-    app:layout_constraintBottom_toTopOf="@id/confirmar_contrasenya_field"
-    android:hint="CONTRASENYA"
-    android:textColorHint="@color/hintColor"
-    android:textColor="@color/black"
-    android:textStyle="bold"
-    android:ems="20"
-    android:paddingLeft="30dp"
-    android:background="@drawable/register_rectangle"
-    />
-    <EditText
-        android:id="@+id/confirmar_contrasenya_field"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.140"
+        app:layout_constraintStart_toStartOf="@+id/name_field_layout"
+        app:layout_constraintTop_toTopOf="@id/name_field_layout"
+        android:text="NOM"
+        android:background="@color/fons"
+        android:textColor="@color/black"
+        android:layout_marginStart="25dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:fontFamily="@font/tilt_neon"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dni_field_layout"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.34"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.165"
+        android:paddingBottom="10dp"
+        android:paddingTop="7dp"
         app:layout_constraintStart_toStartOf="@id/container_registro"
         app:layout_constraintEnd_toEndOf="@id/container_registro"
-        app:layout_constraintTop_toBottomOf="@id/contrasenya_field"
-        app:layout_constraintBottom_toTopOf="@id/crear_compte"
-        android:textColorHint="@color/hintColor"
-        android:hint="CONFIRMA CONTRASENYA"
+        app:layout_constraintTop_toBottomOf="@id/name_field_layout"
+        app:layout_constraintBottom_toTopOf="@id/contrasenya_field_layout"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dni_field"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:background="@drawable/rectangle_registre"
+            android:textColorHint="@color/white"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@+id/dni_field_layout"
+        app:layout_constraintTop_toTopOf="@id/dni_field_layout"
+        android:text="DNI "
+        android:background="@color/fons"
         android:textColor="@color/black"
+        android:layout_marginStart="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
-        android:ems="20"
-        android:paddingLeft="30dp"
-        android:background="@drawable/register_rectangle"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:fontFamily="@font/tilt_neon"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/contrasenya_field_layout"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.34"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.165"
+        android:paddingBottom="10dp"
+        android:paddingTop="7dp"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintStart_toStartOf="@id/container_registro"
+        app:layout_constraintEnd_toEndOf="@id/container_registro"
+        app:layout_constraintTop_toBottomOf="@id/dni_field_layout"
+        app:layout_constraintBottom_toTopOf="@id/confirmar_contrasenya_field_layout"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/contrasenya_field"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:background="@drawable/rectangle_registre"
+            android:inputType="textPassword"
+            android:textColorHint="@color/white"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@+id/contrasenya_field_layout"
+        app:layout_constraintTop_toTopOf="@id/contrasenya_field_layout"
+        android:text="CONTRASENYA"
+        android:background="@color/fons"
+        android:textColor="@color/black"
+        android:layout_marginStart="25dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:fontFamily="@font/tilt_neon"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmar_contrasenya_field_layout"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.34"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.165"
+        android:paddingBottom="10dp"
+        android:paddingTop="7dp"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintStart_toStartOf="@id/container_registro"
+        app:layout_constraintEnd_toEndOf="@id/container_registro"
+        app:layout_constraintTop_toBottomOf="@id/contrasenya_field_layout"
+        app:layout_constraintBottom_toTopOf="@id/crear_compte"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmar_contrasenya_field"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:background="@drawable/rectangle_registre"
+            android:inputType="textPassword"
+            android:textColorHint="@color/white"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@+id/confirmar_contrasenya_field_layout"
+        app:layout_constraintTop_toTopOf="@id/confirmar_contrasenya_field_layout"
+        android:text="CONFIRMAR CONTRASENYA"
+        android:background="@color/fons"
+        android:textColor="@color/black"
+        android:layout_marginStart="25dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:fontFamily="@font/tilt_neon"
         />
 
 
@@ -131,11 +232,12 @@ android:background="@color/fons">
     android:text="Crear Compte"
     android:textColor="@color/black"
     android:background="@drawable/register_rectangle"
-    app:layout_constraintTop_toBottomOf="@id/confirmar_contrasenya_field"
+    app:layout_constraintTop_toBottomOf="@id/confirmar_contrasenya_field_layout"
     app:layout_constraintBottom_toTopOf="@+id/registrat_view"
     app:layout_constraintEnd_toEndOf="@id/container_registro"
     app:layout_constraintStart_toStartOf="@id/container_registro"
     android:textAlignment="center"
+    android:fontFamily="@font/tilt_neon"
     />
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -146,10 +248,8 @@ android:background="@color/fons">
     app:layout_constraintStart_toStartOf="@id/container_registro"
     app:layout_constraintEnd_toEndOf="@id/container_registro"
     app:layout_constraintBottom_toBottomOf="@id/container_registro"
-
-
-
     >
+
     <TextView
         android:id="@+id/ja_tens_compte"
         android:layout_width="wrap_content"
@@ -158,6 +258,7 @@ android:background="@color/fons">
         app:layout_constraintEnd_toStartOf="@id/inicia_la_sessió"
         android:text="Ja tens compte?"
         android:textColor="@color/black"
+        android:fontFamily="@font/tilt_neon"
 
         />
     <TextView
@@ -170,6 +271,7 @@ android:background="@color/fons">
         android:textStyle="bold"
         android:layout_marginStart="5dp"
         android:paddingBottom="6dp"
+        android:fontFamily="@font/tilt_neon"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

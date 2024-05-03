@@ -27,7 +27,7 @@ class MenuFragment : Fragment() {
 
         viewModel.currentUsuari.observe(viewLifecycleOwner) { usuario ->
             usuario?.let {
-                binding.nomUsuari.text = "HOLA ${it.usuari_nom?.uppercase()}"
+                binding.nomusuari.text = "HOLA ${it.usuari_nom?.uppercase()}"
             }
         }
 
@@ -42,13 +42,10 @@ class MenuFragment : Fragment() {
         }
         binding.movilitat.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_modulMovilitatFragment)
-
-            binding.perfil.setOnClickListener {
-                findNavController().navigate(R.id.action_menuFragment_to_perfilFragment)
-            }
         }
-        binding.perfil.setOnClickListener {
+        binding.usuari.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_perfilFragment)
         }
     }
+
 }

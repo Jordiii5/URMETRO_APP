@@ -31,11 +31,10 @@ class ModulEntretenimentFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var jocs=binding.jocs
-        var cançons=binding.cansons
-        var audiollibres=binding.audiollibres
-        var diaris=binding.periodics
-        var pos=1
+        val jocs=binding.jocs
+        val audiollibres=binding.audiollibres
+        val diaris=binding.periodics
+        var pos=0
 
         binding.audiollibres.setOnClickListener {
             findNavController().navigate(R.id.action_modulEntretenimentFragment_to_audiollibresFragment)
@@ -43,9 +42,7 @@ class ModulEntretenimentFragment : Fragment() {
         binding.periodics.setOnClickListener {
             findNavController().navigate(R.id.action_modulEntretenimentFragment_to_periodicsFragment)
         }
-       binding.cansons.setOnClickListener {
-            findNavController().navigate(R.id.action_modulEntretenimentFragment_to_canconsFragment)
-        }
+
          binding.jocs.setOnClickListener {
             findNavController().navigate(R.id.action_modulEntretenimentFragment_to_jocsFragment)
         }
@@ -63,28 +60,19 @@ class ModulEntretenimentFragment : Fragment() {
                 1->{
                     jocs.visibility=View.VISIBLE
                     audiollibres.visibility=View.INVISIBLE
-                    cançons.visibility=View.INVISIBLE
                     diaris.visibility=View.INVISIBLE
                 }
                 2->{
                     jocs.visibility=View.INVISIBLE
                     audiollibres.visibility=View.VISIBLE
-                    cançons.visibility=View.INVISIBLE
                     diaris.visibility=View.INVISIBLE
                 }
                 3->{
                     jocs.visibility=View.INVISIBLE
                     audiollibres.visibility=View.INVISIBLE
-                    cançons.visibility=View.VISIBLE
-                    diaris.visibility=View.INVISIBLE
-                }
-                4->{
-                    jocs.visibility=View.INVISIBLE
-                    audiollibres.visibility=View.INVISIBLE
-                    cançons.visibility=View.INVISIBLE
                     diaris.visibility=View.VISIBLE
                 }
-                5->{
+                4->{
                     pos=0
                 }
             }
@@ -96,29 +84,20 @@ class ModulEntretenimentFragment : Fragment() {
                 1->{
                     jocs.visibility=View.VISIBLE
                     audiollibres.visibility=View.INVISIBLE
-                    cançons.visibility=View.INVISIBLE
                     diaris.visibility=View.INVISIBLE
                 }
                 2->{
                     jocs.visibility=View.INVISIBLE
                     audiollibres.visibility=View.VISIBLE
-                    cançons.visibility=View.INVISIBLE
                     diaris.visibility=View.INVISIBLE
                 }
                 3->{
                     jocs.visibility=View.INVISIBLE
                     audiollibres.visibility=View.INVISIBLE
-                    cançons.visibility=View.VISIBLE
-                    diaris.visibility=View.INVISIBLE
-                }
-                4->{
-                    jocs.visibility=View.INVISIBLE
-                    audiollibres.visibility=View.INVISIBLE
-                    cançons.visibility=View.INVISIBLE
                     diaris.visibility=View.VISIBLE
                 }
-                0->{
-                    pos=4
+                4->{
+                    pos=3
                 }
             }
 

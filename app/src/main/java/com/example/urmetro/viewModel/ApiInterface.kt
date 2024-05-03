@@ -6,7 +6,9 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.burgstaller.okhttp.digest.Credentials
+import com.example.urmetro.model.Publicacions
 import com.example.urmetro.model.Usuari
+import okhttp3.MultipartBody
 import okhttp3.ResponseBody
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -14,7 +16,9 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Url
 import retrofit2.Response
+import retrofit2.http.Multipart
 import retrofit2.http.PUT
+import retrofit2.http.Part
 import retrofit2.http.Path
 
 interface ApiInterface {
@@ -26,10 +30,28 @@ interface ApiInterface {
     suspend fun login(@Body usuario: Usuari): Response<ResponseBody>
     @POST("user/register")
     suspend fun register(@Body usuario: Usuari): Response<ResponseBody>
-    @PUT
-    suspend fun updateUser(@Url url: String): Response<Boolean>
-    @DELETE("usuaris/{usuari_dni}")
-    suspend fun deleteUser(@Path("usuari_dni") dni: String): Response<Boolean>
+    @PUT("usuaris/update/dades/{usuari_dni}/{usuari_nom}/{usuari_telefon}/{usuari_contacte_emergencia}")
+    suspend fun updateUsuari(@Path("usuari_dni") usuari_dni: String, @Path("usuari_nom") usuari_nom: String, @Path("usuari_telefon") usuari_telefon: String, @Path("usuari_contacte_emergencia") usuari_contacte_emergencia: String): Response<ResponseBody>
+    @DELETE()
+    suspend fun deleteUser(@Url url: String): Response<Boolean>
+
+    @GET()
+    suspend fun getPosts(@Url url: String): Response<List<Publicacions>>
+    @GET()
+    suspend fun getPostByName(@Url url: String): Response<List<Publicacions>>
+    @GET
+    suspend fun getPhoto(@Url url: String): Response<ResponseBody>
+
+    @Multipart
+    @POST("posts")
+    suspend fun addPost(
+        @Part image: MultipartBody.Part,
+        @Part ("publicacio_peu_foto") description: String,
+        @Part ("usuari_id") owner: Int
+    ): Response<Publicacions>
+
+    @DELETE()
+    suspend fun deletePost(@Url url: String): Response<Boolean>
 
     companion object {
         val BASE_URL = "http://172.23.6.130:8080/"

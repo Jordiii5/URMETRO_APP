@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.viewModelScope
@@ -27,6 +28,15 @@ class PerfilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.currentUsuari.observe(viewLifecycleOwner) { usuario ->
+            usuario?.let {
+                binding.nomField.text = it.usuari_nom.uppercase()
+                binding.dniField.text = it.usuari_dni.uppercase()
+                binding.telefonField.text = it.usuari_telefon.toString()
+                binding.telefonEmergeniciaField.text = it.usuari_contacte_emergencia.toString()
+            }
+        }
+
         binding.arrowBack.setOnClickListener {
             findNavController().navigate(R.id.action_perfilFragment_to_menuFragment)
         }
@@ -43,6 +53,9 @@ class PerfilFragment : Fragment() {
                 Toast.makeText(requireContext(), "Compta eliminada correctament", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_perfilFragment_to_iniciarSessioFragment)
             }
+        }
+        binding.tancarSessi.setOnClickListener {
+            findNavController().navigate(R.id.action_perfilFragment_to_iniciarSessioFragment)
         }
     }
 

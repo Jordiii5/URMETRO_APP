@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CalendarView
 import androidx.navigation.fragment.findNavController
 import com.example.urmetro.databinding.FragmentCitesBinding
 
@@ -24,6 +25,10 @@ class CitesFragment : Fragment() {
         binding.arrowBack.setOnClickListener {
             findNavController().navigate(R.id.action_citesFragment_to_modulSanitatFragment)
         }
+        binding.afegirCitaButton.setOnClickListener {
+            findNavController().navigate(R.id.action_citesFragment_to_afegirCitaFragment)
+        }
     }
+
 
 }

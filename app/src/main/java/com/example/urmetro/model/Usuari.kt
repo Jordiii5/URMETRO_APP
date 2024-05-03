@@ -4,9 +4,7 @@ data class Usuari (
     val usuari_id: Int,
     val usuari_nom: String,
     val usuari_dni: String,
-    val usuari_adreça: String,
     val usuari_telefon: Int,
     val usuari_contacte_emergencia: Int,
-    val usuari_imatge: String,
     val usuari_contra: String
 )

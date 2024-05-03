@@ -53,9 +53,6 @@
             android:id="@+id/action_modulEntretenimentFragment_to_jocsFragment"
             app:destination="@id/jocsFragment" />
         <action
-            android:id="@+id/action_modulEntretenimentFragment_to_canconsFragment"
-            app:destination="@id/canconsFragment" />
-        <action
             android:id="@+id/action_modulEntretenimentFragment_to_periodicsFragment"
             app:destination="@id/periodicsFragment" />
         <action
@@ -94,6 +91,9 @@
         <action
             android:id="@+id/action_modulMovilitatFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_modulMovilitatFragment_to_ajudaMobilitatFragment"
+            app:destination="@id/ajudaMobilitatFragment" />
     </fragment>
     <fragment
         android:id="@+id/modulSocialitzacioFragment"
@@ -109,6 +109,9 @@
         <action
             android:id="@+id/action_modulSocialitzacioFragment_to_llistaContactesFragment"
             app:destination="@id/llistaContactesFragment" />
+        <action
+            android:id="@+id/action_modulSocialitzacioFragment_to_ajudaSocialitzacioFragment"
+            app:destination="@id/ajudaSocialitzacioFragment" />
     </fragment>
     <fragment
         android:id="@+id/registreFragment"
@@ -130,6 +133,12 @@
         <action
             android:id="@+id/action_galeriaImatgesFragment_to_modulSocialitzacioFragment"
             app:destination="@id/modulSocialitzacioFragment" />
+        <action
+            android:id="@+id/action_galeriaImatgesFragment_to_afegirImatgeFragment"
+            app:destination="@id/afegirImatgeFragment" />
+        <action
+            android:id="@+id/action_galeriaImatgesFragment_to_lesMevesImatgesFragment"
+            app:destination="@id/lesMevesImatgesFragment" />
     </fragment>
     <fragment
         android:id="@+id/llistaContactesFragment"
@@ -184,6 +193,9 @@
         <action
             android:id="@+id/action_citesFragment_to_modulSanitatFragment"
             app:destination="@id/modulSanitatFragment" />
+        <action
+            android:id="@+id/action_citesFragment_to_afegirCitaFragment"
+            app:destination="@id/afegirCitaFragment" />
     </fragment>
     <fragment
         android:id="@+id/medicacionsFragment"
@@ -210,15 +222,6 @@
             app:destination="@id/jocMenuTrivialFragment" />
     </fragment>
     <fragment
-        android:id="@+id/canconsFragment"
-        android:name="com.example.urmetro.CanconsFragment"
-        android:label="fragment_cancons"
-        tools:layout="@layout/fragment_cancons" >
-        <action
-            android:id="@+id/action_canconsFragment_to_modulEntretenimentFragment"
-            app:destination="@id/modulEntretenimentFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/periodicsFragment"
         android:name="com.example.urmetro.PeriodicsFragment"
         android:label="fragment_periodics"
@@ -235,6 +238,9 @@
         <action
             android:id="@+id/action_audiollibresFragment_to_modulEntretenimentFragment"
             app:destination="@id/modulEntretenimentFragment" />
+        <action
+            android:id="@+id/action_audiollibresFragment_to_audiollibreDetallFragment"
+            app:destination="@id/audiollibreDetallFragment" />
     </fragment>
     <fragment
         android:id="@+id/ajudaEntretenimentFragment"
@@ -349,6 +355,66 @@
         <action
             android:id="@+id/action_resultTrivialGameFragment_to_tematicaTrivialFragment2"
             app:destination="@id/tematicaTrivialFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/afegirCitaFragment"
+        android:name="com.example.urmetro.AfegirCitaFragment"
+        android:label="fragment_afegir_cita"
+        tools:layout="@layout/fragment_afegir_cita" >
+        <action
+            android:id="@+id/action_afegirCitaFragment_to_citesFragment"
+            app:destination="@id/citesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ajudaSocialitzacioFragment"
+        android:name="com.example.urmetro.AjudaSocialitzacioFragment"
+        android:label="fragment_ajuda_socialitzacio"
+        tools:layout="@layout/fragment_ajuda_socialitzacio" >
+        <action
+            android:id="@+id/action_ajudaSocialitzacioFragment_to_modulSocialitzacioFragment"
+            app:destination="@id/modulSocialitzacioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ajudaMobilitatFragment"
+        android:name="com.example.urmetro.AjudaMobilitatFragment"
+        android:label="fragment_ajuda_mobilitat"
+        tools:layout="@layout/fragment_ajuda_mobilitat" >
+        <action
+            android:id="@+id/action_ajudaMobilitatFragment_to_modulMovilitatFragment"
+            app:destination="@id/modulMovilitatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/audiollibreDetallFragment"
+        android:name="com.example.urmetro.audiollibres.utils.AudiollibreDetallFragment"
+        android:label="fragment_audiollibre_detall"
+        tools:layout="@layout/fragment_audiollibre_detall" >
+        <action
+            android:id="@+id/action_audiollibreDetallFragment_to_audiollibresFragment"
+            app:destination="@id/audiollibresFragment" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/afegirImatgeFragment"
+        android:name="com.example.urmetro.AfegirImatgeFragment"
+        android:label="fragment_afegir_imatge"
+        tools:layout="@layout/fragment_afegir_imatge" >
+        <action
+            android:id="@+id/action_afegirImatgeFragment_to_galeriaImatgesFragment"
+            app:destination="@id/galeriaImatgesFragment" />
+        <action
+            android:id="@+id/action_afegirImatgeFragment_to_lesMevesImatgesFragment"
+            app:destination="@id/lesMevesImatgesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lesMevesImatgesFragment"
+        android:name="com.example.urmetro.LesMevesImatgesFragment"
+        android:label="fragment_les_meves_imatges"
+        tools:layout="@layout/fragment_les_meves_imatges" >
+        <action
+            android:id="@+id/action_lesMevesImatgesFragment_to_galeriaImatgesFragment"
+            app:destination="@id/galeriaImatgesFragment" />
     </fragment>
     <fragment
         android:id="@+id/camaraFragment"

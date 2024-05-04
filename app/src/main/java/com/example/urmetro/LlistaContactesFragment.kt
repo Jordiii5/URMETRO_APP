@@ -41,7 +41,7 @@ class LlistaContactesFragment : Fragment() {
     private fun showChangePasswordDialog() {
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.dialog_contactes)
-        val telefon = "635352517"
+        val telefon = "664792335"
 
         val botonNo = dialog.findViewById<Button>(R.id.boto_no)
         val botonSi = dialog.findViewById<Button>(R.id.boto_si)

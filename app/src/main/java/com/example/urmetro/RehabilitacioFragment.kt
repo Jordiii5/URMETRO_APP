@@ -36,7 +36,7 @@ class RehabilitacioFragment : Fragment() {
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.dialog_programacio)
 
-        val codiSeg="1234"
+        val codiSeg="qwe"
 
         val botonNo = dialog.findViewById<Button>(R.id.boto_no)
         val botonSi = dialog.findViewById<Button>(R.id.boto_si)

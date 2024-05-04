@@ -1,14 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/fons"
     tools:context=".ProgramarRobotFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_cap"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="1.05"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="40dp"
+        android:background="@drawable/rectangle_sanitat"
+        >
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/arrowBack"
+            app:layout_constraintEnd_toEndOf="@id/container_cap"
+            app:layout_constraintTop_toTopOf="@id/container_cap"
+            app:layout_constraintBottom_toBottomOf="@id/container_cap"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="PERSONALITZACIÓ" />
+        <ImageButton
+            android:id="@+id/arrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_arrow_circle_left_24"
+            app:layout_constraintStart_toStartOf="@id/container_cap"
+            android:backgroundTint="#ABDAAA"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/programes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_cap"
+        app:layout_constraintBottom_toTopOf="@id/blocs"
+        >
+        <TextView
+            android:id="@+id/prog1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintWidth_percent="0.3"
+            android:background="@drawable/programes_personalitzats"
+            android:text="PROGRAMA 1"
+            android:fontFamily="@font/tilt_neon"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/prog2"
+            />
+        <TextView
+            android:id="@+id/prog2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintWidth_percent="0.3"
+            android:background="@drawable/programes_personalitzats"
+            android:text="PROGRAMA 2"
+            android:fontFamily="@font/tilt_neon"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/prog1"
+            app:layout_constraintEnd_toStartOf="@id/prog3"
+            />
+        <TextView
+            android:id="@+id/prog3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintWidth_percent="0.3"
+            android:background="@drawable/programes_personalitzats"
+            android:text="PROGRAMA 3"
+            android:fontFamily="@font/tilt_neon"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/prog2"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/blocs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/programes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/programes_personalitzats"
+        android:backgroundTint="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/inici"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.1"
+            app:layout_constraintHeight_percent="0.25"
+            android:text="INICI"
+            android:fontFamily="@font/tilt_neon"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/moviment"
+            android:backgroundTint="@color/socialitzacio"
+            android:background="@drawable/programes_fons_inici"
+            />
+        <TextView
+            android:id="@+id/moviment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.1"
+            app:layout_constraintHeight_percent="0.25"
+            android:text="MOVIMENT"
+            android:fontFamily="@font/tilt_neon"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inici"
+            app:layout_constraintBottom_toTopOf="@id/pausa"
+            android:background="@color/movilitat"
+            />
+        <TextView
+            android:id="@+id/pausa"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.1"
+            app:layout_constraintHeight_percent="0.25"
+            android:text="PAUSA"
+            android:fontFamily="@font/tilt_neon"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/moviment"
+            app:layout_constraintBottom_toTopOf="@id/acabar"
+            android:background="@color/sanitat"
+            />
+        <TextView
+            android:id="@+id/acabar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.1"
+            app:layout_constraintHeight_percent="0.25"
+            android:text="FINAL"
+            android:fontFamily="@font/tilt_neon"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pausa"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:backgroundTint="@color/entreteniment"
+            android:background="@drawable/programes_fons_final"
+            />
+
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintWidth_percent="0.45"
+           android:background="@drawable/programes_vista"
+            android:backgroundTint="#E1D9D9"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="100dp"
+                >
+                <TextView
+                    android:id="@+id/a"
+                    android:layout_width="match_parent"
+                    android:layout_height="310dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@color/movilitat"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="310dp"
+                    app:layout_constraintTop_toBottomOf="@id/a"
+                    android:background="@color/entreteniment"
+                    android:layout_marginTop="30dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

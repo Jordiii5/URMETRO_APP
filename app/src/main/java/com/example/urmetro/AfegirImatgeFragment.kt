@@ -32,8 +32,7 @@ class AfegirImatgeFragment : Fragment() {
     lateinit var binding: FragmentAfegirImatgeBinding
     private var currentPhotoPath: String? = null
     var uri = ""
-    private val viewModel: MyViewModel by activityViewModels()
-    private lateinit var outputDirectory: File
+    val viewModel: MyViewModel by activityViewModels()
     private lateinit var myPreferences: SharedPreferences
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -70,16 +69,18 @@ class AfegirImatgeFragment : Fragment() {
         }
 
         binding.afegirPublicacioButton.setOnClickListener{
-            if (binding.peuImatgeField.text.toString() != "" && viewModel.fotohecha){
+            val text = binding.peuImatgeField.text.toString()
+            val uri = viewModel.image
+            if (text.isNotBlank() && uri != null){
                 val publicacio= Publicacions(
                     0,
                     "",
-                    binding.peuImatgeField.text.toString(),
+                    text,
                     0,
                     0,
                 )
-                viewModel.postResena(publicacio, viewModel.image)
-                findNavController().navigate(R.id.action_afegirImatgeFragment_to_lesMevesImatgesFragment)
+                viewModel.postPublicacio(publicacio, uri)
+                //findNavController().navigate(R.id.action_afegirImatgeFragment_to_lesMevesImatgesFragment)
             }
             else{
                 Toast.makeText(context, "Error al afegir publicació", Toast.LENGTH_LONG).show()
@@ -92,6 +93,7 @@ class AfegirImatgeFragment : Fragment() {
         }
     }
 
+    /*
     private val galleryLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             val data: Intent? = result.data
@@ -105,6 +107,23 @@ class AfegirImatgeFragment : Fragment() {
             }
         }
     }
+
+     */
+
+    private val galleryLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val data: Intent? = result.data
+
+            data?.data?.let { uri ->
+                val file = getFileFromUri(requireContext(), uri)
+                if (file != null) {
+                    binding.publicacioImatge.setImageURI(uri)
+                    viewModel.image = uri
+                }
+            }
+        }
+    }
+
 
     private fun openGalleryForImages() {
         val intent = Intent(Intent.ACTION_PICK)
@@ -124,6 +143,8 @@ class AfegirImatgeFragment : Fragment() {
         }
         return if (file.exists()) file else null
     }
+
+
 
 
 }

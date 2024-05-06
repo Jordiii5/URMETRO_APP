@@ -46,8 +46,8 @@ interface ApiInterface {
     @POST("posts")
     suspend fun addPost(
         @Part image: MultipartBody.Part,
-        @Part ("publicacio_peu_foto") description: String,
-        @Part ("usuari_id") owner: Int
+        @Part ("publicacio_peu_foto") publicacioPeuFoto: String,
+        @Part ("usuari_id") usuariId: Int
     ): Response<Publicacions>
 
     @DELETE()

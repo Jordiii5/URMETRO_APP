@@ -39,6 +39,7 @@ class ProgramarRobotFragment : Fragment() {
 
         binding.moviment.isEnabled=false
         binding.pausa.isEnabled=false
+        binding.acabar.isEnabled=false
 
         bloc1.visibility=View.GONE
         bloc1.visibility=View.GONE
@@ -71,6 +72,7 @@ class ProgramarRobotFragment : Fragment() {
         binding.inici.setOnClickListener {
             binding.moviment.isEnabled=true
             binding.pausa.isEnabled=true
+            binding.acabar.isEnabled=true
             binding.textInici.visibility=View.GONE
             bloc1.visibility=View.VISIBLE
             bloc2.visibility=View.VISIBLE

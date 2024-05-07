@@ -1,5 +1,6 @@
 package com.example.urmetro.view
 
+import android.net.Uri
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.example.urmetro.model.Publicacions
@@ -23,8 +24,6 @@ class ApiRepository(dni: String, password: String) {
     suspend fun getPostByName(url: String)= apiInterface.getPostByName(url)
     suspend fun getImage(url: String)= apiInterface.getPhoto(url)
     suspend fun deletePost(url: String) = apiInterface.deletePost(url)
-
-    suspend fun postPublicacio(image: MultipartBody.Part,publicacio_peu_foto:RequestBody, usuari_id:RequestBody) = apiInterface.addPost(image, publicacio_peu_foto, usuari_id)
 
 
     /*
@@ -57,7 +56,6 @@ class ApiRepository(dni: String, password: String) {
 
      */
 
-    /*
     @RequiresApi(Build.VERSION_CODES.O)
     suspend fun postPublicacio(
         postPhoto: String,
@@ -84,6 +82,4 @@ class ApiRepository(dni: String, password: String) {
             println(e.message)
         }
     }
-     */
-
 }

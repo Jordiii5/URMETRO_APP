@@ -406,6 +406,9 @@
         <action
             android:id="@+id/action_afegirImatgeFragment_to_lesMevesImatgesFragment"
             app:destination="@id/lesMevesImatgesFragment" />
+        <action
+            android:id="@+id/action_afegirImatgeFragment_to_camaraFragment"
+            app:destination="@id/camaraFragment" />
     </fragment>
     <fragment
         android:id="@+id/lesMevesImatgesFragment"
@@ -424,5 +427,8 @@
         <action
             android:id="@+id/action_camaraFragment_to_editarPerfilFragment"
             app:destination="@id/editarPerfilFragment" />
+        <action
+            android:id="@+id/action_camaraFragment_to_afegirImatgeFragment"
+            app:destination="@id/afegirImatgeFragment" />
     </fragment>
 </navigation>

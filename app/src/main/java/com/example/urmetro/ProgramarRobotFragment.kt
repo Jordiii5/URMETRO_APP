@@ -71,11 +71,18 @@ class ProgramarRobotFragment : Fragment() {
         binding.inici.setOnClickListener {
             binding.moviment.isEnabled=true
             binding.pausa.isEnabled=true
+            binding.textInici.visibility=View.GONE
             bloc1.visibility=View.VISIBLE
             bloc2.visibility=View.VISIBLE
             bloc3.visibility=View.VISIBLE
             bloc4.visibility=View.VISIBLE
             binding.codiDins1.visibility=View.VISIBLE
+        }
+        bloc1.setOnClickListener {
+            binding.codiDins2.visibility=View.VISIBLE
+        }
+        binding.esborrar1.setOnClickListener {
+            binding.codiDins2.visibility=View.GONE
         }
     }
 

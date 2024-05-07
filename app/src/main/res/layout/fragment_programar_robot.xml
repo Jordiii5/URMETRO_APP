@@ -186,7 +186,18 @@
             />
 
 
-
+<TextView
+    android:id="@+id/text_inici"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    app:layout_constraintWidth_percent="0.45"
+    app:layout_constraintStart_toEndOf="@id/pausa"
+    android:text="Inicia el programa"
+    android:fontFamily="@font/tilt_neon"
+    android:textSize="50dp"
+    android:gravity="center"
+    android:textStyle="bold"
+    />
 
 <ScrollView
     android:layout_width="0dp"
@@ -679,14 +690,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:visibility="gone">
+                    android:visibility="gone"
+                    >
 
                     <ImageView
                         android:id="@+id/a_codi1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/bloc_inici"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginBottom="-30dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -709,6 +721,103 @@
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/codi_dins2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/codi_dins1"
+                    android:visibility="gone"
+                    android:layout_marginTop="-23dp">
+
+                    <ImageView
+                        android:id="@+id/a_codi2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/bloc_moviment"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/guia13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tilt_neon"
+                        android:text="Velocitat"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/velocitat5"
+                        app:layout_constraintEnd_toStartOf="@id/guia14"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintTop_toTopOf="@id/a_codi2" />
+
+                    <Spinner
+                        android:id="@+id/velocitat5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/programes_personalitzats"
+                        android:backgroundTint="@color/white"
+                        android:entries="@array/Velocitat"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:paddingStart="10dp"
+                        app:layout_constraintBottom_toBottomOf="@id/flecha_horizontal2"
+                        app:layout_constraintStart_toStartOf="@id/guia13"
+                        app:layout_constraintEnd_toEndOf="@id/guia13"
+                        app:layout_constraintTop_toBottomOf="@id/guia13"
+                        app:layout_constraintWidth_percent="0.1" />
+
+                    <TextView
+                        android:id="@+id/guia14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tilt_neon"
+                        android:text="Repeticions"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/repeticions5"
+                        app:layout_constraintEnd_toStartOf="@id/flecha_horizontal2"
+                        app:layout_constraintTop_toTopOf="@id/a_codi2" />
+
+                    <Spinner
+                        android:id="@+id/repeticions5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/programes_personalitzats"
+                        android:backgroundTint="@color/white"
+                        android:entries="@array/Repeticions"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:layout_constraintBottom_toBottomOf="@id/flecha_horizontal2"
+                        app:layout_constraintStart_toStartOf="@id/guia14"
+                        app:layout_constraintEnd_toEndOf="@id/guia14"
+                        app:layout_constraintTop_toBottomOf="@id/guia14"
+                        android:paddingStart="10dp"
+                        app:layout_constraintWidth_percent="0.1" />
+
+                    <ImageView
+                        android:id="@+id/flecha_horizontal2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="20dp"
+                        android:src="@drawable/flechas_horizontales"
+                        app:layout_constraintBottom_toBottomOf="@id/a_codi2"
+                        app:layout_constraintEnd_toEndOf="@id/a_codi2"
+                        app:layout_constraintHeight_percent="0.5"
+                        app:layout_constraintTop_toTopOf="@id/a_codi2"
+                        app:layout_constraintWidth_percent="0.2" />
+                    <ImageView
+                        android:id="@+id/esborrar1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_cancel_24"
+                        app:layout_constraintTop_toTopOf="@id/a_codi2"
+                        app:layout_constraintStart_toEndOf="@id/a_codi2"
+                        app:layout_constraintEnd_toEndOf="@id/a_codi2"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

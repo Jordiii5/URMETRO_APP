@@ -78,11 +78,57 @@ class ProgramarRobotFragment : Fragment() {
             bloc4.visibility=View.VISIBLE
             binding.codiDins1.visibility=View.VISIBLE
         }
+        binding.acabar.setOnClickListener {
+            binding.codiDins5.visibility=View.VISIBLE
+        }
         bloc1.setOnClickListener {
-            binding.codiDins2.visibility=View.VISIBLE
+            if(binding.codiDins2.visibility==View.VISIBLE){
+                binding.codiDins4.visibility=View.VISIBLE
+                binding.flechaHorizontal3.setImageResource(R.drawable.flechas_horizontales)
+            }else{
+                binding.codiDins2.visibility=View.VISIBLE
+                binding.flechaHorizontal2.setImageResource(R.drawable.flechas_horizontales)
+            }
+        }
+        bloc2.setOnClickListener {
+            if(binding.codiDins2.visibility==View.VISIBLE){
+                binding.codiDins4.visibility=View.VISIBLE
+                binding.flechaHorizontal3.setImageResource(R.drawable.flechas_verticales)
+            }else{
+                binding.codiDins2.visibility=View.VISIBLE
+                binding.flechaHorizontal2.setImageResource(R.drawable.flechas_verticales)
+            }
+        }
+        bloc3.setOnClickListener {
+            if(binding.codiDins2.visibility==View.VISIBLE){
+                binding.codiDins4.visibility=View.VISIBLE
+                binding.flechaHorizontal3.setImageResource(R.drawable.flecha_curva)
+            }else{
+                binding.codiDins2.visibility=View.VISIBLE
+                binding.flechaHorizontal2.setImageResource(R.drawable.flecha_curva)
+            }
+        }
+        bloc4.setOnClickListener {
+            if(binding.codiDins2.visibility==View.VISIBLE){
+                binding.codiDins4.visibility=View.VISIBLE
+                binding.flechaHorizontal3.setImageResource(R.drawable.vibracion)
+            }else{
+                binding.codiDins2.visibility=View.VISIBLE
+                binding.flechaHorizontal2.setImageResource(R.drawable.vibracion)
+            }
+
+        }
+        bloc5.setOnClickListener {
+                binding.codiDins3.visibility=View.VISIBLE
         }
         binding.esborrar1.setOnClickListener {
             binding.codiDins2.visibility=View.GONE
+        }
+        binding.esborrar2.setOnClickListener {
+            binding.codiDins3.visibility=View.GONE
+        }
+        binding.esborrar3.setOnClickListener {
+            binding.codiDins4.visibility=View.GONE
         }
     }
 

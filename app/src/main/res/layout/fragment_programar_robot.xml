@@ -799,7 +799,6 @@
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginBottom="20dp"
-                        android:src="@drawable/flechas_horizontales"
                         app:layout_constraintBottom_toBottomOf="@id/a_codi2"
                         app:layout_constraintEnd_toEndOf="@id/a_codi2"
                         app:layout_constraintHeight_percent="0.5"
@@ -817,7 +816,211 @@
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/codi_dins3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/codi_dins2"
+                    android:layout_marginTop="-23dp"
+                    android:visibility="gone">
 
+                    <ImageView
+                        android:id="@+id/a_codi3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/bloc_pausa"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/guia15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tilt_neon"
+                        android:text="Esperar"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintBottom_toBottomOf="@id/a_codi3"
+                        app:layout_constraintEnd_toStartOf="@id/segons2"
+                        app:layout_constraintTop_toTopOf="@id/a_codi3" />
+
+                    <Spinner
+                        android:id="@+id/segons2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/programes_personalitzats"
+                        android:backgroundTint="@color/white"
+                        android:paddingStart="10dp"
+                        android:entries="@array/Velocitat"
+                        app:layout_constraintBottom_toBottomOf="@id/a_codi3"
+                        app:layout_goneMarginEnd="10dp"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintEnd_toStartOf="@id/guia16"
+                        app:layout_constraintTop_toTopOf="@id/a_codi3"
+                        app:layout_constraintWidth_percent="0.1" />
+
+                    <TextView
+                        android:id="@+id/guia16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tilt_neon"
+                        android:text="segons"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginEnd="20dp"
+                        app:layout_constraintBottom_toBottomOf="@id/a_codi3"
+                        app:layout_constraintEnd_toEndOf="@id/a_codi3"
+                        app:layout_constraintTop_toTopOf="@id/a_codi3" />
+                    <ImageView
+                        android:id="@+id/esborrar2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_cancel_24"
+                        app:layout_constraintTop_toTopOf="@id/a_codi3"
+                        app:layout_constraintStart_toEndOf="@id/a_codi3"
+                        app:layout_constraintEnd_toEndOf="@id/a_codi3"
+                        />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/codi_dins4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/codi_dins3"
+                    android:visibility="gone"
+                    android:layout_marginTop="-23dp">
+
+                    <ImageView
+                        android:id="@+id/a_codi4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/bloc_moviment"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/guia17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tilt_neon"
+                        android:text="Velocitat"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/velocitat6"
+                        app:layout_constraintEnd_toStartOf="@id/guia18"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintTop_toTopOf="@id/a_codi4" />
+
+                    <Spinner
+                        android:id="@+id/velocitat6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/programes_personalitzats"
+                        android:backgroundTint="@color/white"
+                        android:entries="@array/Velocitat"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:paddingStart="10dp"
+                        app:layout_constraintBottom_toBottomOf="@id/flecha_horizontal3"
+                        app:layout_constraintStart_toStartOf="@id/guia17"
+                        app:layout_constraintEnd_toEndOf="@id/guia17"
+                        app:layout_constraintTop_toBottomOf="@id/guia17"
+                        app:layout_constraintWidth_percent="0.1" />
+
+                    <TextView
+                        android:id="@+id/guia18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tilt_neon"
+                        android:text="Repeticions"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/repeticions6"
+                        app:layout_constraintEnd_toStartOf="@id/flecha_horizontal3"
+                        app:layout_constraintTop_toTopOf="@id/a_codi4" />
+
+                    <Spinner
+                        android:id="@+id/repeticions6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/programes_personalitzats"
+                        android:backgroundTint="@color/white"
+                        android:entries="@array/Repeticions"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:layout_constraintBottom_toBottomOf="@id/flecha_horizontal3"
+                        app:layout_constraintStart_toStartOf="@id/guia18"
+                        app:layout_constraintEnd_toEndOf="@id/guia18"
+                        app:layout_constraintTop_toBottomOf="@id/guia18"
+                        android:paddingStart="10dp"
+                        app:layout_constraintWidth_percent="0.1" />
+
+                    <ImageView
+                        android:id="@+id/flecha_horizontal3"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintBottom_toBottomOf="@id/a_codi4"
+                        app:layout_constraintEnd_toEndOf="@id/a_codi4"
+                        app:layout_constraintHeight_percent="0.5"
+                        app:layout_constraintTop_toTopOf="@id/a_codi4"
+                        app:layout_constraintWidth_percent="0.2" />
+                    <ImageView
+                        android:id="@+id/esborrar3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_cancel_24"
+                        app:layout_constraintTop_toTopOf="@id/a_codi4"
+                        app:layout_constraintStart_toEndOf="@id/a_codi4"
+                        app:layout_constraintEnd_toEndOf="@id/a_codi4"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/codi_dins5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/codi_dins4"
+                    android:layout_marginTop="-23dp"
+                    android:visibility="gone"
+                    >
+
+                    <ImageView
+                        android:id="@+id/a_codi5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/bloc_final"
+                        android:layout_marginBottom="-30dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/guia19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tilt_neon"
+                        android:text="Final"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginEnd="20dp"
+                        app:layout_constraintBottom_toBottomOf="@id/a_codi5"
+                        app:layout_constraintStart_toStartOf="@id/a_codi5"
+                        app:layout_constraintEnd_toEndOf="@id/a_codi5"
+                        app:layout_constraintTop_toTopOf="@id/a_codi5" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -60,6 +60,8 @@ class AdapterPublicacio (
             binding.descripcioFoto.text = post.publicacio_peu_foto
             binding.nomUsuari.text = viewModel.currentUsuari.value?.usuari_nom ?: ""
 
+
+
             Glide.with(context)
                 .load(post.publicacio_foto)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -74,7 +76,6 @@ class AdapterPublicacio (
                             .load(foto)
                             .diskCacheStrategy(DiskCacheStrategy.ALL)
                             .centerCrop()
-                            .circleCrop()
                             .into(binding.imatge)
                     }
                 }

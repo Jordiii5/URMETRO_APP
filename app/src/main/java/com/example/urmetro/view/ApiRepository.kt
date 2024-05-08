@@ -60,10 +60,11 @@ class ApiRepository(dni: String, password: String) {
     suspend fun postPublicacio(
         postPhoto: String,
         description: String,
+        likes: Int,
         owner: Int,
         file: Uri?
     ) {
-        val request = Publicacions(0, postPhoto, description,0,owner)
+        val request = Publicacions(0, postPhoto, description,likes,owner)
         val file= File(file?.path )
         val gson = Gson()
         return try {
@@ -75,6 +76,7 @@ class ApiRepository(dni: String, password: String) {
                         file.asRequestBody()
                     ),
                 description,
+                likes,
                 owner
             )
         }

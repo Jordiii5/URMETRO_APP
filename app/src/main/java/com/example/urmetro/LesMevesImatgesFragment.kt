@@ -38,6 +38,7 @@ class LesMevesImatgesFragment : Fragment() {
         binding.arrowBack.setOnClickListener {
             findNavController().navigate(R.id.action_lesMevesImatgesFragment_to_galeriaImatgesFragment)
         }
+
     }
 
     fun setUpRecyclerView(listOfPost: MutableList<Publicacions>) {

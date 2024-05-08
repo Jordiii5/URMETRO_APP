@@ -48,6 +48,7 @@ interface ApiInterface {
     suspend fun addPost(
         @Part image: MultipartBody.Part,
         @Part ("publicacio_peu_foto") description: String,
+        @Part ("publicacio_likes") likes: Int,
         @Part ("usuari_id") owner: Int
     ): Response<Publicacions>
 

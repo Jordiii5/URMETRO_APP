@@ -70,7 +70,8 @@ class AfegirImatgeFragment : Fragment() {
 
                 viewModel.postPublicacio(publicacio, viewModel.image)
                 Log.d("pie de foto", binding.peuImatgeField.text.toString())
-                //findNavController().navigate(R.id.action_afegirImatgeFragment_to_lesMevesImatgesFragment)
+                Toast.makeText(context, "Publiació feta correctament", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_afegirImatgeFragment_to_lesMevesImatgesFragment)
             } else {
                 Toast.makeText(context, "Error al afegir publicació", Toast.LENGTH_LONG).show()
             }

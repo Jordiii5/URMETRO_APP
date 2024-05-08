@@ -123,7 +123,7 @@ class MyViewModel : ViewModel(){
     @RequiresApi(Build.VERSION_CODES.O)
     fun postPublicacio(post: Publicacions, image: Uri?){
         CoroutineScope(Dispatchers.IO).launch {
-            repository.postPublicacio("",post.publicacio_peu_foto,post.usuari_id,image)
+            repository.postPublicacio("",post.publicacio_peu_foto,post.publicacio_likes,post.usuari_id,image)
         }
     }
 }

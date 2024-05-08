@@ -9,6 +9,7 @@ import com.burgstaller.okhttp.digest.Credentials
 import com.example.urmetro.model.Publicacions
 import com.example.urmetro.model.Usuari
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -30,8 +31,8 @@ interface ApiInterface {
     suspend fun login(@Body usuario: Usuari): Response<ResponseBody>
     @POST("user/register")
     suspend fun register(@Body usuario: Usuari): Response<ResponseBody>
-    @PUT("/update/dades/{usuari_dni}/{usuari_nom}/{usuari_adreça}/{usuari_telefon}/{usuari_contacte_emergencia}")
-    suspend fun updateUsuari(@Path("usuari_dni") usuari_dni: String, @Path("usuari_nom") usuari_nom: String, @Path("usuari_adreça") usuari_adreça: String, @Path("usuari_telefon") usuari_telefon: String, @Path("usuari_contacte_emergencia") usuari_contacte_emergencia: String): Response<ResponseBody>
+    @PUT("usuaris/update/dades/{usuari_dni}/{usuari_nom}/{usuari_telefon}/{usuari_contacte_emergencia}")
+    suspend fun updateUsuari(@Path("usuari_dni") usuari_dni: String, @Path("usuari_nom") usuari_nom: String, @Path("usuari_telefon") usuari_telefon: String, @Path("usuari_contacte_emergencia") usuari_contacte_emergencia: String): Response<ResponseBody>
     @DELETE()
     suspend fun deleteUser(@Url url: String): Response<Boolean>
 
@@ -47,6 +48,7 @@ interface ApiInterface {
     suspend fun addPost(
         @Part image: MultipartBody.Part,
         @Part ("publicacio_peu_foto") description: String,
+        @Part ("publicacio_likes") likes: Int,
         @Part ("usuari_id") owner: Int
     ): Response<Publicacions>
 

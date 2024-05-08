@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -13,24 +14,32 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.urmetro.R
 import com.example.urmetro.databinding.ItemPublicacioBinding
 import com.example.urmetro.model.Publicacions
+import com.example.urmetro.model.Usuari
+import com.example.urmetro.viewModel.MyViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class AdapterPublicacio (private var publicacions: List<Publicacions>, private var listener: com.example.urmetro.viewModel.OnClickListener): RecyclerView.Adapter<AdapterPublicacio.ViewHolder>() {
+class AdapterPublicacio (
+    private var publicacions: List<Publicacions>,
+    private val viewModel: MyViewModel
+    //private var listener: com.example.urmetro.viewModel.OnClickListener
+): RecyclerView.Adapter<AdapterPublicacio.ViewHolder>() {
     private lateinit var context: Context
     lateinit var repository: ApiRepository
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val binding = ItemPublicacioBinding.bind(view)
+
+        /*
         fun setListener(post: Publicacions){
             binding.root.setOnClickListener{
                 listener.onClick(post)
             }
         }
+         */
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
         repository= ApiRepository("dni", "password")
@@ -47,13 +56,16 @@ class AdapterPublicacio (private var publicacions: List<Publicacions>, private v
         val post = publicacions[position]
 
         with(holder){
-            setListener(post)
+            //setListener(post)
             binding.descripcioFoto.text = post.publicacio_peu_foto
+            binding.nomUsuari.text = viewModel.currentUsuari.value?.usuari_nom ?: ""
+
+
+
             Glide.with(context)
                 .load(post.publicacio_foto)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
-                .circleCrop()
                 .into(binding.imatge)
             CoroutineScope(Dispatchers.IO).launch {
                 val response = repository.getImage("posts/imagenespost/${post.publicacio_foto}")
@@ -64,12 +76,10 @@ class AdapterPublicacio (private var publicacions: List<Publicacions>, private v
                             .load(foto)
                             .diskCacheStrategy(DiskCacheStrategy.ALL)
                             .centerCrop()
-                            .circleCrop()
                             .into(binding.imatge)
                     }
                 }
             }
         }
     }
-
 }

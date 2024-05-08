@@ -1,5 +1,11 @@
 package com.example.urmetro.model
 
+import android.os.Build
+import androidx.annotation.RequiresApi
+import kotlinx.serialization.Serializable
+
+@RequiresApi(Build.VERSION_CODES.O)
+@Serializable
 data class Publicacions(
     val publicacio_id: Int,
     val publicacio_foto: String,

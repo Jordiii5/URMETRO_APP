@@ -1,6 +1,5 @@
 package com.example.urmetro
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -8,8 +7,7 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Environment
-import android.provider.OpenableColumns
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +15,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -30,18 +30,18 @@ import java.io.File
 
 class AfegirImatgeFragment : Fragment() {
     lateinit var binding: FragmentAfegirImatgeBinding
-    private var currentPhotoPath: String? = null
-    var uri = ""
     private val viewModel: MyViewModel by activityViewModels()
-    private lateinit var outputDirectory: File
     private lateinit var myPreferences: SharedPreferences
+    var uri = ""
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentAfegirImatgeBinding.inflate(layoutInflater)
+    ): View {
+        binding = FragmentAfegirImatgeBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -54,76 +54,56 @@ class AfegirImatgeFragment : Fragment() {
 
         myPreferences = requireActivity().getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE)
 
-
-
-        if (uri != "") {
-            Glide.with(requireContext())
-                .load(uri.toUri())
-                .centerCrop()
-                .transform(RoundedCorners(50))
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(binding.publicacioImatge)
-        }
-
         binding.arrowBack.setOnClickListener {
             requireActivity().onBackPressed()
         }
 
-        binding.afegirPublicacioButton.setOnClickListener{
-            if (binding.peuImatgeField.text.toString() != "" && viewModel.fotohecha){
-                val publicacio= Publicacions(
+        binding.afegirPublicacioButton.setOnClickListener {
+            if (binding.peuImatgeField.text.toString().isNotBlank() && viewModel.fotohecha) {
+                val publicacio = Publicacions(
                     0,
-                    "",
+                    binding.publicacioImatge.toString(),
                     binding.peuImatgeField.text.toString(),
                     0,
-                    0,
+                    viewModel.currentUsuari.value!!.usuari_id
                 )
-                viewModel.postResena(publicacio, viewModel.image)
+
+                viewModel.postPublicacio(publicacio, viewModel.image)
+                Log.d("pie de foto", binding.peuImatgeField.text.toString())
+                Toast.makeText(context, "Publiació feta correctament", Toast.LENGTH_LONG).show()
                 findNavController().navigate(R.id.action_afegirImatgeFragment_to_lesMevesImatgesFragment)
-            }
-            else{
+            } else {
                 Toast.makeText(context, "Error al afegir publicació", Toast.LENGTH_LONG).show()
             }
-
         }
 
         binding.publicacioImatge.setOnClickListener {
-            openGalleryForImages()
+            findNavController().navigate(R.id.action_afegirImatgeFragment_to_camaraFragment)
+            viewModel.camara = true
         }
     }
 
-    private val galleryLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val data: Intent? = result.data
-
-            data?.data?.let { uri ->
-                val file = getFileFromUri(requireContext(), uri)
-                if (file != null) {
-                    binding.publicacioImatge.setImageURI(uri)
-                    currentPhotoPath = file.absolutePath
-                }
+    private fun loadCapturedImage() {
+        if (viewModel.camara) {
+            viewModel.camara = false
+            uri =
+                viewModel.image.toString()
+            if (uri.isNotEmpty()) {
+                Glide.with(requireContext())
+                    .load(uri.toUri())
+                    .centerCrop()
+                    .transform(RoundedCorners(50))
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(binding.publicacioImatge)
             }
         }
     }
 
-    private fun openGalleryForImages() {
-        val intent = Intent(Intent.ACTION_PICK)
-        intent.type = "image/*"
-        galleryLauncher.launch(intent)
+    override fun onResume() {
+        super.onResume()
+        loadCapturedImage()
+        val supportActionBar: ActionBar? = (requireActivity() as AppCompatActivity).supportActionBar
+        if (supportActionBar != null) supportActionBar.hide()
     }
-
-    private fun getFileFromUri(context: Context, uri: Uri): File? {
-        val inputStream = context.contentResolver.openInputStream(uri) ?: return null
-        val fileName = uri.lastPathSegment ?: "file"
-        val directory = context.getExternalFilesDir(null)
-        val file = File(directory, fileName)
-        inputStream.use { input ->
-            file.outputStream().use { output ->
-                input.copyTo(output)
-            }
-        }
-        return if (file.exists()) file else null
-    }
-
 
 }

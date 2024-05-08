@@ -5,12 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.urmetro.databinding.FragmentGaleriaImatgesBinding
+import com.example.urmetro.model.Publicacions
+import com.example.urmetro.view.AdapterPublicacio
+import com.example.urmetro.viewModel.MyViewModel
+import com.example.urmetro.viewModel.OnClickListener
 
 class GaleriaImatgesFragment : Fragment() {
     lateinit var binding: FragmentGaleriaImatgesBinding
+    private val viewModel: MyViewModel by activityViewModels()
+    private lateinit var userAdapterPost: AdapterPublicacio
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,6 +30,12 @@ class GaleriaImatgesFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel.fetchDataPublicacions()
+
+        viewModel.dataPub.observe(viewLifecycleOwner) { listOfPost ->
+            setUpRecyclerView(listOfPost as MutableList<Publicacions>)
+        }
 
         binding.recyclerView.layoutManager=GridLayoutManager(requireContext(), 3)
 
@@ -35,4 +50,12 @@ class GaleriaImatgesFragment : Fragment() {
         }
     }
 
+    fun setUpRecyclerView(listOfPost: MutableList<Publicacions>) {
+        userAdapterPost = AdapterPublicacio(listOfPost, viewModel)
+        binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
+        binding.recyclerView.apply {
+            setHasFixedSize(true)
+            adapter = userAdapterPost
+        }
+    }
 }

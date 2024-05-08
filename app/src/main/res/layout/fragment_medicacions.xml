@@ -313,58 +313,58 @@
             android:textColor="@color/black"
             >
             <TextView
-                android:id="@+id/aa"
+                android:id="@+id/na"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ab"
+                android:id="@+id/nb"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/aa"
+                app:layout_constraintStart_toEndOf="@+id/na"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ac"
+                android:id="@+id/nc"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ab"
+                app:layout_constraintStart_toEndOf="@+id/nb"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ad"
+                android:id="@+id/nd"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ac"
+                app:layout_constraintStart_toEndOf="@+id/nc"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/af"
+                android:id="@+id/nf"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ad"
+                app:layout_constraintStart_toEndOf="@+id/nd"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ag"
+                android:id="@+id/ng"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/af"
+                app:layout_constraintStart_toEndOf="@+id/nf"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ah"
+                android:id="@+id/nh"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ag"
+                app:layout_constraintStart_toEndOf="@+id/ng"
                 android:background="@drawable/rectangle_calendari"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -387,7 +387,7 @@
                 android:id="@+id/aa"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="ibuprofeno"
+                android:text=""
                 android:gravity="center"
                 android:textSize="20dp"
                 android:textColor="@color/black"
@@ -407,7 +407,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                android:text="ibuprofeno"
+                android:text=""
                 android:gravity="center"
                 android:textSize="20dp"
                 android:textColor="@color/black"
@@ -427,7 +427,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                android:text="ibuprofeno"
+                android:text=""
                 android:gravity="center"
                 android:textSize="20dp"
                 android:textColor="@color/black"
@@ -467,58 +467,58 @@
             android:textColor="@color/black"
             >
             <TextView
-                android:id="@+id/aa"
+                android:id="@+id/ba"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ab"
+                android:id="@+id/bb"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/aa"
+                app:layout_constraintStart_toEndOf="@+id/ba"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ac"
+                android:id="@+id/bc"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ab"
+                app:layout_constraintStart_toEndOf="@+id/bb"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ad"
+                android:id="@+id/bd"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ac"
+                app:layout_constraintStart_toEndOf="@+id/bc"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/af"
+                android:id="@+id/bf"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ad"
+                app:layout_constraintStart_toEndOf="@+id/bd"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ag"
+                android:id="@+id/bg"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/af"
+                app:layout_constraintStart_toEndOf="@+id/bf"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ah"
+                android:id="@+id/bh"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ag"
+                app:layout_constraintStart_toEndOf="@+id/bg"
                 android:background="@drawable/rectangle_calendari"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -537,58 +537,58 @@
             android:textColor="@color/black"
             >
             <TextView
-                android:id="@+id/aa"
+                android:id="@+id/ca"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
                 android:background="@drawable/rectangle_calendari"
-                />
+                tools:ignore="MissingConstraints" />
             <TextView
-                android:id="@+id/ab"
+                android:id="@+id/cb"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/aa"
+                app:layout_constraintStart_toEndOf="@+id/ca"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ac"
+                android:id="@+id/cc"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ab"
+                app:layout_constraintStart_toEndOf="@+id/cb"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ad"
+                android:id="@+id/cd"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ac"
+                app:layout_constraintStart_toEndOf="@+id/cc"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/af"
+                android:id="@+id/cf"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ad"
+                app:layout_constraintStart_toEndOf="@+id/cd"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ag"
+                android:id="@+id/cg"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/af"
+                app:layout_constraintStart_toEndOf="@+id/cf"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ah"
+                android:id="@+id/ch"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ag"
+                app:layout_constraintStart_toEndOf="@+id/cg"
                 android:background="@drawable/rectangle_calendari"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -607,58 +607,58 @@
             android:textColor="@color/black"
             >
             <TextView
-                android:id="@+id/aa"
+                android:id="@+id/da"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ab"
+                android:id="@+id/db"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/aa"
+                app:layout_constraintStart_toEndOf="@+id/da"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ac"
+                android:id="@+id/dc"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ab"
+                app:layout_constraintStart_toEndOf="@+id/db"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ad"
+                android:id="@+id/dd"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ac"
+                app:layout_constraintStart_toEndOf="@+id/dc"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/af"
+                android:id="@+id/df"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ad"
+                app:layout_constraintStart_toEndOf="@+id/dd"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ag"
+                android:id="@+id/dg"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/af"
+                app:layout_constraintStart_toEndOf="@+id/df"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ah"
+                android:id="@+id/dh"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ag"
+                app:layout_constraintStart_toEndOf="@+id/dg"
                 android:background="@drawable/rectangle_calendari"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -677,70 +677,70 @@
             android:textColor="@color/black"
             >
             <TextView
-                android:id="@+id/aa"
+                android:id="@+id/ea"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ab"
+                android:id="@+id/eb"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/aa"
-                android:text="vitamina D"
+                app:layout_constraintStart_toEndOf="@+id/ea"
+                android:text=""
                 android:gravity="center"
                 android:textSize="20dp"
                 android:textColor="@color/black"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ac"
+                android:id="@+id/ec"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ab"
+                app:layout_constraintStart_toEndOf="@+id/eb"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ad"
+                android:id="@+id/ed"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ac"
-                android:text="vitamina D"
+                app:layout_constraintStart_toEndOf="@+id/ec"
+                android:text=""
                 android:gravity="center"
                 android:textSize="20dp"
                 android:textColor="@color/black"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/af"
+                android:id="@+id/ef"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ad"
+                app:layout_constraintStart_toEndOf="@+id/ed"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ag"
+                android:id="@+id/eg"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/af"
-                android:text="vitamina D"
+                app:layout_constraintStart_toEndOf="@+id/ef"
+                android:text=""
                 android:gravity="center"
                 android:textSize="20dp"
                 android:textColor="@color/black"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ah"
+                android:id="@+id/eh"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ag"
+                app:layout_constraintStart_toEndOf="@+id/eg"
                 android:background="@drawable/rectangle_calendari"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -759,58 +759,58 @@
             android:textColor="@color/black"
             >
             <TextView
-                android:id="@+id/aa"
+                android:id="@+id/fa"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ab"
+                android:id="@+id/fb"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/aa"
+                app:layout_constraintStart_toEndOf="@+id/fa"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ac"
+                android:id="@+id/fc"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ab"
+                app:layout_constraintStart_toEndOf="@+id/fb"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ad"
+                android:id="@+id/fd"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ac"
+                app:layout_constraintStart_toEndOf="@+id/fc"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/af"
+                android:id="@+id/ff"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ad"
+                app:layout_constraintStart_toEndOf="@+id/fd"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ag"
+                android:id="@+id/fg"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/af"
+                app:layout_constraintStart_toEndOf="@+id/ff"
                 android:background="@drawable/rectangle_calendari"
                 />
             <TextView
-                android:id="@+id/ah"
+                android:id="@+id/fh"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintWidth_percent="0.14"
-                app:layout_constraintStart_toEndOf="@+id/ag"
+                app:layout_constraintStart_toEndOf="@+id/fg"
                 android:background="@drawable/rectangle_calendari"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,6 +36,14 @@ class AudiollibresFragment : Fragment() , MyOnClickListener {
         viewModel.data.observe(viewLifecycleOwner){
             // Configura el RecyclerView amb les dades rebudes
             setUpRecyclerView(it as MutableList<Book>?)
+            binding.carrega.visibility=View.GONE
+        }
+        viewModel.success.observe(viewLifecycleOwner) { success ->
+            if (success != null) {
+                binding.carrega.isVisible = !success
+                binding.recyclerView.isVisible = success
+
+            }
         }
 
         //Fem una navegació a al módul d'entreteniment al polsar en aquest botó

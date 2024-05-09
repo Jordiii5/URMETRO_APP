@@ -38,6 +38,10 @@ android {
     viewBinding{
         enable=true
     }
+
+    packagingOptions {
+        exclude("META-INF/DEPENDENCIES")
+    }
 }
 
 dependencies {
@@ -88,5 +92,6 @@ dependencies {
 
     implementation ("com.squareup.okhttp3:okhttp:4.9.0")
 
+    implementation ("org.apache.xmlrpc:xmlrpc-client:3.1.3")
 
 }

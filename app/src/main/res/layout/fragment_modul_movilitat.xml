@@ -53,10 +53,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/boto1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintWidth_percent="0.43"
-            app:layout_constraintHeight_percent="0.8"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
             android:paddingBottom="40dp"
             app:layout_constraintBottom_toBottomOf="@id/bottons_layout"
             app:layout_constraintTop_toTopOf="@id/bottons_layout"
@@ -154,10 +152,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/boto2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintWidth_percent="0.43"
-            app:layout_constraintHeight_percent="0.8"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
             android:paddingBottom="40dp"
             app:layout_constraintBottom_toBottomOf="@id/bottons_layout"
             app:layout_constraintTop_toTopOf="@id/bottons_layout"
@@ -300,18 +296,14 @@
             android:paddingEnd="15dp"
 
             >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/baseline_image_24"
-                tools:ignore="MissingConstraints" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FORMA"
+                android:text="HOME"
                 android:textSize="40dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/forma_layout"
                 app:layout_constraintEnd_toEndOf="@+id/forma_layout"
                 app:layout_constraintTop_toTopOf="@+id/forma_layout"
                 app:layout_constraintBottom_toBottomOf="@id/forma_layout"
@@ -330,18 +322,14 @@
             android:paddingEnd="15dp"
             android:layout_marginTop="15dp"
             >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/baseline_image_24"
-                tools:ignore="MissingConstraints" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FORMA"
+                android:text="DUCHA"
                 android:textSize="40dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/forma_layout2"
                 app:layout_constraintEnd_toEndOf="@+id/forma_layout2"
                 app:layout_constraintTop_toTopOf="@+id/forma_layout2"
                 app:layout_constraintBottom_toBottomOf="@id/forma_layout2"
@@ -361,19 +349,14 @@
             android:paddingEnd="15dp"
             android:layout_marginTop="15dp"
             >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/baseline_image_24"
-                tools:ignore="MissingConstraints" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FORMA"
+                android:text="APAGAR"
                 android:textSize="40dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/forma_layout3"
                 app:layout_constraintEnd_toEndOf="@+id/forma_layout3"
                 app:layout_constraintTop_toTopOf="@+id/forma_layout3"
                 app:layout_constraintBottom_toBottomOf="@id/forma_layout3"

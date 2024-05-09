@@ -78,7 +78,7 @@ dependencies {
     implementation ("io.github.rburgst:okhttp-digest:3.0.1")
 
     //calendar
-    implementation ("org.naishadhparmar.zcustomcalendar:zcustomcalendar:1.0.1")
+    //implementation ("org.naishadhparmar.zcustomcalendar:zcustomcalendar:1.0.1")
 
 
     val camerax_version = "1.2.2"

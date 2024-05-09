@@ -14,11 +14,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.urmetro.databinding.FragmentLlistaContactesBinding
+import com.example.urmetro.viewModel.MyViewModel
 
 class LlistaContactesFragment : Fragment() {
     lateinit var binding: FragmentLlistaContactesBinding
+    private val viewModel: MyViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,14 +37,22 @@ class LlistaContactesFragment : Fragment() {
             findNavController().navigate(R.id.action_llistaContactesFragment_to_modulSocialitzacioFragment)
         }
         binding.afegirContacteButton.setOnClickListener{
-            showChangePasswordDialog()
 
+            showAddContactDialog()
+        }
+
+        binding.sos.setOnClickListener{
+            callEmergencyContact(722788710)
+        }
+
+        binding.contacteEmergencia.setOnClickListener {
+            viewModel.currentUsuari.value?.let { it1 -> callEmergencyContact(it1.usuari_contacte_emergencia) }
         }
     }
-    private fun showChangePasswordDialog() {
+    private fun callEmergencyContact(numTelefon: Int) {
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.dialog_contactes)
-        val telefon = "664792335"
+        val telefon = numTelefon.toString()
 
         val botonNo = dialog.findViewById<Button>(R.id.boto_no)
         val botonSi = dialog.findViewById<Button>(R.id.boto_si)
@@ -50,6 +61,21 @@ class LlistaContactesFragment : Fragment() {
         }
         botonSi.setOnClickListener {
             call(telefon)
+            dialog.hide()
+        }
+        dialog.show()
+    }
+    private fun showAddContactDialog() {
+        val dialog = Dialog(requireContext())
+        dialog.setContentView(R.layout.dialog_afegir_contacte)
+
+
+        val afegir = dialog.findViewById<Button>(R.id.afegir_cita_button)
+        val nom = dialog.findViewById<EditText>(R.id.nom_contacte)
+        val telefon = dialog.findViewById<EditText>(R.id.telefon_contacte)
+
+        afegir.setOnClickListener {
+
             dialog.hide()
         }
         dialog.show()

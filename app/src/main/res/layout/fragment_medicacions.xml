@@ -84,7 +84,7 @@
                 app:layout_constraintEnd_toEndOf="@id/week_changer_layout"
                 android:text="SETMANA"
                 android:gravity="center"
-                android:textSize="40dp"
+                android:textSize="32dp"
                 android:textStyle="bold"
                 android:fontFamily="@font/tilt_neon"
                 android:textColor="@color/black"

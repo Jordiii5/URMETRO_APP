@@ -151,6 +151,9 @@
         <action
             android:id="@+id/action_llistaContactesFragment_to_afegirContacteFragment"
             app:destination="@id/afegirContacteFragment" />
+        <action
+            android:id="@+id/action_llistaContactesFragment_to_afegirContacteFragment2"
+            app:destination="@id/afegirContacteFragment" />
     </fragment>
     <fragment
         android:id="@+id/perfilFragment"
@@ -456,6 +459,9 @@
         tools:layout="@layout/fragment_afegir_contacte" >
         <action
             android:id="@+id/action_afegirContacteFragment_to_llistaContactesFragment"
+            app:destination="@id/llistaContactesFragment" />
+        <action
+            android:id="@+id/action_afegirContacteFragment_to_llistaContactesFragment2"
             app:destination="@id/llistaContactesFragment" />
     </fragment>
     <fragment

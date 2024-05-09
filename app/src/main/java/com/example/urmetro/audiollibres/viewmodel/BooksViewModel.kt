@@ -13,6 +13,7 @@ class BooksViewModel : ViewModel() {
     private val repository = Repository()
     var data = MutableLiveData<List<Book>?>()
     var currentBook = MutableLiveData<Book>()
+    val success= MutableLiveData<Boolean>()
 
     /**
      * @author Joel Garcia

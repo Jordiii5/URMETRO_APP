@@ -37,6 +37,7 @@ class RegistreFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.crearCompte.setOnClickListener {
+            binding.carrega.visibility=View.VISIBLE
             val dni = binding.dniField.text.toString().uppercase()
             val contra = binding.contrasenyaField.text.toString()
             val nom = binding.nameField.text.toString()
@@ -46,13 +47,16 @@ class RegistreFragment : Fragment() {
             if (nom == "" || dni == "" || contra == "" || repetircontra == ""){
                 //faltara crear un toast para poder avisar que se ha dejado espacios vacios para registrar un usuario
                 Toast.makeText(context, "Has dejado espacios vacíos, rellénalos todos", Toast.LENGTH_SHORT).show()
+                binding.carrega.visibility=View.INVISIBLE
             }else if (contra != repetircontra){
                 //faltara crear un toast para poder avisar que las contras no son iguales
                 Toast.makeText(context, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+                binding.carrega.visibility=View.INVISIBLE
             }
             else if (dni.length < 9 || dni.length > 9){
                 //faltara crear un toast para poder avisar que el dni no puede ser diferente a 9 caracteres
                 Toast.makeText(context, "El DNI tiene que contener 9 caracteres.", Toast.LENGTH_SHORT).show()
+                binding.carrega.visibility=View.INVISIBLE
             }else{
                 val hashedPassword = HashUtils.hashPassword(binding.contrasenyaField.text.toString())
                 viewModel.currentUsuari.value = Usuari(0,binding.nameField.text.toString(), binding.dniField.text.toString().uppercase(), 0, 0, hashedPassword)
@@ -67,6 +71,7 @@ class RegistreFragment : Fragment() {
                         }else{
                             //faltara crear un toast para poder avisar que el usuario no se ha podido registrar
                             Toast.makeText(context, "Error al registrarse", Toast.LENGTH_SHORT).show()
+                            binding.carrega.visibility=View.INVISIBLE
                         }
                     }
                 }

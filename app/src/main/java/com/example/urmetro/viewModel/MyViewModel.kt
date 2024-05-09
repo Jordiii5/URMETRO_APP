@@ -111,7 +111,7 @@ class MyViewModel : ViewModel(){
 
         return withContext(Dispatchers.IO) {
             try {
-                val response = repository.deleteUser(dniToDelete)
+                val response = repository.deleteUser("/usuaris/$dniToDelete")
                 response.isSuccessful
             } catch (e: Exception) {
                 Log.e("Error", "Excepción en la corrutina: ${e.message}", e)
@@ -122,10 +122,11 @@ class MyViewModel : ViewModel(){
 
     suspend fun deletePublicacio(): Boolean{
         val publicacioToDelete = post.value?.publicacio_id ?: return false
+        Log.d("pie de foto", publicacioToDelete.toString())
 
         return withContext(Dispatchers.IO) {
             try {
-                val response = repository.deletePost("posts/$publicacioToDelete")
+                val response = repository.deletePost("/posts/$publicacioToDelete")
                 response.isSuccessful
             } catch (e: Exception) {
                 Log.e("Error", "Excepción en la corrutina: ${e.message}", e)

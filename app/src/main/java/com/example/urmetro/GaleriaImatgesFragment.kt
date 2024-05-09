@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -31,10 +32,19 @@ class GaleriaImatgesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.carrega.visibility=View.VISIBLE
         viewModel.fetchDataPublicacions()
 
         viewModel.dataPub.observe(viewLifecycleOwner) { listOfPost ->
             setUpRecyclerView(listOfPost as MutableList<Publicacions>)
+            binding.carrega.visibility=View.GONE
+        }
+        viewModel.success.observe(viewLifecycleOwner) { success ->
+            if (success != null) {
+                binding.carrega.isVisible = !success
+                binding.recyclerView.isVisible = success
+
+            }
         }
 
         binding.recyclerView.layoutManager=GridLayoutManager(requireContext(), 3)

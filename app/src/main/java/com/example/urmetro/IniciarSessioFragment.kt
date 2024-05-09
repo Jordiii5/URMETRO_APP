@@ -75,6 +75,7 @@ class IniciarSessioFragment : Fragment() {
  */
 
         binding.login.setOnClickListener {
+            binding.carrega.visibility=View.VISIBLE
             val dni = binding.dniField.text.toString().uppercase()
             val contra = binding.contrasenyaField.text.toString()
             val saveCredentials = binding.rememberCheckbox.isChecked
@@ -117,11 +118,13 @@ class IniciarSessioFragment : Fragment() {
                             }
                         } else {
                             Toast.makeText(context, "Error con el email o contraseña, inténtalo de nuevo", Toast.LENGTH_SHORT).show()
+                            binding.carrega.visibility=View.INVISIBLE
                         }
                     }
                 }
             } else {
                 Toast.makeText(context, "Has dejado espacios vacíos, rellénalos todos", Toast.LENGTH_SHORT).show()
+                binding.carrega.visibility=View.INVISIBLE
             }
         }
         binding.registrat.setOnClickListener {

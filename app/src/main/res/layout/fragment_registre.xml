@@ -275,6 +275,18 @@ android:background="@color/fons">
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/carrega"
+        android:layout_width="493dp"
+        android:layout_height="297dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:visibility="invisible"
+        app:lottie_rawRes="@raw/carrega_animacio"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

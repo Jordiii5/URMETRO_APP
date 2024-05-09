@@ -2,27 +2,40 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="400dp"
-    android:layout_height="300dp"
+    android:layout_height="350dp"
     android:padding="15dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_dialog_socialitzacio"
+    android:background="@drawable/bg_dialog_sanitat"
 
     android:paddingVertical="20dp">
     <TextView
         android:id="@+id/pregunta_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ESTÀS SEGUR QUE VOLS TRUCAR A"
+        android:text="INTRODUEIX CODI DE SEGURETAT"
+        android:gravity="center"
         android:textSize="30dp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
-        android:gravity="center"
         android:fontFamily="@font/tilt_neon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
 
 
+    <EditText
+        android:id="@+id/codi"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.70"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:fontFamily="@font/tilt_neon"
+        android:background="@drawable/rectangle_registre"
+        app:layout_constraintStart_toStartOf="@id/pregunta_text"
+        app:layout_constraintEnd_toEndOf="@id/pregunta_text"
+        app:layout_constraintTop_toBottomOf="@id/pregunta_text"
+        app:layout_constraintBottom_toTopOf="@id/boto_no"
+        />
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/boto_no"
         android:layout_width="0dp"
@@ -34,7 +47,7 @@
         android:background="@drawable/rectangle_vermell"
         app:layout_constraintStart_toStartOf="@id/pregunta_text"
         app:layout_constraintEnd_toStartOf="@id/boto_si"
-        app:layout_constraintTop_toBottomOf="@id/pregunta_text"
+        app:layout_constraintTop_toBottomOf="@id/codi"
         app:layout_constraintBottom_toBottomOf="parent"
         android:textAlignment="center"
         android:textSize="20dp"
@@ -51,7 +64,7 @@
         android:background="@drawable/rectangle_verd"
         app:layout_constraintEnd_toEndOf="@id/pregunta_text"
         app:layout_constraintStart_toEndOf="@id/boto_no"
-        app:layout_constraintTop_toBottomOf="@id/pregunta_text"
+        app:layout_constraintTop_toBottomOf="@id/codi"
         app:layout_constraintBottom_toBottomOf="parent"
         android:textAlignment="center"
         android:textSize="20dp"

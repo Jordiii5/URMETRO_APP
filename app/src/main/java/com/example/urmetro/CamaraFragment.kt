@@ -36,7 +36,6 @@ class CamaraFragment : Fragment() {
     private var imageCapture: ImageCapture? = null
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
-    lateinit var uri:Uri
     private val viewModel: MyViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -52,9 +51,6 @@ class CamaraFragment : Fragment() {
         binding.camaraCaptureButton.setOnClickListener {
             takePhoto()
         }
-        binding.imageCaptureButton.setOnClickListener {
-            openGalleryForImages()
-        }
 
         outputDirectory = getOutputDirectory()
         cameraExecutor = Executors.newSingleThreadExecutor()
@@ -66,7 +62,6 @@ class CamaraFragment : Fragment() {
             requireContext(), it) == PackageManager.PERMISSION_GRANTED
     }
 
-    //FOTOS
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
         cameraProviderFuture.addListener(Runnable {
@@ -101,7 +96,7 @@ class CamaraFragment : Fragment() {
                     viewModel.fotohecha = true
                     viewModel.image = savedUri
                     Log.d(CamaraFragment.TAG, msg)
-                    findNavController().navigate(R.id.action_camaraFragment_to_editarPerfilFragment)
+                    findNavController().navigate(R.id.action_camaraFragment_to_afegirImatgeFragment)
                 }
             })
     }
@@ -120,53 +115,6 @@ class CamaraFragment : Fragment() {
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
         private const val REQUEST_CODE_PERMISSIONS = 10
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
-    }
-
-
-    //GALERIA
-    private fun openGalleryForImages() {
-        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
-        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
-        intent.addCategory(Intent.CATEGORY_OPENABLE)
-        intent.type = "image/*"
-        //resultLauncher.launch(intent)
-    }
-
-    /*
-    var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if(result.resultCode == Activity.RESULT_OK) {
-            val data: Intent? = result.data
-            val image = binding.imageCaptureButton
-
-            if(data?.getClipData() != null){
-                var count = data.clipData?.itemCount
-                for(i in 0..count!! - 1){
-                    var imageUri: Uri = data.clipData?.getItemAt(i)!!.uri
-                    image.setImageURI(imageUri)
-                    uri = imageUri
-                }
-            }
-            else if(data?.getData() != null){
-                var imageUri: Uri = data.data!!
-                image.setImageURI(imageUri)
-                uri = imageUri
-            }
-        }
-    }
-
-     */
-
-    private fun getFileFromUri(context: Context, uri: Uri): File? {
-        val inputStream = context.contentResolver.openInputStream(uri) ?: return null
-        val fileName = uri.lastPathSegment ?: "file"
-        val directory = context.getExternalFilesDir(null)
-        val file = File(directory, fileName)
-        inputStream.use { input ->
-            file.outputStream().use { output ->
-                input.copyTo(output)
-            }
-        }
-        return if (file.exists()) file else null
     }
 
 }

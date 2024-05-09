@@ -29,12 +29,10 @@ class EditarPerfilFragment : Fragment() {
 
         binding.confirmarDadesNoves.setOnClickListener{
             val usuari_nom = binding.nomField.text.toString()
-            val usuari_adreça = binding.adressField.text.toString()
             val usuari_telefon = binding.telefonField.text.toString()
             val usuari_contacte_emergencia = binding.telefonEmergeniciaField.text.toString()
-            viewModel.updateDades(usuari_nom, usuari_adreça, usuari_telefon, usuari_contacte_emergencia)
+            viewModel.updateDades(usuari_nom, usuari_telefon, usuari_contacte_emergencia)
             findNavController().navigate(R.id.action_editarPerfilFragment_to_perfilFragment)
         }
     }
-
 }

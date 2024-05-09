@@ -1,11 +1,15 @@
 package com.example.urmetro.viewModel
 
 import android.net.Uri
+import android.os.Build
 import android.os.Looper
 import android.util.Log
+import androidx.annotation.RequiresApi
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.urmetro.model.Publicacions
 import com.example.urmetro.model.Usuari
 import com.example.urmetro.view.ApiRepository
 import kotlinx.coroutines.CoroutineScope
@@ -17,15 +21,24 @@ val PREFS_NAME = "MyPrefsFile"
 class MyViewModel : ViewModel(){
     lateinit var repository: ApiRepository
     var currentUsuari= MutableLiveData<Usuari>()
-    var name = ""
+    val usuarios: MutableLiveData<List<Usuari>> = MutableLiveData()
+    var name = currentUsuari.value?.usuari_nom
     var loginClean = false
     var data = MutableLiveData<List<Usuari>>()
+    var dataPub = MutableLiveData<List<Publicacions>>()
+    val post= MutableLiveData<Publicacions>()
     val success = MutableLiveData<Boolean>()
     val showToast: MutableLiveData<Boolean> = MutableLiveData()
     var image : Uri? = null
     var fotohecha = true
     var camara = false
+    private val _imageUri = MutableLiveData<Uri>()
 
+    val imageUri: LiveData<Uri>
+        get() = _imageUri
+    fun setImageUri(uri: Uri) {
+        _imageUri.value = uri
+    }
     fun fetchData(){
         success.postValue(false)
         CoroutineScope(Dispatchers.IO).launch {
@@ -38,6 +51,20 @@ class MyViewModel : ViewModel(){
                 }
             }
             success.postValue(true)
+        }
+    }
+
+    fun fetchDataPublicacions(){
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = repository.getPost("posts")
+            withContext(Dispatchers.Main) {
+                if(response.isSuccessful){
+                    dataPub.postValue(response.body())
+                }
+                else{
+                    Log.e("Error :", response.message())
+                }
+            }
         }
     }
     fun getUsuari(dni: String) {
@@ -66,12 +93,12 @@ class MyViewModel : ViewModel(){
         }
     }
 
-    fun updateDades (usuari_nom:String, usuari_adreça:String, usuari_telefon: String, usuari_contacte_emergencia: String){
+    fun updateDades (usuari_nom:String, usuari_telefon: String, usuari_contacte_emergencia: String){
         val usuari_dni = currentUsuari.value?.usuari_dni
         if (usuari_dni != null){
             viewModelScope.launch(Dispatchers.IO){
                 try {
-                    repository.updateUser(usuari_dni, usuari_nom, usuari_adreça, usuari_telefon, usuari_contacte_emergencia)
+                    repository.updateUser(usuari_dni, usuari_nom, usuari_telefon, usuari_contacte_emergencia)
                 } catch (e: Exception){
                     Log.d("TRY CATCH FUNCION", "${e.message}")
                 }
@@ -90,6 +117,13 @@ class MyViewModel : ViewModel(){
                 Log.e("Error", "Excepción en la corrutina: ${e.message}", e)
                 false
             }
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun postPublicacio(post: Publicacions, image: Uri?){
+        CoroutineScope(Dispatchers.IO).launch {
+            repository.postPublicacio("",post.publicacio_peu_foto,post.publicacio_likes,post.usuari_id,image)
         }
     }
 }

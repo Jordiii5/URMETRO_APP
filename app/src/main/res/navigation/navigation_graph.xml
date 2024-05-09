@@ -187,6 +187,9 @@
         <action
             android:id="@+id/action_rehabilitacioFragment_to_modulSanitatFragment"
             app:destination="@id/modulSanitatFragment" />
+        <action
+            android:id="@+id/action_rehabilitacioFragment_to_programarRobotFragment"
+            app:destination="@id/programarRobotFragment" />
     </fragment>
     <fragment
         android:id="@+id/citesFragment"
@@ -409,6 +412,12 @@
         <action
             android:id="@+id/action_afegirImatgeFragment_to_galeriaImatgesFragment"
             app:destination="@id/galeriaImatgesFragment" />
+        <action
+            android:id="@+id/action_afegirImatgeFragment_to_lesMevesImatgesFragment"
+            app:destination="@id/lesMevesImatgesFragment" />
+        <action
+            android:id="@+id/action_afegirImatgeFragment_to_camaraFragment"
+            app:destination="@id/camaraFragment" />
     </fragment>
     <fragment
         android:id="@+id/lesMevesImatgesFragment"
@@ -427,6 +436,18 @@
         <action
             android:id="@+id/action_camaraFragment_to_editarPerfilFragment"
             app:destination="@id/editarPerfilFragment" />
+        <action
+            android:id="@+id/action_camaraFragment_to_afegirImatgeFragment"
+            app:destination="@id/afegirImatgeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/programarRobotFragment"
+        android:name="com.example.urmetro.ProgramarRobotFragment"
+        android:label="fragment_programar_robot"
+        tools:layout="@layout/fragment_programar_robot" >
+        <action
+            android:id="@+id/action_programarRobotFragment_to_rehabilitacioFragment"
+            app:destination="@id/rehabilitacioFragment" />
     </fragment>
     <fragment
         android:id="@+id/afegirContacteFragment"

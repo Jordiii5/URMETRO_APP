@@ -79,6 +79,7 @@
             android:id="@+id/nom_field_layout"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="55dp"
             app:layout_constraintHeight_percent="0.25"
             app:layout_constraintStart_toStartOf="@id/info_container"
             app:layout_constraintEnd_toEndOf="@id/info_container"
@@ -159,50 +160,6 @@
             />
 
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/adress_field_layout"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.25"
-            app:layout_constraintStart_toStartOf="@id/info_container"
-            app:layout_constraintEnd_toEndOf="@id/info_container"
-            app:layout_constraintTop_toBottomOf="@+id/dni_field_layout"
-            >
-            <TextView
-                android:id="@+id/adress_field"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/black"
-                android:text="Hola"
-                android:textSize="25dp"
-                android:fontFamily="@font/tilt_neon"
-                android:textStyle="bold"
-                android:paddingTop="20dp"
-                android:paddingLeft="20dp"
-                android:background="@drawable/rectangle_registre"
-                android:textColorHint="@color/white"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="@+id/adress_field_layout"
-            app:layout_constraintTop_toTopOf="@id/adress_field_layout"
-            android:text="ADREÇA "
-            android:background="@color/fons"
-            android:textColor="@color/black"
-            android:layout_marginStart="25dp"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            android:fontFamily="@font/tilt_neon"
-            />
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/telefon_field_layout"
             android:layout_width="0dp"
@@ -210,7 +167,7 @@
             app:layout_constraintHeight_percent="0.25"
             app:layout_constraintWidth_percent="0.5"
             app:layout_constraintStart_toStartOf="@+id/info_container"
-            app:layout_constraintTop_toBottomOf="@+id/adress_field_layout"
+            app:layout_constraintTop_toBottomOf="@+id/dni_field_layout"
             >
             <TextView
                 android:id="@+id/telefon_field"
@@ -257,7 +214,7 @@
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.25"
             app:layout_constraintWidth_percent="0.5"
-            app:layout_constraintTop_toBottomOf="@+id/adress_field_layout"
+            app:layout_constraintTop_toBottomOf="@+id/dni_field_layout"
             app:layout_constraintStart_toEndOf="@+id/telefon_field_layout"
             app:layout_constraintEnd_toEndOf="@+id/info_container"
             >

@@ -18,12 +18,12 @@ class ApiRepository(dni: String, password: String) {
     suspend fun getUsers(url: String)= apiInterface.getUsers(url)
     suspend fun login(usuario: Usuari) = apiInterface.login(usuario)
     suspend fun updateUser(usuari_dni:String, usuari_nom: String, usuari_telefon: String, usuari_contacte_emergencia: String) = apiInterface.updateUsuari(usuari_dni, usuari_nom, usuari_telefon, usuari_contacte_emergencia)
-    suspend fun deleteUser(url: String) = apiInterface.deletePost(url)
+    suspend fun deleteUser(url: String) = apiInterface.delete(url)
     suspend fun getUsuario(url: String) = apiInterface.getUsuari(url)
     suspend fun getPost(url: String) = apiInterface.getPosts(url)
     suspend fun getPostByName(url: String)= apiInterface.getPostByName(url)
     suspend fun getImage(url: String)= apiInterface.getPhoto(url)
-    suspend fun deletePost(url: String) = apiInterface.deletePost(url)
+    suspend fun deletePost(url: String) = apiInterface.delete(url)
 
 
     /*

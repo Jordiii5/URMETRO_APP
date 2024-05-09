@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.urmetro.R
 import com.example.urmetro.databinding.ItemPublicacioBinding
+import com.example.urmetro.databinding.ItemPublicaciosMevesBinding
 import com.example.urmetro.model.Publicacions
 import com.example.urmetro.model.Usuari
 import com.example.urmetro.viewModel.MyViewModel
@@ -21,16 +22,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class AdapterPublicacio (
+class AdapterMevesPublicacions (
     private var publicacions: List<Publicacions>,
     private val viewModel: MyViewModel
     //private var listener: com.example.urmetro.viewModel.OnClickListener
-): RecyclerView.Adapter<AdapterPublicacio.ViewHolder>() {
+): RecyclerView.Adapter<AdapterMevesPublicacions.ViewHolder>() {
     private lateinit var context: Context
     lateinit var repository: ApiRepository
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
-        val binding = ItemPublicacioBinding.bind(view)
+        val binding = ItemPublicaciosMevesBinding.bind(view)
 
         /*
         fun setListener(post: Publicacions){
@@ -43,7 +44,7 @@ class AdapterPublicacio (
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
         repository= ApiRepository("dni", "password")
-        val view = LayoutInflater.from(context).inflate(R.layout.item_publicacio, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_publicacios_meves, parent, false)
         return ViewHolder(view)
     }
 
@@ -51,14 +52,14 @@ class AdapterPublicacio (
         return publicacions.size
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val post = publicacions[position]
 
         with(holder){
             //setListener(post)
-            binding.descripcioFoto.text = post.publicacio_peu_foto
+            binding.peu.text = post.publicacio_peu_foto
             binding.nomUsuari.text = viewModel.currentUsuari.value?.usuari_nom ?: ""
+            binding.favoriteCounter.text = post.publicacio_likes.toString()
 
             Glide.with(context)
                 .load(post.publicacio_foto)
@@ -80,4 +81,5 @@ class AdapterPublicacio (
             }
         }
     }
+
 }

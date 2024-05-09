@@ -120,10 +120,26 @@ class MyViewModel : ViewModel(){
         }
     }
 
+    suspend fun deletePublicacio(): Boolean{
+        val publicacioToDelete = post.value?.publicacio_id ?: return false
+
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = repository.deletePost("posts/$publicacioToDelete")
+                response.isSuccessful
+            } catch (e: Exception) {
+                Log.e("Error", "Excepción en la corrutina: ${e.message}", e)
+                false
+            }
+        }
+    }
+
     @RequiresApi(Build.VERSION_CODES.O)
     fun postPublicacio(post: Publicacions, image: Uri?){
         CoroutineScope(Dispatchers.IO).launch {
             repository.postPublicacio("",post.publicacio_peu_foto,post.publicacio_likes,post.usuari_id,image)
         }
     }
+
+
 }

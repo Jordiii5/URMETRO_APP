@@ -42,7 +42,7 @@ class LlistaContactesFragment : Fragment() {
         }
 
         binding.sos.setOnClickListener{
-            callEmergencyContact(722788710)
+            callEmergencyContact(112)
         }
 
         binding.contacteEmergencia.setOnClickListener {

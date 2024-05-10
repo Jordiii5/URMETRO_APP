@@ -6,6 +6,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.burgstaller.okhttp.digest.Credentials
+import com.example.urmetro.model.Contacte
 import com.example.urmetro.model.Publicacions
 import com.example.urmetro.model.Usuari
 import okhttp3.MultipartBody
@@ -27,6 +28,8 @@ interface ApiInterface {
     suspend fun getUsers(@Url url: String): Response<List<Usuari>>
     @GET
     suspend fun getUsuari(@Url url: String): Response<Usuari>
+    @GET
+    suspend fun getUsuariId(@Url url: String): Response<Usuari>
     @POST("user/login")
     suspend fun login(@Body usuario: Usuari): Response<ResponseBody>
     @POST("user/register")
@@ -49,11 +52,22 @@ interface ApiInterface {
         @Part ("usuari_id") owner: Int
     ): Response<Publicacions>
 
+    @GET()
+    suspend fun getContactes(@Url url: String): Response<List<Contacte>>
+
+    @Multipart
+    @POST("contactes")
+    suspend fun addContacte(
+        @Part ("contacte_nom") nom: String,
+        @Part ("contacte_telefon") telefon: Int,
+        @Part ("usuari_id") owner: Int
+    ): Response<Contacte>
+
     @DELETE()
     suspend fun delete(@Url url: String): Response<Boolean>
 
     companion object {
-        val BASE_URL = "http://172.23.6.130:8080/"
+        val BASE_URL = "http://192.168.1.68:8080/"
 
         fun create(dni: String, password: String): ApiInterface {
             val digestAuthenticator = DigestAuthenticator(Credentials(dni, password))

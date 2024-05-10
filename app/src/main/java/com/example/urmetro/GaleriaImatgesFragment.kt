@@ -39,6 +39,7 @@ class GaleriaImatgesFragment : Fragment() {
             setUpRecyclerView(listOfPost as MutableList<Publicacions>)
             binding.carrega.visibility=View.GONE
         }
+
         viewModel.success.observe(viewLifecycleOwner) { success ->
             if (success != null) {
                 binding.carrega.isVisible = !success
@@ -46,6 +47,7 @@ class GaleriaImatgesFragment : Fragment() {
 
             }
         }
+
 
         binding.recyclerView.layoutManager=GridLayoutManager(requireContext(), 3)
 

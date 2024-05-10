@@ -2,12 +2,15 @@ package com.example.urmetro.view
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -57,8 +60,10 @@ class AdapterPublicacio (
 
         with(holder){
             //setListener(post)
+            //binding.nomUsuari.text = viewModel.currentUsuari.value?.usuari_nom ?: ""
+
+            binding.nomUsuari.text = post.usuari_id.toString()
             binding.descripcioFoto.text = post.publicacio_peu_foto
-            binding.nomUsuari.text = viewModel.currentUsuari.value?.usuari_nom ?: ""
 
             Glide.with(context)
                 .load(post.publicacio_foto)

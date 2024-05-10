@@ -20,6 +20,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints">
         <TextView
+            android:id="@+id/id_contacte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="A"
@@ -52,7 +53,7 @@
         app:layout_constraintBottom_toBottomOf="@id/cercle_inicial"
         android:inputType="phone"
         />
-    <androidx.appcompat.widget.AppCompatImageButton
+    <ImageButton
         android:id="@+id/trucar_boto"
         android:layout_width="0dp"
         android:layout_height="0dp"

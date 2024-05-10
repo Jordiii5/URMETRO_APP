@@ -3,6 +3,7 @@ package com.example.urmetro.view
 import android.net.Uri
 import android.os.Build
 import androidx.annotation.RequiresApi
+import com.example.urmetro.model.Contacte
 import com.example.urmetro.model.Publicacions
 import com.example.urmetro.model.Usuari
 import com.example.urmetro.viewModel.ApiInterface
@@ -20,6 +21,7 @@ class ApiRepository(dni: String, password: String) {
     suspend fun updateUser(usuari_dni:String, usuari_nom: String, usuari_telefon: String, usuari_contacte_emergencia: String) = apiInterface.updateUsuari(usuari_dni, usuari_nom, usuari_telefon, usuari_contacte_emergencia)
     suspend fun deleteUser(url: String) = apiInterface.delete(url)
     suspend fun getUsuario(url: String) = apiInterface.getUsuari(url)
+    suspend fun getUsuarioId(url: String)= apiInterface.getUsuariId(url)
     suspend fun getPost(url: String) = apiInterface.getPosts(url)
     suspend fun getPostByName(url: String)= apiInterface.getPostByName(url)
     suspend fun getImage(url: String)= apiInterface.getPhoto(url)
@@ -77,6 +79,28 @@ class ApiRepository(dni: String, password: String) {
                     ),
                 description,
                 likes,
+                owner
+            )
+        }
+        catch (e: Exception){
+            println(e.message)
+        }
+    }
+
+    suspend fun getContactes(url: String) = apiInterface.getContactes(url)
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    suspend fun postContacte(
+        nom: String,
+        telefon: Int,
+        owner: Int
+    ) {
+        val request = Contacte(0, nom, telefon,owner)
+        val gson = Gson()
+        return try {
+            val response = apiInterface.addContacte(
+                nom,
+                telefon,
                 owner
             )
         }

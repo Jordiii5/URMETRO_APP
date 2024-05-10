@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.urmetro.model.Contacte
 import com.example.urmetro.model.Publicacions
 import com.example.urmetro.model.Usuari
 import com.example.urmetro.view.ApiRepository
@@ -26,7 +27,9 @@ class MyViewModel : ViewModel(){
     var loginClean = false
     var data = MutableLiveData<List<Usuari>>()
     var dataPub = MutableLiveData<List<Publicacions>>()
+    var dataContacte = MutableLiveData<List<Contacte>>()
     val post= MutableLiveData<Publicacions>()
+    val contacte= MutableLiveData<Contacte>()
     val success = MutableLiveData<Boolean>()
     val showToast: MutableLiveData<Boolean> = MutableLiveData()
     var image : Uri? = null
@@ -67,6 +70,20 @@ class MyViewModel : ViewModel(){
             }
         }
     }
+
+    fun fetchDataContactes(){
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = repository.getContactes("contactes")
+            withContext(Dispatchers.Main) {
+                if(response.isSuccessful){
+                    dataContacte.postValue(response.body())
+                }
+                else{
+                    Log.e("Error :", response.message())
+                }
+            }
+        }
+    }
     fun getUsuari(dni: String) {
         success.postValue(false)
         CoroutineScope(Dispatchers.IO).launch {
@@ -92,6 +109,28 @@ class MyViewModel : ViewModel(){
             }
         }
     }
+
+    fun getUsuariId(id: Int) {
+        success.postValue(false)
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val response = repository.getUsuarioId("/usuaris/$id")
+
+                withContext(Dispatchers.Main) {
+                    if (response.isSuccessful) {
+                        currentUsuari.value = response.body()
+                        success.postValue(true)
+                        Log.d("lista", "${currentUsuari.value}")
+                    } else {
+                        Log.e("Error :", response.message())
+                    }
+                }
+            } catch (e: Exception) {
+                Log.e("Error", "Excepción en la corrutina: ${e.message}", e)
+            }
+        }
+    }
+
 
     fun updateDades (usuari_nom:String, usuari_telefon: String, usuari_contacte_emergencia: String){
         val usuari_dni = currentUsuari.value?.usuari_dni
@@ -139,6 +178,13 @@ class MyViewModel : ViewModel(){
     fun postPublicacio(post: Publicacions, image: Uri?){
         CoroutineScope(Dispatchers.IO).launch {
             repository.postPublicacio("",post.publicacio_peu_foto,post.publicacio_likes,post.usuari_id,image)
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun postContacte(tel: Contacte){
+        CoroutineScope(Dispatchers.IO).launch {
+            repository.postContacte(tel.contacte_nom, tel.contacte_telefon, tel.usuari_id)
         }
     }
 

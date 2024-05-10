@@ -28,6 +28,8 @@ class PeriodicsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //Per a cada botó truquem a la funció per a obrir links amb la url corresponent
         binding.marca.setOnClickListener {
             openLink("https://www.marca.com/" )
         }
@@ -47,6 +49,13 @@ class PeriodicsFragment : Fragment() {
         }
     }
 
+    /**
+     * @author
+     *
+     * @param url Url del diari corresponent
+     *
+     * Aquesta funció rep una url i obre el navegador predeterminat amb aquesta pagina web
+     */
     private fun openLink(url: String) {
         val uri = Uri.parse(url)
         val intent = Intent(Intent.ACTION_VIEW, uri)

@@ -23,6 +23,7 @@ class AjudaEntretenimentFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val text=binding.text
 
+        //Llista de textos d'ajuda
         val llistaText= listOf<String>(
             "En el nostre apartat d'entreteniment, et donem opcions perquè gaudeixis al màxim. Pots jugar a jocs divertits, escoltar emocionants audiollibres i trobar llistes de música per a qualsevol moment. També pots estar informat amb enllaços a notícies en línia. Volem que t'ho passis bé i trobis el que més t'agrada fer a la nostra app. Així que si busques passar un bon moment, estàs al lloc adequat!",
             "A l'apartat de jocs, trobaràs una varietat d'opcions per a divertir-te. Gaudeix de jocs senzills i addictius dissenyats per entretenir-te en qualsevol moment. Explora la nostra selecció i troba el joc perfecte per a tu!",
@@ -32,6 +33,7 @@ class AjudaEntretenimentFragment : Fragment() {
         text.text = llistaText[posicio]
         binding.arrowBack.visibility=View.INVISIBLE
 
+        //Navegació a fragment anterior
         binding.exit.setOnClickListener {
             findNavController().navigate(R.id.action_ajudaEntretenimentFragment_to_modulEntretenimentFragment)
         }
@@ -39,15 +41,19 @@ class AjudaEntretenimentFragment : Fragment() {
         binding.arrowBack.setOnClickListener {
             binding.arrowNext.visibility=View.VISIBLE
             binding.arrowNext.isClickable=true
+
+            //Si hi ha una posició enrere la mostrem
             if (posicio>=0){
                 posicio--
                 text.text = llistaText[posicio]
             }
+            //Si no hi ha mes posicions enrere ocultem el botó
             if (posicio<=0){
                 binding.arrowBack.visibility=View.INVISIBLE
                 binding.arrowBack.isClickable=false
             }
 
+            //Per a cada posició cambiem la marca corresponent
             when(posicio){
                 0-> {
                     binding.marca1.setImageResource(R.drawable.baseline_circle_entreteniment)
@@ -80,15 +86,19 @@ class AjudaEntretenimentFragment : Fragment() {
         binding.arrowNext.setOnClickListener {
             binding.arrowBack.visibility=View.VISIBLE
             binding.arrowBack.isClickable=true
+
+            //Si hi ha mes posicions per devant la mostrem
             if (posicio<=llistaText.lastIndex) {
                 posicio++
                 text.text = llistaText[posicio]
             }
+            //Si no hi ha més posicions per devant ocultem el botó
             if (posicio>=llistaText.lastIndex){
                 binding.arrowNext.visibility=View.INVISIBLE
                 binding.arrowNext.isClickable=false
             }
 
+            //Per a cada posició cambiem la marca corresponent
             when(posicio){
                 0-> {
                     binding.marca1.setImageResource(R.drawable.baseline_circle_entreteniment)
@@ -119,6 +129,7 @@ class AjudaEntretenimentFragment : Fragment() {
             binding.scroll.scrollTo(0, -10000)
         }
 
+        //Al pulsar aquest botó cambiem la mida del text de 30 a 40 o al reves
         binding.zoom.setOnClickListener {
             zoom=!zoom
             if (zoom) text.textSize=30F

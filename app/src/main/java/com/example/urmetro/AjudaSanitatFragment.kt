@@ -24,6 +24,7 @@ class AjudaSanitatFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val text = binding.text
 
+        //Llista de textos d'ajuda
         val llistaText = listOf<String>(
             "En el nostre apartat de salut, et proporcionem eines per cuidar-te millor. Pots fer exercicis de rehabilitació per mantenir el teu cos fort i àgil. També tenim un calendari on pots organitzar les teves cites mèdiques per no oblidar-ne cap. I el millor de tot, pots portar un registre dels teus medicaments per assegurar-te de prendre'ls en el moment adequat. Tot està dissenyat perquè cuidar la teva salut sigui més fàcil i còmode per a tu.\n",
             "L'apartat d'exercicis de rehabilitació inclou una llista de vídeos amb exercicis específics. Pots reproduir-los i aturar-los per seguir-los tranquil·lament, adaptant-te al teu ritme. Aquesta guia visual millora la comprensió i execució dels exercicis, essencials per a la recuperació després de lesions o procediments mèdics. Les rutines ajuden a millorar la força, flexibilitat i mobilitat, afavorint una rehabilitació còmoda i eficaç, adaptada a les teves necessitats i ritme.",
@@ -34,6 +35,7 @@ class AjudaSanitatFragment : Fragment() {
         text.text = llistaText[posicio]
         binding.arrowBack.visibility = View.INVISIBLE
 
+        //Navegació a fragment anterior
         binding.exit.setOnClickListener {
             findNavController().navigate(R.id.action_ajudaSanitatFragment_to_modulSanitatFragment)
         }
@@ -41,16 +43,19 @@ class AjudaSanitatFragment : Fragment() {
         binding.arrowBack.setOnClickListener {
             binding.arrowNext.visibility = View.VISIBLE
             binding.arrowNext.isClickable = true
+
+            //Si hi ha una posició enrere la mostrem
             if (posicio >= 0) {
                 posicio--
                 text.text = llistaText[posicio]
             }
+            //Si no hi ha mes posicions enrere ocultem el botó
             if (posicio <= 0) {
                 binding.arrowBack.visibility = View.INVISIBLE
                 binding.arrowBack.isClickable = false
             }
 
-
+            //Per a cada posició cambiem la marca corresponent
             when (posicio) {
                 0 -> {
                     binding.marca1.setImageResource(R.drawable.baseline_circle_sanitat)
@@ -89,14 +94,19 @@ class AjudaSanitatFragment : Fragment() {
         binding.arrowNext.setOnClickListener {
             binding.arrowBack.visibility = View.VISIBLE
             binding.arrowBack.isClickable = true
+
+            //Si hi ha mes posicions per devant la mostrem
             if (posicio <= llistaText.lastIndex) {
                 posicio++
                 text.text = llistaText[posicio]
             }
+            //Si no hi ha més posicions per devant ocultem el botó
             if (posicio >= llistaText.lastIndex) {
                 binding.arrowNext.visibility = View.INVISIBLE
                 binding.arrowNext.isClickable = false
             }
+
+            //Per a cada posició cambiem la marca corresponent
             when (posicio) {
                 0 -> {
                     binding.marca1.setImageResource(R.drawable.baseline_circle_sanitat)
@@ -141,6 +151,7 @@ class AjudaSanitatFragment : Fragment() {
             binding.scroll.scrollTo(0, -10000)
         }
 
+        //Al pulsar aquest botó cambiem la mida del text de 30 a 40 o al reves
         binding.zoom.setOnClickListener {
             zoom=!zoom
             if (zoom) text.textSize=30F

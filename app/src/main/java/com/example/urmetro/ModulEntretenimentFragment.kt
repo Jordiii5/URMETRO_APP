@@ -54,6 +54,7 @@ class ModulEntretenimentFragment : Fragment() {
             findNavController().navigate(R.id.action_modulEntretenimentFragment_to_ajudaEntretenimentFragment)
         }
 
+        //Augmentem una posició y mostrem el botó corresponent
         binding.arrowNext.setOnClickListener {
             pos++
             when(pos){
@@ -78,6 +79,8 @@ class ModulEntretenimentFragment : Fragment() {
             }
 
         }
+
+        //Disminuim una posició y mostrem el botó corresponent
         binding.arrowBack.setOnClickListener {
             pos--
             when(pos){

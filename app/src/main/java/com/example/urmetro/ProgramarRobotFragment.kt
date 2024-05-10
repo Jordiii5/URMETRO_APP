@@ -27,6 +27,7 @@ class ProgramarRobotFragment : Fragment() {
         val bloc5= binding.codi5
         val bloc6= binding.codi6
 
+        //Fem que els spinners dels blocs de la esquerra no siguin accesibles per a l'usuari
         binding.velocitat.isEnabled = false
         binding.velocitat2.isEnabled = false
         binding.velocitat3.isEnabled = false
@@ -41,6 +42,7 @@ class ProgramarRobotFragment : Fragment() {
         binding.pausa.isEnabled=false
         binding.acabar.isEnabled=false
 
+        //Fem que tots els blocs siguin invisibles
         bloc1.visibility=View.GONE
         bloc1.visibility=View.GONE
         bloc2.visibility=View.GONE
@@ -53,6 +55,7 @@ class ProgramarRobotFragment : Fragment() {
             findNavController().navigate(R.id.action_programarRobotFragment_to_rehabilitacioFragment)
         }
 
+        //Al pulsar quest botó mostrem els blocs de moviment y ociltem els de pausa
         binding.moviment.setOnClickListener {
             bloc1.visibility=View.VISIBLE
             bloc2.visibility=View.VISIBLE
@@ -61,6 +64,7 @@ class ProgramarRobotFragment : Fragment() {
             bloc5.visibility=View.GONE
             bloc6.visibility=View.GONE
         }
+        //Al pulsar quest botó mostrem els blocs de pausa y ociltem els de moviment
         binding.pausa.setOnClickListener {
             bloc1.visibility=View.GONE
             bloc2.visibility=View.GONE
@@ -69,6 +73,7 @@ class ProgramarRobotFragment : Fragment() {
             bloc5.visibility=View.VISIBLE
             bloc6.visibility=View.VISIBLE
         }
+        //Al pulsar aquest botó fem que la resta de botons siguin accesibles per l'usuari, mostrem el bloc d'inici dins del codi
         binding.inici.setOnClickListener {
             binding.moviment.isEnabled=true
             binding.pausa.isEnabled=true

@@ -15,8 +15,6 @@ import com.example.urmetro.databinding.FragmentGaleriaImatgesBinding
 import com.example.urmetro.model.Publicacions
 import com.example.urmetro.view.AdapterPublicacio
 import com.example.urmetro.viewModel.MyViewModel
-import com.example.urmetro.viewModel.OnClickListener
-
 class GaleriaImatgesFragment : Fragment() {
     lateinit var binding: FragmentGaleriaImatgesBinding
     private val viewModel: MyViewModel by activityViewModels()

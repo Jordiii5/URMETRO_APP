@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/titol"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
+        android:paddingStart="15dp"
        />
 
     <TextView
@@ -60,6 +60,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
+        android:paddingStart="15dp"
+        android:inputType="phone"
 
         />
 

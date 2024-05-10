@@ -1,35 +1,31 @@
 package com.example.urmetro
 
-import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.urmetro.databinding.FragmentLlistaContactesBinding
 import com.example.urmetro.databinding.ItemContactoBinding
-import com.example.urmetro.databinding.ItemPublicaciosMevesBinding
 import com.example.urmetro.model.Contacte
-import com.example.urmetro.model.Publicacions
 import com.example.urmetro.view.AdapterContacte
-import com.example.urmetro.view.AdapterMevesPublicacions
+import com.example.urmetro.viewModel.ContacteOnClick
 import com.example.urmetro.viewModel.MyViewModel
 
-class LlistaContactesFragment : Fragment() {
+class LlistaContactesFragment : Fragment(), ContacteOnClick {
     lateinit var binding: FragmentLlistaContactesBinding
     private val viewModel: MyViewModel by activityViewModels()
     private lateinit var userAdapterContacte: AdapterContacte
@@ -61,21 +57,17 @@ class LlistaContactesFragment : Fragment() {
             showAddContactDialog()
         }
 
-        bindingMeusContactes.trucarBoto.setOnClickListener{
-            viewModel.contacte.value?.let { it1 -> callContact(it1.contacte_telefon) }
-        }
-
         binding.sos.setOnClickListener{
-            callContact(112)
+            call("112")
         }
 
         binding.contacteEmergencia.setOnClickListener {
-            viewModel.currentUsuari.value?.let { it1 -> callContact(it1.usuari_contacte_emergencia) }
+            viewModel.currentUsuari.value?.let { it1 -> call(it1.usuari_contacte_emergencia.toString()) }
         }
     }
 
     fun setUpRecyclerView(listOfContacte: MutableList<Contacte>) {
-        userAdapterContacte = AdapterContacte(listOfContacte)
+        userAdapterContacte = AdapterContacte(listOfContacte, this)
         binding.recyclerContactes.layoutManager = GridLayoutManager(requireContext(), 1)
         binding.recyclerContactes.apply {
             setHasFixedSize(true)
@@ -83,13 +75,16 @@ class LlistaContactesFragment : Fragment() {
         }
     }
 
-    private fun callContact(numTelefon: Int) {
+    private fun callContact(numTelefon: Int, nom: String) {
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.dialog_contactes)
         val telefon = numTelefon.toString()
 
+
         val botonNo = dialog.findViewById<Button>(R.id.boto_no)
         val botonSi = dialog.findViewById<Button>(R.id.boto_si)
+        val titol = dialog.findViewById<TextView>(R.id.pregunta_text)
+        titol.text="ESTAS SEGUR DE QUE VOLS TRUCAR A ${nom.uppercase()}?"
         botonNo.setOnClickListener {
             dialog.hide()
         }
@@ -133,5 +128,13 @@ class LlistaContactesFragment : Fragment() {
         startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$tel")))
     }
 
+
+    override fun onClickContacte(contacte: Contacte) {
+        val viewModel= ViewModelProvider(requireActivity())[MyViewModel::class.java]
+        viewModel.contacte.postValue(contacte)
+        val num=contacte.contacte_telefon
+        val nom=contacte.contacte_nom
+       callContact(num,nom)
+    }
 
 }

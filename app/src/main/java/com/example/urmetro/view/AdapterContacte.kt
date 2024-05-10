@@ -25,7 +25,7 @@ import kotlinx.coroutines.withContext
 
 class AdapterContacte (
     private var contactes: List<Contacte>,
-    //private var listener: com.example.urmetro.viewModel.OnClickListener
+    private var listener: com.example.urmetro.viewModel.ContacteOnClick
 ): RecyclerView.Adapter<AdapterContacte.ViewHolder>() {
     private lateinit var context: Context
     lateinit var repository: ApiRepository
@@ -33,13 +33,13 @@ class AdapterContacte (
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val binding = ItemContactoBinding.bind(view)
 
-        /*
-        fun setListener(post: Publicacions){
+
+        fun setListener(post: Contacte){
             binding.root.setOnClickListener{
-                listener.onClick(post)
+                listener.onClickContacte(post)
             }
         }
-         */
+
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
@@ -57,7 +57,7 @@ class AdapterContacte (
         val contacte = contactes[position]
 
         with(holder){
-            //setListener(post)
+            setListener(contacte)
             binding.idContacte.text = contacte.contacte_id.toString()
             binding.nomContacte.text = contacte.contacte_nom
             binding.numeroTelefon.text = contacte.contacte_telefon.toString()

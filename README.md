@@ -55,7 +55,7 @@
 - `Pas 3`: Instal·lar Git: https://git-scm.com/downloads
 - `Pas 4`: Des de la terminal fer -> $ git clone https://github.com/Jordiii5/URMETRO_APP.git
 - `Pas 5`: Obrir el projecte amb Android Studio
-- `Pas 6`: Un cop obert, a dalt al centre veuràs una icona de play (:arrow_forward:)
+- `Pas 6`: Un cop obert, a dalt al centre veuràs una icona de play 
 - `Pas 7`: Prem el botó i a gaudir!
 
 ## Tecnologies utilitzades 

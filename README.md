@@ -46,7 +46,7 @@
 ## Programes necessaris 
 
 - Android Studio
-- Git
+- GitHub
 
 ## Instal·lació 
 

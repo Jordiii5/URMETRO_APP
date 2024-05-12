@@ -22,8 +22,8 @@
     usuaris, promoure la seva autonomia i proporcionar-los un suport integral i personalitzat.
 
     Aquesta APP està pensada per ajudar a superar obstàcles diaris, proporcionant assistència en 
-    tasques com ara ajudar a aixecar-se d'una cadira o agafar objectes que el propi usuari vulgui. A
-    més, s'ofereixen funcions addicionals com la comunicació amb tercers i la gestió de recordatoris,
+    tasques com ara ajudar a aixecar-se d'una cadira o agafar objectes que el propi usuari vulgui. 
+    A més, s'ofereixen funcions addicionals com la comunicació amb tercers i la gestió de recordatoris,
     millorant la seguretat i la comunicació dels usuaris. D'aquesta manera, el projecte resol el repte
     de proporcionar suport integral i personalitzat per a les persones grans amb dependència, millorant
     la seva qualitat de vida i promocionant la seva autonomia a la vida quotidiana.

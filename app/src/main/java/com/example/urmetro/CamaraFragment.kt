@@ -29,39 +29,54 @@ import androidx.navigation.fragment.findNavController
 import java.text.SimpleDateFormat
 import java.util.concurrent.Executors
 
-
+/**
+ * Fragment que permet capturar una foto mitjançant la càmera del dispositiu.
+ */
 class CamaraFragment : Fragment() {
 
-    lateinit var binding: FragmentCamaraBinding
-    private var imageCapture: ImageCapture? = null
-    private lateinit var outputDirectory: File
-    private lateinit var cameraExecutor: ExecutorService
-    private val viewModel: MyViewModel by activityViewModels()
+    lateinit var binding: FragmentCamaraBinding // Binding per accedir als elements de la UI
+    private var imageCapture: ImageCapture? = null // Capturador d'imatges
+    private lateinit var outputDirectory: File  // Directori de sortida per emmagatzemar les imatges capturades
+    private lateinit var cameraExecutor: ExecutorService // Executor per a tasques de càmera
+    private val viewModel: MyViewModel by activityViewModels() // ViewModel per gestionar l'estat de l'aplicació
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         binding = FragmentCamaraBinding.inflate(layoutInflater)
+        // Comprovar si s'han concedit tots els permisos necessaris
         if (allPermissionsGranted()) {
+            // Iniciar la càmera
             startCamera()
         } else {
+            // Sol·licitar els permisos necessaris si no s'han concedit
             ActivityCompat.requestPermissions(
                 requireActivity(), CamaraFragment.REQUIRED_PERMISSIONS, CamaraFragment.REQUEST_CODE_PERMISSIONS
             )
         }
+        // Configurar el listener per al botó de captura d'imatges
         binding.camaraCaptureButton.setOnClickListener {
             takePhoto()
         }
 
+        // Obtenir el directori de sortida per emmagatzemar les imatges capturades
         outputDirectory = getOutputDirectory()
+        // Inicialitzar l'executor de càmera
         cameraExecutor = Executors.newSingleThreadExecutor()
 
         return binding.root
     }
+
+    /**
+     * Funció que comprova si s'han concedit tots els permisos necessaris per a la càmera
+     */
     private fun allPermissionsGranted() = CamaraFragment.REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(
             requireContext(), it) == PackageManager.PERMISSION_GRANTED
     }
 
+    /**
+     * Inicia la càmera per a la captura d'imatges.
+     */
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
         cameraProviderFuture.addListener(Runnable {
@@ -79,6 +94,10 @@ class CamaraFragment : Fragment() {
             }
         }, ContextCompat.getMainExecutor(requireContext()))
     }
+
+    /**
+     * Captura una foto utilitzant la càmera.
+     */
     private fun takePhoto() {
         val imageCapture = imageCapture ?: return
         val photoFile = File(outputDirectory,
@@ -100,16 +119,30 @@ class CamaraFragment : Fragment() {
                 }
             })
     }
+
+    /**
+     * Obté el directori de sortida per emmagatzemar les imatges capturades.
+     *
+     * @return Un objecte File que representa el directori on es guardaran les imatges capturades.
+     */
     private fun getOutputDirectory(): File {
         val mediaDir = requireContext().externalMediaDirs.firstOrNull()?.let {
             File(it, resources.getString(R.string.app_name)).apply { mkdirs() } }
         return if (mediaDir != null && mediaDir.exists())
             mediaDir else requireContext().filesDir
     }
+
+    /**
+     * Aquest mètode es crida quan el fragment es destrueix per alliberar recursos.
+     */
     override fun onDestroy() {
         super.onDestroy()
         cameraExecutor.shutdown()
     }
+
+    /**
+     * Objecte de companyia que conté constants i permisos necessaris per a l'ús de la càmera.
+     */
     companion object {
         private const val TAG = "CameraXBasic"
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"

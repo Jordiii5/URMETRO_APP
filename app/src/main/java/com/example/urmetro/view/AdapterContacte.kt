@@ -23,6 +23,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+/**
+ * Adaptador per a la llista de contactes.
+ * @property contactes Llista de contactes a mostrar.
+ * @property listener Gestor del clic sobre els contactes.
+ */
 class AdapterContacte (
     private var contactes: List<Contacte>,
     private var listener: com.example.urmetro.viewModel.ContacteOnClick
@@ -33,7 +38,10 @@ class AdapterContacte (
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val binding = ItemContactoBinding.bind(view)
 
-
+        /**
+         * Estableix el listener per al clic en un contacte.
+         * @param post El contacte que es fa clic.
+         */
         fun setListener(post: Contacte){
             binding.root.setOnClickListener{
                 listener.onClickContacte(post)
@@ -52,6 +60,11 @@ class AdapterContacte (
         return contactes.size
     }
 
+    /**
+     * Vincula les dades del contacte amb la vista.
+     * @param holder Mantenedor de les vistes.
+     * @param position Posició del contacte a la llista.
+     */
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: AdapterContacte.ViewHolder, position: Int) {
         val contacte = contactes[position]

@@ -19,6 +19,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 val PREFS_NAME = "MyPrefsFile"
+
+/**
+ * ViewModel que conté dades i lògica de negoci relacionades amb l'aplicació.
+ */
 class MyViewModel : ViewModel(){
     lateinit var repository: ApiRepository
     var currentUsuari= MutableLiveData<Usuari>()
@@ -42,6 +46,10 @@ class MyViewModel : ViewModel(){
     fun setImageUri(uri: Uri) {
         _imageUri.value = uri
     }
+
+    /**
+     * Recupera les dades dels usuaris des del servidor.
+     */
     fun fetchData(){
         success.postValue(false)
         CoroutineScope(Dispatchers.IO).launch {
@@ -57,6 +65,9 @@ class MyViewModel : ViewModel(){
         }
     }
 
+    /**
+     * Recupera les dades de les publicacions des del servidor.
+     */
     fun fetchDataPublicacions(){
         CoroutineScope(Dispatchers.IO).launch {
             val response = repository.getPost("posts")
@@ -71,6 +82,9 @@ class MyViewModel : ViewModel(){
         }
     }
 
+    /**
+     * Recupera les dades dels contactes des del servidor.
+     */
     fun fetchDataContactes(){
         CoroutineScope(Dispatchers.IO).launch {
             val response = repository.getContactes("contactes")
@@ -84,6 +98,10 @@ class MyViewModel : ViewModel(){
             }
         }
     }
+
+    /**
+     * Obté un usuari per DNI del servidor.
+     */
     fun getUsuari(dni: String) {
         success.postValue(false)
         CoroutineScope(Dispatchers.IO).launch {
@@ -110,6 +128,9 @@ class MyViewModel : ViewModel(){
         }
     }
 
+    /**
+     * Obté un usuari per ID del servidor.
+     */
     fun getUsuariId(id: Int) {
         success.postValue(false)
         CoroutineScope(Dispatchers.IO).launch {
@@ -132,6 +153,12 @@ class MyViewModel : ViewModel(){
     }
 
 
+    /**
+     * Actualitza les dades de l'usuari al servidor.
+     * @param usuari_nom El nou nom de l'usuari.
+     * @param usuari_telefon El nou número de telèfon de l'usuari.
+     * @param usuari_contacte_emergencia El nou contacte d'emergència de l'usuari.
+     */
     fun updateDades (usuari_nom:String, usuari_telefon: String, usuari_contacte_emergencia: String){
         val usuari_dni = currentUsuari.value?.usuari_dni
         if (usuari_dni != null){
@@ -145,6 +172,10 @@ class MyViewModel : ViewModel(){
         }
     }
 
+    /**
+     * Elimina l'usuari del servidor.
+     * @return True si l'eliminació s'ha realitzat amb èxit, fals altrament.
+     */
     suspend fun deleteUser(): Boolean {
         val dniToDelete = currentUsuari.value?.usuari_dni ?: return false
 
@@ -159,6 +190,10 @@ class MyViewModel : ViewModel(){
         }
     }
 
+    /**
+     * Elimina una publicació del servidor.
+     * @return True si l'eliminació s'ha realitzat amb èxit, fals altrament.
+     */
     suspend fun deletePublicacio(): Boolean{
         val publicacioToDelete = post.value?.publicacio_id ?: return false
         Log.d("pie de foto", publicacioToDelete.toString())
@@ -174,6 +209,11 @@ class MyViewModel : ViewModel(){
         }
     }
 
+    /**
+     * Publica una nova publicació al servidor.
+     * @param post La nova publicació a publicar.
+     * @param image La imatge associada a la publicació.
+     */
     @RequiresApi(Build.VERSION_CODES.O)
     fun postPublicacio(post: Publicacions, image: Uri?){
         CoroutineScope(Dispatchers.IO).launch {
@@ -181,6 +221,10 @@ class MyViewModel : ViewModel(){
         }
     }
 
+    /**
+     * Publica un nou contacte al servidor.
+     * @param tel El nou contacte a publicar.
+     */
     @RequiresApi(Build.VERSION_CODES.O)
     fun postContacte(tel: Contacte){
         CoroutineScope(Dispatchers.IO).launch {

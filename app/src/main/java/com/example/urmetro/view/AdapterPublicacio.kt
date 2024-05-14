@@ -24,24 +24,20 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+/**
+ * Adaptador per a la llista de publicacions.
+ * @property publicacions Llista de publicacions a mostrar.
+ * @property viewModel ViewModel associat a l'activitat o fragment.
+ */
 class AdapterPublicacio (
     private var publicacions: List<Publicacions>,
     private val viewModel: MyViewModel
-    //private var listener: com.example.urmetro.viewModel.OnClickListener
 ): RecyclerView.Adapter<AdapterPublicacio.ViewHolder>() {
     private lateinit var context: Context
     lateinit var repository: ApiRepository
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val binding = ItemPublicacioBinding.bind(view)
-
-        /*
-        fun setListener(post: Publicacions){
-            binding.root.setOnClickListener{
-                listener.onClick(post)
-            }
-        }
-         */
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
@@ -54,14 +50,16 @@ class AdapterPublicacio (
         return publicacions.size
     }
 
+    /**
+     * Vincula les dades de la publicació amb la vista.
+     * @param holder Mantenedor de les vistes.
+     * @param position Posició de la publicació a la llista.
+     */
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val post = publicacions[position]
 
         with(holder){
-            //setListener(post)
-            //binding.nomUsuari.text = viewModel.currentUsuari.value?.usuari_nom ?: ""
-
             binding.nomUsuari.text = post.usuari_id.toString()
             binding.descripcioFoto.text = post.publicacio_peu_foto
 

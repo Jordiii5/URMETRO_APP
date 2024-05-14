@@ -28,11 +28,14 @@ import com.example.urmetro.model.Publicacions
 import com.example.urmetro.viewModel.MyViewModel
 import java.io.File
 
+/**
+ * Fragment per afegir una nova imatge amb peu de foto a la galeria d'imatges.
+ */
 class AfegirImatgeFragment : Fragment() {
-    lateinit var binding: FragmentAfegirImatgeBinding
-    private val viewModel: MyViewModel by activityViewModels()
-    private lateinit var myPreferences: SharedPreferences
-    var uri = ""
+    lateinit var binding: FragmentAfegirImatgeBinding // Binding per accedir als elements de la UI
+    private val viewModel: MyViewModel by activityViewModels() // ViewModel per gestionar les dades i l'estat de l'aplicació
+    private lateinit var myPreferences: SharedPreferences // Preferències de l'usuari
+    var uri = ""  // URI de la imatge seleccionada
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,20 +49,25 @@ class AfegirImatgeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Observar els canvis en l'usuari actual i actualitzar la vista amb el nom de l'usuari
         viewModel.currentUsuari.observe(viewLifecycleOwner) { usuario ->
             usuario?.let {
                 binding.nomUsuari.text = it.usuari_nom?.uppercase()
             }
         }
 
+        // Inicialitzar les preferències compartides de l'usuari
         myPreferences = requireActivity().getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE)
 
+        // Configurar el listener per al botó de retrocés
         binding.arrowBack.setOnClickListener {
             requireActivity().onBackPressed()
         }
 
+        // Configurar el listener per al botó d'afegir publicació
         binding.afegirPublicacioButton.setOnClickListener {
             if (binding.peuImatgeField.text.toString().isNotBlank() && viewModel.fotohecha) {
+                // Crear una nova publicació amb la informació proporcionada
                 val publicacio = Publicacions(
                     0,
                     binding.publicacioImatge.toString(),
@@ -67,22 +75,25 @@ class AfegirImatgeFragment : Fragment() {
                     0,
                     viewModel.currentUsuari.value!!.usuari_id
                 )
-
+                // Publicar la nova publicació
                 viewModel.postPublicacio(publicacio, viewModel.image)
                 Log.d("pie de foto", binding.peuImatgeField.text.toString())
                 Toast.makeText(context, "Publiació feta correctament", Toast.LENGTH_LONG).show()
+                // Navegar a la pantalla de les pròpies imatges
                 findNavController().navigate(R.id.action_afegirImatgeFragment_to_lesMevesImatgesFragment)
             } else {
                 Toast.makeText(context, "Error al afegir publicació", Toast.LENGTH_LONG).show()
             }
         }
 
+        // Configurar el listener per a la imatge de la publicació, per obrir la càmera
         binding.publicacioImatge.setOnClickListener {
             findNavController().navigate(R.id.action_afegirImatgeFragment_to_camaraFragment)
             viewModel.camara = true
         }
     }
 
+    // Funció per carregar la imatge capturada de la càmera
     private fun loadCapturedImage() {
         if (viewModel.camara) {
             viewModel.camara = false
@@ -101,7 +112,9 @@ class AfegirImatgeFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        // Carregar la imatge capturada quan es reanuda el fragment
         loadCapturedImage()
+        // Amagar la barra d'acció quan es reanuda el fragment
         val supportActionBar: ActionBar? = (requireActivity() as AppCompatActivity).supportActionBar
         if (supportActionBar != null) supportActionBar.hide()
     }

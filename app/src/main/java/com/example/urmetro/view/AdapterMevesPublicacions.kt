@@ -22,10 +22,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+/**
+ * Adaptador per a la llista de les meves publicacions.
+ * @property publicacions Llista de publicacions a mostrar.
+ * @property viewModel ViewModel associat a l'activitat o fragment.
+ */
 class AdapterMevesPublicacions (
     private var publicacions: List<Publicacions>,
     private val viewModel: MyViewModel
-    //private var listener: com.example.urmetro.viewModel.OnClickListener
 ): RecyclerView.Adapter<AdapterMevesPublicacions.ViewHolder>() {
     private lateinit var context: Context
     lateinit var repository: ApiRepository
@@ -33,13 +37,6 @@ class AdapterMevesPublicacions (
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val binding = ItemPublicaciosMevesBinding.bind(view)
 
-        /*
-        fun setListener(post: Publicacions){
-            binding.root.setOnClickListener{
-                listener.onClick(post)
-            }
-        }
-         */
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
@@ -52,11 +49,15 @@ class AdapterMevesPublicacions (
         return publicacions.size
     }
 
+    /**
+     * Vincula les dades de la publicació amb la vista.
+     * @param holder Mantenedor de les vistes.
+     * @param position Posició de la publicació a la llista.
+     */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val post = publicacions[position]
 
         with(holder){
-            //setListener(post)
             binding.peu.text = post.publicacio_peu_foto
             binding.nomUsuari.text = viewModel.currentUsuari.value?.usuari_nom ?: ""
             binding.favoriteCounter.text = post.publicacio_likes.toString()

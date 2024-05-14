@@ -91,7 +91,6 @@ class RegistreFragment : Fragment() {
                             Toast.makeText(context, "Registre correctament", Toast.LENGTH_SHORT).show()
                             findNavController().navigate(R.id.action_registreFragment_to_menuFragment)
                         }else{
-                            //faltara crear un toast para poder avisar que el usuario no se ha podido registrar
                             Toast.makeText(context, "Error al registrarse", Toast.LENGTH_SHORT).show()
                             binding.carrega.visibility=View.INVISIBLE
                         }

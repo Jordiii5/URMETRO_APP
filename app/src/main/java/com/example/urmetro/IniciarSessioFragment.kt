@@ -8,9 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Switch
 import android.widget.Toast
-import androidx.core.content.edit
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.urmetro.RegistreFragment.HashUtils.hashPassword
@@ -24,8 +22,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+/**
+ * Fragment per iniciar sessió, permetent als usuaris entrar amb les seves credencials.
+ */
 class IniciarSessioFragment : Fragment() {
-    lateinit var myPreferences: SharedPreferences
     lateinit var binding: FragmentIniciarSessioBinding
     private val viewModel: MyViewModel by activityViewModels()
 
@@ -35,16 +35,15 @@ class IniciarSessioFragment : Fragment() {
     ): View? {
         binding = FragmentIniciarSessioBinding.inflate(layoutInflater)
 
-        // Recuperar datos guardados en SharedPreferences
+        // Recuperar les dades guardades a SharedPreferences
         val prefs: SharedPreferences =
             requireActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val savedUsername = prefs.getString("username", "")
         val savedPassword = prefs.getString("password", "")
-        val savedHashedPassword = prefs.getString("hashedPassword", "")
         val saveCredentials = prefs.getBoolean("saveCredentials", false)
 
         if (saveCredentials && savedUsername!!.isNotEmpty() && savedPassword!!.isNotEmpty()) {
-            // Si hay credenciales guardadas y válidas, intenta iniciar sesión automáticamente
+            // Si hi ha credencials guardades i vàlides, intenta iniciar sessió automàticament
             attemptLogin(savedUsername, savedPassword)
         }
 
@@ -63,16 +62,6 @@ class IniciarSessioFragment : Fragment() {
     @SuppressLint("ResourceType", "CommitPrefEdits")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        //myPreferences = requireActivity().getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE)
-        //setupForm()
-
-/*
-        if (binding.rememberCheckbox.isChecked){
-            findNavController().navigate(R.id.action_iniciarSessioFragment_to_menuFragment)
-        }
-
- */
 
         binding.login.setOnClickListener {
             binding.carrega.visibility=View.VISIBLE
@@ -132,49 +121,19 @@ class IniciarSessioFragment : Fragment() {
         }
     }
 
-//    private fun rememberUser(userName: String, pass: String, remember: Boolean) {
-//        if(remember){
-//            myPreferences.edit {
-//                putString("dni", userName)
-//                putString("password", pass)
-//                putBoolean("remember", remember)
-//                putBoolean("active", remember)
-//                apply()
-//            }
-//        }else{
-//            myPreferences.edit {
-//                putString("dni", "")
-//                putString("password", "")
-//                putBoolean("remember", remember)
-//                putBoolean("active", remember)
-//                apply()
-//            }
-//        }
-//
-//    }
-//    private fun setupForm() {
-//        val username = myPreferences.getString("dni", "")
-//        val pass = myPreferences.getString("password", "")
-//        val remember = myPreferences.getBoolean("remember", false)
-//        if (username != null) {
-//            if(username.isNotEmpty()){
-//                binding.dniField.setText(username)
-//                binding.contrasenyaField.setText(pass)
-//                binding.rememberCheckbox.isChecked = remember
-//            }
-//        }
-//    }
+    /**
+     * Intenta iniciar sessió automàticament amb les credencials guardades.
+     */
     @SuppressLint("ResourceType")
     private fun attemptLogin(username: String, password: String) {
-        val hashedPassword = hashPassword(password) // Hashear la contraseña ingresada
+        val hashedPassword = hashPassword(password) // Hashejar la contrasenya introduïda
 
-        // Obtener la contraseña hasheada almacenada en SharedPreferences
+        // Obtenir la contrasenya hashejada emmagatzemada a SharedPreferences
         val prefs: SharedPreferences =
             requireActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val savedHashedPassword = prefs.getString("hashedPassword", hashedPassword)
 
         if (hashedPassword == savedHashedPassword) {
-            // Contraseña válida, proceder con el inicio de sesión
             viewModel.currentUsuari.value = Usuari(0, "", username, 0, 0, password )
             viewModel.repository = ApiRepository(username, hashedPassword)
 
@@ -199,5 +158,4 @@ class IniciarSessioFragment : Fragment() {
             }
         }
     }
-
 }

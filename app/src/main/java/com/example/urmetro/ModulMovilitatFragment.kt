@@ -23,15 +23,15 @@ class ModulMovilitatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        xmlRpcClient = UR3XmlRpcClient()
+        //xmlRpcClient = UR3XmlRpcClient()
 
         // Por ejemplo, mueve el robot a la posición original al iniciar la actividad
-        val originalPosition = listOf(0.0, -1.5707963267948966, 0.0, -1.5707963267948966, 0.0, 0.0)
-        xmlRpcClient.moveRobotToPosition(originalPosition)
+        //val originalPosition = listOf(0.0, -1.5707963267948966, 0.0, -1.5707963267948966, 0.0, 0.0)
+        //xmlRpcClient.moveRobotToPosition(originalPosition)
 
         binding.formaLayout.setOnClickListener {
-            val newPosition = listOf(0.0, -1.5707963267948966, 0.0, -2.5707963267948966, 0.0, 0.0)// Define la nueva posición aquí
-            xmlRpcClient.moveRobotToPosition(newPosition)
+            //val newPosition = listOf(0.0, -1.5707963267948966, 0.0, -2.5707963267948966, 0.0, 0.0)// Define la nueva posición aquí
+            //xmlRpcClient.moveRobotToPosition(newPosition)
         }
 
         binding.menu.setOnClickListener {
